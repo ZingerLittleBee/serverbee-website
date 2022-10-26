@@ -1,36 +1,45 @@
 <script setup>
 const props = defineProps({
-	appName: {
-		type: String,
-		default: 'Nuxt'
-	},
 	version: {
 		type: String,
-		default: ''
+		default: '1.0.0'
 	},
 	title: {
 		type: String,
-		default: 'Welcome to Nuxt 3!'
+		default: 'ServerBee'
+	},
+	subTitle: {
+		type: String,
+		default: '掌控你所有 PC、服务器的状态'
 	},
 	highPerformance: {
 		type: String,
-		default:
-			'使用高性能框架 Actix-Web 提供服务, 由 Rust 强力驱动.'
+		default: '使用高性能框架 Actix-Web 提供服务, 由 Rust 强力驱动.'
 	},
 	starGitHub: {
 		type: String,
+		default: '服务器程序开源, 完全透明、公开、可定制化.'
+	},
+	crossPlatorm: {
+		type: String,
+		default: '支持 Windows、Linux、MacOS.'
+	},
+	featuresList: {
+		type: String,
 		default:
-			'服务器程序开源, 完全透明、公开、可定制化.'
+			'CPU 核心、 系统负载、 内存用量、 磁盘读写、 网卡 IO、 进程管理、SSH 终端.'
 	}
 })
-useHead({
-	title: `${props.title}`,
-	script: [],
-	style: [
-		{
-			children: `*,:before,:after{-webkit-box-sizing:border-box;box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}*{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14, 165, 233, .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}a{color:inherit;text-decoration:inherit}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";line-height:1.5}h1,p,h2{margin:0}h1,h2{font-size:inherit;font-weight:inherit}svg{display:block;vertical-align:middle}`
-		}
-	]
+const url = {
+	github: 'https://github.com/ZingerLittleBee/server_bee-backend',
+	appStore: 'https://apps.apple.com/us/app/serverbee/id6443553714'
+}
+
+const isDark = ref(false)
+
+onMounted(() => {
+	let pref = window.matchMedia('(prefers-color-scheme: dark)')
+	isDark.value = pref.matches
 })
 </script>
 <template>
@@ -38,74 +47,77 @@ useHead({
 		class="font-sans antialiased bg-white dark:bg-black text-black dark:text-white min-h-screen place-content-center flex flex-col items-center justify-center p-8 text-sm sm:text-base"
 	>
 		<div class="grid grid-cols-2 gap-4 md:gap-8 max-w-5xl w-full z-20">
-			<div class="flex flex-col justify-center items-center col-span-2">
+			<div
+				class="flex flex-col justify-center items-center col-span-2 sm:col-span-2"
+			>
 				<div
-					class="flex justify-center items-center p-6 rounded-6 serverbee-logo spotlight-logo my-6"
+					class="flex justify-center items-center rounded-6 p-6 serverbee-logo spotlight-logo my-6"
 				>
-					<img src="/img/serverbee.png" width="80" height="80" alt="serverbee logo" />
+					<img
+						src="/img/serverbee.png"
+						width="80"
+						height="80"
+						alt="serverbee logo"
+						crossOrigin="anonymous"
+					/>
 				</div>
 				<div class="spotlight-wrapper">
 					<div class="fixed z-10 left-0 right-0 spotlight"></div>
 				</div>
-				<h1 class="xl:text-5xl font-800 text-4xl mt-4">
-					掌控你所有的 PC
-				</h1>
+				<h1 class="xl:text-5xl font-800 text-4xl mt-4" v-text="title" />
 				<p
 					class="xl:text-2xl font-400 text-xl my-4"
 					style="color: #6b7280"
-				>
-					跨平台、高性能、开源
-				</p>
-				<a href="https://apps.apple.com/us/app/serverbee/id6443553714" target="_blank">
-          <div class="my-4">
-            <img
-              src="~/assets/dl.svg"
-              alt="Download on the App Store"
-            />
-            <p class="text-center text-sm"
-               style="color: #9ca3af"
-            >1.0.0 已发布</p>
-          </div>
+					v-text="subTitle"
+				/>
+				<a :href="url.appStore" target="_blank">
+					<div class="my-4">
+						<img
+							v-if="!isDark"
+							src="~/assets/dl.svg"
+							alt="Download on the App Store"
+						/>
+						<img
+							v-if="isDark"
+							src="~/assets/dl-dark.svg"
+							alt="Download on the App Store"
+						/>
+						<p class="text-center text-sm" style="color: #9ca3af">
+							{{ version }} 已发布
+						</p>
+					</div>
 				</a>
 			</div>
-			<div class="rounded p-4 flex flex-col gradient-border">
-        <div class="i-akar-icons:fire text-40px"></div>
-				<h1 class="font-medium text-xl my-4">特性</h1>
-				<div class="flex flex-col col-span-1">
-					<div>
-						<p>CPU 核心</p>
-						<p>系统负载</p>
-						<p>内存用量</p>
-						<p>磁盘读写</p>
-						<p>网卡 IO</p>
-						<p>进程管理</p>
-					</div>
-				</div>
+			<div
+				class="rounded p-4 flex flex-col gradient-border col-span-2 sm:col-span-1"
+			>
+				<div class="i-akar-icons:fire text-40px"></div>
+				<h1 class="font-medium text-xl mt-4">特性</h1>
+				<div v></div>
+				<p class="mt-2" v-text="featuresList" />
 			</div>
-      <a
-          href="https://github.com/ZingerLittleBee/server_bee-backend"
-          target="_blank"
-          rel="noopener"
-          class="cursor-pointer gradient-border col-span-3 sm:col-span-1 p-4 flex flex-col"
-      >
-        <div class="i-eos-icons:system-ok-outlined text-40px" />
-        <h2 class="font-semibold text-xl mt-4">跨平台</h2>
-        <p class="mt-2" v-text="starGitHub" />
-      </a>
+			<div
+				class="gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col"
+			>
+				<div class="i-eos-icons:system-ok-outlined text-40px" />
+				<h2 class="font-semibold text-xl mt-4">跨平台</h2>
+				<p class="mt-2" v-text="crossPlatorm" />
+			</div>
 			<div
 				rel="noopener"
-				class="gradient-border col-span-3 sm:col-span-1 p-4 flex flex-col"
+				class="gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col"
 			>
-        <div class="i-charm:rocket text-40px"></div>
+				<div class="i-charm:rocket text-40px"></div>
 				<h2 class="font-semibold text-xl mt-4">高性能</h2>
-				<p class="mt-2" v-text="highPerformance" /> </div
-			><a
-				href="https://github.com/ZingerLittleBee/server_bee-backend"
+				<p class="mt-2" v-text="highPerformance" />
+			</div>
+			<a
+				:href="url.github"
 				target="_blank"
 				rel="noopener"
-				class="cursor-pointer gradient-border col-span-3 sm:col-span-1 p-4 flex flex-col"
+				class="cursor-pointer gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col"
 			>
-      <div class="i-carbon:logo-github text-40px"></div>
+				<div class="i-carbon:logo-github text-40px"></div>
 				<h2 class="font-semibold text-xl mt-4">开源</h2>
 				<p class="mt-2" v-text="starGitHub" />
 			</a>
