@@ -54,7 +54,7 @@ onMounted(() => {
 					class="flex justify-center items-center rounded-6 p-6 serverbee-logo spotlight-logo my-6"
 				>
 					<img
-						src="/img/serverbee.png"
+						src="/img/serverbee.webp"
 						width="80"
 						height="80"
 						alt="serverbee logo"
