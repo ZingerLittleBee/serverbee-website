@@ -35,28 +35,32 @@ const url = {
 	appStore: 'https://apps.apple.com/us/app/serverbee/id6443553714'
 }
 
-const isDark = ref(false)
+const colorMode = useColorMode()
+const isDark = computed(() => colorMode.value === 'dark')
 
-onMounted(() => {
-	let pref = window.matchMedia('(prefers-color-scheme: dark)')
-	isDark.value = pref.matches
-})
+const bgColor = computed(() =>
+	colorMode.value === 'system'
+		? 'text-black dark:text-white'
+		: colorMode.value === 'dark'
+		? 'text-white'
+		: 'text-black'
+)
 </script>
+
 <template>
 	<div
-		class="font-sans antialiased bg-white dark:bg-black text-black dark:text-white min-h-screen place-content-center flex flex-col items-center justify-center p-8 text-sm sm:text-base"
+		:class="`p-8 antialiased place-content-center flex flex-col items-center justify-center text-sm sm:text-base ${bgColor}`"
 	>
-		<div class="grid grid-cols-2 gap-4 md:gap-8 max-w-5xl w-full z-20">
+		<div class="grid grid-cols-2 gap-4 md:gap-8 max-w-4xl w-full z-20">
 			<div
 				class="flex flex-col justify-center items-center col-span-2 sm:col-span-2"
 			>
 				<div
-					class="flex justify-center items-center rounded-6 p-6 serverbee-logo spotlight-logo my-6"
+					class="flex items-center rounded-6 p-6 serverbee-logo spotlight-logo mb-6"
 				>
 					<img
 						src="/img/serverbee.webp"
-						width="80"
-						height="80"
+						class="w-80px h-80px"
 						alt="serverbee logo"
 						crossOrigin="anonymous"
 					/>
@@ -89,15 +93,14 @@ onMounted(() => {
 				</a>
 			</div>
 			<div
-				class="rounded p-4 flex flex-col gradient-border col-span-2 sm:col-span-1"
+				:class="`rounded p-4 flex flex-col gradient-border col-span-2 sm:col-span-1`"
 			>
 				<div class="i-akar-icons:fire text-40px"></div>
 				<h1 class="font-medium text-xl mt-4">特性</h1>
-				<div v></div>
 				<p class="mt-2" v-text="featuresList" />
 			</div>
 			<div
-				class="gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col"
+				:class="`gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col`"
 			>
 				<div class="i-eos-icons:system-ok-outlined text-40px" />
 				<h2 class="font-semibold text-xl mt-4">跨平台</h2>
@@ -105,7 +108,7 @@ onMounted(() => {
 			</div>
 			<div
 				rel="noopener"
-				class="gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col"
+				:class="`gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col`"
 			>
 				<div class="i-charm:rocket text-40px"></div>
 				<h2 class="font-semibold text-xl mt-4">高性能</h2>
@@ -115,7 +118,7 @@ onMounted(() => {
 				:href="url.github"
 				target="_blank"
 				rel="noopener"
-				class="cursor-pointer gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col"
+				:class="`cursor-pointer gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col`"
 			>
 				<div class="i-carbon:logo-github text-40px"></div>
 				<h2 class="font-semibold text-xl mt-4">开源</h2>
@@ -187,7 +190,6 @@ onMounted(() => {
 		);
 	}
 }
-
 .gradient-border::before {
 	content: '';
 	position: absolute;
@@ -214,55 +216,8 @@ onMounted(() => {
 	opacity: 1;
 }
 
-.font-sans {
-	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-		Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol,
-		'Noto Color Emoji';
-}
-
 .antialiased {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-@media (min-width: 640px) {
-	.sm\:text-base {
-		font-size: 1rem;
-		line-height: 1.5rem;
-	}
-
-	.sm\:pb-2 {
-		padding-bottom: 0.5rem;
-	}
-
-	.sm\:col-span-1 {
-		-ms-grid-column-span: span 1 / span 1;
-		grid-column: span 1 / span 1;
-	}
-}
-
-@media (min-width: 768px) {
-	.md\:gap-8 {
-		grid-gap: 2rem;
-		gap: 2rem;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	.dark\:bg-black {
-		--tw-bg-opacity: 1;
-		background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
-	}
-
-	.dark\:bg-white\/10 {
-		--tw-bg-opacity: 0.1;
-		background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-	}
-
-	.dark\:text-white {
-		--tw-text-opacity: 1;
-		color: rgba(255, 255, 255, var(--tw-text-opacity));
-	}
 }
 </style>

@@ -29,6 +29,7 @@ export default defineNuxtConfig({
 			]
 		}
 	},
+	extends: 'content-wind',
 	modules: ['@unocss/nuxt'],
 	unocss: {
 		uno: true,
