@@ -45,6 +45,14 @@ const bgColor = computed(() =>
 		? 'text-white'
 		: 'text-black'
 )
+
+const broderDivId = computed(() =>
+	colorMode.value === 'system'
+		? ''
+		: colorMode.value === 'dark'
+		? 'gradient-border-dark'
+		: 'gradient-border-light'
+)
 </script>
 
 <template>
@@ -93,22 +101,25 @@ const bgColor = computed(() =>
 				</a>
 			</div>
 			<div
-				:class="`rounded p-4 flex flex-col gradient-border col-span-2 sm:col-span-1`"
+				:id="broderDivId"
+				class="rounded p-4 flex flex-col gradient-border col-span-2 sm:col-span-1"
 			>
 				<div class="i-akar-icons:fire text-40px"></div>
 				<h1 class="font-medium text-xl mt-4">特性</h1>
 				<p class="mt-2" v-text="featuresList" />
 			</div>
 			<div
-				:class="`gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col`"
+				:id="broderDivId"
+				class="gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col"
 			>
 				<div class="i-eos-icons:system-ok-outlined text-40px" />
 				<h2 class="font-semibold text-xl mt-4">跨平台</h2>
 				<p class="mt-2" v-text="crossPlatorm" />
 			</div>
 			<div
+				:id="broderDivId"
 				rel="noopener"
-				:class="`gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col`"
+				class="gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col"
 			>
 				<div class="i-charm:rocket text-40px"></div>
 				<h2 class="font-semibold text-xl mt-4">高性能</h2>
@@ -118,7 +129,8 @@ const bgColor = computed(() =>
 				:href="url.github"
 				target="_blank"
 				rel="noopener"
-				:class="`cursor-pointer gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col`"
+				:id="broderDivId"
+				class="cursor-pointer gradient-border col-span-2 sm:col-span-1 p-4 flex flex-col"
 			>
 				<div class="i-carbon:logo-github text-40px"></div>
 				<h2 class="font-semibold text-xl mt-4">开源</h2>
@@ -174,6 +186,21 @@ const bgColor = computed(() =>
 	}
 }
 
+#gradient-border-light {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+#gradient-border-light .gradient-border::before {
+	background: linear-gradient(
+		90deg,
+		#e2e2e2 0%,
+		#e2e2e2 25%,
+		#00dc82 50%,
+		#36e4da 75%,
+		#0047e1 100%
+	);
+}
+
 @media (prefers-color-scheme: dark) {
 	.gradient-border {
 		background-color: rgba(20, 20, 20, 0.3);
@@ -190,6 +217,22 @@ const bgColor = computed(() =>
 		);
 	}
 }
+
+#gradient-border-dark {
+	background-color: rgba(20, 20, 20, 0.3);
+}
+
+#gradient-border-dark .gradient-border::before {
+	background: linear-gradient(
+		90deg,
+		#303030 0%,
+		#303030 25%,
+		#00dc82 50%,
+		#36e4da 75%,
+		#0047e1 100%
+	);
+}
+
 .gradient-border::before {
 	content: '';
 	position: absolute;
@@ -200,9 +243,9 @@ const bgColor = computed(() =>
 	border-radius: 0.5rem;
 	padding: 2px;
 	width: 100%;
+	opacity: 0.25;
 	background-size: 400% auto;
 	background-position: 0 0;
-	opacity: 0.5;
 	transition: background-position 0.3s ease-in-out, opacity 0.2s ease-in-out;
 	-webkit-mask: linear-gradient(#fff 0 0) content-box,
 		linear-gradient(#fff 0 0);

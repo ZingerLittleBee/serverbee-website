@@ -10,6 +10,7 @@
   "devDependencies": {
     "content-wind": "^0.2.4",
     "@iconify/json": "^2.1.128",
+    "@nuxtjs/color-mode": "^3.1.8",
     "@unocss/nuxt": "^0.46.0",
     "@unocss/preset-icons": "^0.46.0",
     "nuxt": "3.0.0-rc.12"
