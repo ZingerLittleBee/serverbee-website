@@ -1,18 +1,18 @@
 {
-  "private": true,
+  "name": "serverbee-website",
+  "version": "1.0.0",
+  "description": "A project of vuepress-theme-hope",
+  "license": "MIT",
+  "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "docs:build": "vuepress build src",
+    "docs:clean-dev": "vuepress dev src --clean-cache",
+    "docs:dev": "vuepress dev src"
   },
   "devDependencies": {
-    "content-wind": "^0.2.4",
-    "@iconify/json": "^2.1.128",
-    "@nuxtjs/color-mode": "^3.1.8",
-    "@unocss/nuxt": "^0.46.0",
-    "@unocss/preset-icons": "^0.46.0",
-    "nuxt": "3.0.0-rc.12"
+    "@vuepress/client": "2.0.0-beta.53",
+    "vue": "^3.2.41",
+    "vuepress": "2.0.0-beta.53",
+    "vuepress-theme-hope": "2.0.0-beta.120"
   }
 }
