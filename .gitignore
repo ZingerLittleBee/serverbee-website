@@ -8,4 +8,8 @@ node_modules
 dist
 .idea
 .history
-pnpm-lock.yaml
+
+# Vuepress Cache
+.cache/
+# Vuepress Temp
+.temp/
