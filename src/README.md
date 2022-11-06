@@ -20,7 +20,7 @@ features:
 
   - title: 跨平台
     icon: slides
-    details: 支持 Windows、Linux、MacOS.
+    details: 支持 Windows、Linux、MacOS、QTS.
 
   - title: 高性能
     icon: light
@@ -35,3 +35,10 @@ features:
 copyright: false
 footer: Copyright © 2022-present ServerBee.app
 ---
+
+<div align="center" style="margin-top: 10px">
+<a target="_blank" href="https://apps.apple.com/us/app/serverbee/id6443553714"><img src="/dl.svg"  alt=""/></a>
+<br />
+<span style="font-size: 14px">1.0.0 已发布</span>
+
+</div>

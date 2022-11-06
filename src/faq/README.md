@@ -5,6 +5,4 @@ icon: discover
 footer: false
 ---
 
-## 隐私
-
-### 你们收集什么数据
+## 常见问题

@@ -8,3 +8,8 @@ node_modules
 dist
 .idea
 .history
+
+# Vuepress Cache
+.cache/
+# Vuepress Temp
+.temp/

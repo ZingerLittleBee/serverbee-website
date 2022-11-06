@@ -10,11 +10,11 @@ export default defineUserConfig({
 			title: 'ServerBee',
 			description: '掌控你所有 PC、服务器的状态.'
 		},
-		'/en/': {
-			lang: 'en-US',
-			title: 'ServerBee',
-			description: 'Control the status of all your PCs and servers.'
-		}
+		// '/en/': {
+		// 	lang: 'en-US',
+		// 	title: 'ServerBee',
+		// 	description: 'Control the status of all your PCs and servers.'
+		// }
 	},
 
 	theme,

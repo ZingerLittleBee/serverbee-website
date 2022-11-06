@@ -1,12 +1,13 @@
 ---
 title: Windows
 icon: windows
-order: 1
+order: 3
 sticky: true
 footer: false
 ---
 
-1. [点击下载安装包](https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/latest/serverbee-deploy-x86_64-pc-windows-gnu.zip)
+1. [国内机器下载地址](https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/latest/serverbee-deploy-x86_64-pc-windows-gnu.zip)
+    > [国外机器下载地址](https://github.com/ZingerLittleBee/server_bee-backend/releases/download/v0.0.1/serverbee-deploy-x86_64-pc-windows-gnu.zip)
 2. 解压到任意路径 (一定要解压, 不要直接运行压缩包)
 3. 双击运行 `serverbee-deploy.exe`
 
