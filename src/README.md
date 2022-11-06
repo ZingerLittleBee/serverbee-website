@@ -2,19 +2,19 @@
 home: true
 icon: home
 title: 主页
-heroImage: /abstract-bee.svg
+heroImage: /serverbee-logo.svg
 heroText: ServerBee
 tagline: 掌控你所有 PC、服务器的状态.
 actions:
   - text: 如何使用 💡
-    link: /demo/
+    link: /usage/
     type: primary
 
-  - text: Docs
-    link: /guide/
+  - text: 常见问题 ❓
+    link: /faq/
 
 features:
-  - title: 特性
+  - title: 功能强大
     icon: like
     details: CPU 核心、系统负载、 内存用量、 磁盘读写、 网卡 IO、 进程管理、SSH 终端
 

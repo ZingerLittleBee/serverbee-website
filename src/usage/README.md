@@ -2,9 +2,10 @@
 title: 如何使用
 index: false
 icon: discover
+footer: false
 ---
 
-## 平台
+## 支持的平台
 
 - [Linux](linux.md)
 

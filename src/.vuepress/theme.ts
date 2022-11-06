@@ -1,14 +1,14 @@
 import { hopeTheme } from 'vuepress-theme-hope'
-import { enNavbar, zhNavbar } from './navbar/index.js'
-import { enSidebar, zhSidebar } from './sidebar/index.js'
+import { enNavbar, zhNavbar } from './navbar'
+import { enSidebar, zhSidebar } from './sidebar'
 
 export default hopeTheme({
 	hostname: 'https://serverbee.app',
 
-	author: {
-		name: 'ZingerLittleBee',
-		url: 'https://github.com/ZingerLittleBee'
-	},
+	// author: {
+	// 	name: 'ZingerLittleBee',
+	// 	url: 'https://github.com/ZingerLittleBee'
+	// },
 
 	themeColor: {
 		blue: '#2196f3',
@@ -17,18 +17,40 @@ export default hopeTheme({
 		orange: '#fb9b5f'
 	},
 
+	fullscreen: true,
+
+	backToTop: true,
+
 	iconAssets: 'iconfont',
 
 	logo: '/serverbee-logo.png',
 
-	repo: 'ZingerLittleBee/serverbee-website',
+	editLink: false,
 
-	docsDir: 'demo/theme-docs/src',
+	repo: 'ZingerLittleBee/serverbee-website',
 
 	pageInfo: ['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime'],
 
 	locales: {
+		/**
+		 * Chinese locale config
+		 */
 		'/': {
+			// navbar
+			navbar: zhNavbar,
+
+			// sidebar
+			sidebar: zhSidebar,
+
+			displayFooter: false,
+
+			// page meta
+			metaLocales: {
+				editLink: '在 GitHub 上编辑此页'
+			}
+		},
+
+		'/en/': {
 			// navbar
 			navbar: enNavbar,
 
@@ -42,37 +64,12 @@ export default hopeTheme({
 			metaLocales: {
 				editLink: 'Edit this page on GitHub'
 			}
-		},
-
-		/**
-		 * Chinese locale config
-		 */
-		'/zh/': {
-			// navbar
-			navbar: zhNavbar,
-
-			// sidebar
-			sidebar: zhSidebar,
-
-			footer: '默认页脚',
-
-			displayFooter: true,
-
-			// page meta
-			metaLocales: {
-				editLink: '在 GitHub 上编辑此页'
-			}
-		}
-	},
-
-	encrypt: {
-		config: {
-			'/demo/encrypt.html': ['1234'],
-			'/zh/demo/encrypt.html': ['1234']
 		}
 	},
 
 	plugins: {
+		copyCode: {},
+
 		// If you don’t need comment feature, you can remove following option
 		// The following config is for demo ONLY, if you need comment feature, please generate and use your own config, see comment plugin documentation for details.
 		// To avoid disturbing the theme developer and consuming his resources, please DO NOT use the following config directly in your production environment!!!!!
@@ -80,11 +77,11 @@ export default hopeTheme({
 			/**
 			 * Using Giscus
 			 */
-			// provider: "Giscus",
-			// repo: "vuepress-theme-hope/giscus-discussions",
-			// repoId: "R_kgDOG_Pt2A",
-			// category: "Announcements",
-			// categoryId: "DIC_kwDOG_Pt2M4COD69",
+			provider: "Giscus",
+			repo: "ZingerLittleBee/serverbee-website",
+			repoId: "R_kgDOIUGgBg",
+			category: "General",
+			categoryId: "DIC_kwDOIUGgBs4CSZiQ",
 
 			/**
 			 * Using Twikoo
@@ -95,8 +92,8 @@ export default hopeTheme({
 			/**
 			 * Using Waline
 			 */
-			provider: 'Waline',
-			serverURL: 'https://vuepress-theme-hope-comment.vercel.app'
+			// provider: 'Waline',
+			// serverURL: 'https://vuepress-theme-hope-comment.vercel.app'
 		},
 
 		// Disable features you don’t want here

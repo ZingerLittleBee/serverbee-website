@@ -1,23 +1,23 @@
-import { defineUserConfig } from "vuepress";
-import theme from "./theme.js";
+import { defineUserConfig } from 'vuepress'
+import theme from './theme.js'
 
 export default defineUserConfig({
-  base: "/",
+	base: '/',
 
-  locales: {
-    "/": {
-      lang: "en-US",
-      title: "Docs Demo",
-      description: "A docs demo for vuepress-theme-hope",
-    },
-    "/zh/": {
-      lang: "zh-CN",
-      title: "文档演示",
-      description: "vuepress-theme-hope 的文档演示",
-    },
-  },
+	locales: {
+		'/': {
+			lang: 'zh-CN',
+			title: 'ServerBee',
+			description: '掌控你所有 PC、服务器的状态.'
+		},
+		'/en/': {
+			lang: 'en-US',
+			title: 'ServerBee',
+			description: 'Control the status of all your PCs and servers.'
+		}
+	},
 
-  theme,
+	theme,
 
-  shouldPrefetch: false,
-});
+	shouldPrefetch: false
+})

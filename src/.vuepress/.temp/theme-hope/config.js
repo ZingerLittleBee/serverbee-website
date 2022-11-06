@@ -14,8 +14,6 @@ import { setupSidebarItems } from "@theme-hope/modules/sidebar/composables/index
 
 import "/Users/zingerbee/Documents/nuxt/serverbee-website/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.120/node_modules/vuepress-theme-hope/lib/client/styles/index.scss";
 
-import GlobalEncrypt from "@theme-hope/modules/encrypt/components/GlobalEncrypt.js";
-import LocalEncrypt from "@theme-hope/modules/encrypt/components/LocalEncrypt.js";
 import Slide from "/Users/zingerbee/Documents/nuxt/serverbee-website/node_modules/.pnpm/vuepress-theme-hope@2.0.0-beta.120/node_modules/vuepress-theme-hope/lib/client/layouts/Slide.js";
 
 
@@ -39,8 +37,6 @@ export default defineClientConfig({
     app.component("Navbar", Navbar);
     app.component("Sidebar", Sidebar);
 
-    app.component("GlobalEncrypt", GlobalEncrypt);
-    app.component("LocalEncrypt", LocalEncrypt);
     
   },
   setup: () => {
