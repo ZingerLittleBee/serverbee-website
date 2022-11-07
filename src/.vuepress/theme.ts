@@ -49,7 +49,7 @@ export default hopeTheme({
 			metaLocales: {
 				editLink: '在 GitHub 上编辑此页'
 			}
-		},
+		}
 
 		// '/en/': {
 		// 	// navbar
@@ -74,11 +74,11 @@ export default hopeTheme({
 			/**
 			 * Using Giscus
 			 */
-			provider: "Giscus",
-			repo: "ZingerLittleBee/serverbee-website",
-			repoId: "R_kgDOIUGgBg",
-			category: "General",
-			categoryId: "DIC_kwDOIUGgBs4CSZiQ",
+			provider: 'Giscus',
+			repo: 'ZingerLittleBee/serverbee-website',
+			repoId: 'R_kgDOIUGgBg',
+			category: 'General',
+			categoryId: 'DIC_kwDOIUGgBs4CSZiQ'
 		},
 		mdEnhance: {
 			align: true,
@@ -160,7 +160,7 @@ export default hopeTheme({
 						sizes: '192x192',
 						type: 'image/png'
 					}
-				],
+				]
 			}
 		}
 	}

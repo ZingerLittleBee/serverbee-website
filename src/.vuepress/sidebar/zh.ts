@@ -17,5 +17,19 @@ export const zhSidebar = sidebar({
 			link: 'faq/',
 			children: 'structure'
 		},
+		{
+			icon: 'add',
+			text: '需求墙',
+			prefix: 'roadmap/',
+			link: 'roadmap/',
+			children: 'structure'
+		},
+		{
+			icon: 'call',
+			text: '联系我们',
+			prefix: 'contact/',
+			link: 'contact/',
+			children: 'structure'
+		},
 	]
 })
