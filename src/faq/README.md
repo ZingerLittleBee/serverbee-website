@@ -1,7 +1,7 @@
 ---
 title: 常见问题
 index: false
-icon: discover
+icon: question
 footer: false
 ---
 

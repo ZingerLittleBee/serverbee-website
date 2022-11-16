@@ -1,7 +1,7 @@
 ---
 title: 联系我们
 index: false
-icon: discover
+icon: call
 footer: false
 ---
 

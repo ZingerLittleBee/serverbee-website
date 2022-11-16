@@ -18,6 +18,13 @@ export const zhSidebar = sidebar({
 			children: 'structure'
 		},
 		{
+			icon: 'info',
+			text: '已知问题',
+			prefix: 'issue/',
+			link: 'issue/',
+			children: 'structure'
+		},
+		{
 			icon: 'add',
 			text: '需求墙',
 			prefix: 'roadmap/',
