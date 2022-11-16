@@ -6,6 +6,14 @@ sticky: true
 footer: false
 ---
 
+## Ubuntu 桌面版
+[下载 AppImage](https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/desktop/1.0.0/serverbee_1.0.0_amd64.AppImage)
+
+
+## Debian 桌面版
+[下载 deb](https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/desktop/1.0.0/serverbee_1.0.0_amd64.deb)
+
+## 命令行 (适合无 GUI 使用)
 ::: info 前置条件
 首次需要安装 wget、unzip
 

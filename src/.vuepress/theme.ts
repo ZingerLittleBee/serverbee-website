@@ -9,7 +9,6 @@ export default hopeTheme({
 	// 	name: 'ZingerLittleBee',
 	// 	url: 'https://github.com/ZingerLittleBee'
 	// },
-
 	themeColor: {
 		Purple: '#6200EE',
 		darkPurple: '#BB86FC',
