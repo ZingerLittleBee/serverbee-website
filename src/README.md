@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: 主页
-heroImage: /serverbee-logo.svg
+heroImage: /serverbee-logo.png
 heroText: ServerBee
 tagline: 掌控你所有 PC、服务器的状态.
 actions:
