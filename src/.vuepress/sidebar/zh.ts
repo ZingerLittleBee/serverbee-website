@@ -38,5 +38,12 @@ export const zhSidebar = sidebar({
 			link: 'contact/',
 			children: 'structure'
 		},
+		{
+			icon: 'preview',
+			text: '隐私政策',
+			prefix: 'privacy/',
+			link: 'privacy/',
+			children: 'structure'
+		},
 	]
 })

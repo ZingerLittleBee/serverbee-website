@@ -3,6 +3,7 @@ title: 如何使用
 index: false
 icon: discover
 footer: false
+comment: false
 ---
 
 ## 支持的平台
