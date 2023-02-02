@@ -11,7 +11,7 @@
             "vuepress": {
                 "use": "@cloudbase/framework-plugin-website",
                 "inputs": {
-                    "buildCommand": "npm run docs:build",
+                    "buildCommand": "pnpm docs:build",
                     "outputPath": "src/.vuepress/dist"
                 }
             }
