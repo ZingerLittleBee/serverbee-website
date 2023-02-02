@@ -6,6 +6,23 @@ sticky: true
 footer: false
 ---
 
-#### 下载安装
+#### Windows 桌面环境
 
-[点击下载(amd64)](https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/desktop/1.0.0/serverbee_1.0.0_x64.msi)
+<ServerMilkLogo />
+
+::: tabs#download
+@tab:active 国内下载
+
+<DesktopDownload label="点击下载 Windows 桌面程序（国内地址）" os="windows" />
+
+@tab 国外下载
+
+<DesktopDownload label="点击下载 Windows 桌面程序（国外地址）" is-github="true" os="windows" />
+
+:::
+
+
+<script setup>
+import ServerMilkLogo from "@ServerMilkLogo";
+import DesktopDownload from "@DesktopDownload";
+</script>

@@ -1,16 +1,32 @@
 ---
-title: MacOS
+title: macOS
 icon: computer
 order: 2
 sticky: true
 footer: false
 ---
 
-#### 下载安装
+#### macOS 桌面环境
 
-1. [intel 芯片](https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/desktop/1.0.0/serverbee_1.0.0_x64.dmg)
-2. [M1/2 芯片](https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/desktop/1.0.0/serverbee_1.0.1_aarch64.tar.gz)
+<ServerMilkLogo />
+
+::: tabs#download
+@tab:active 国内下载
+
+<DesktopDownload label="点击下载 macOS 桌面程序（国内地址）" os="mac" />
+
+@tab 国外下载
+
+<DesktopDownload label="点击下载 macOS 桌面程序（国外地址）" is-github="true" os="mac" />
+
+:::
+
 
 #### 程序界面
 
 <img src="/img/gui-mac.png" width="340" height="380" alt="程序界面" />
+
+<script setup>
+import ServerMilkLogo from "@ServerMilkLogo";
+import DesktopDownload from "@DesktopDownload";
+</script>

@@ -37,7 +37,7 @@ features:
 
 
 copyright: false
-footer: Copyright © 2022-present ServerBee.app
+footer: Copyright © 2023-present ServerBee.app
 ---
 
 <div align="center" style="margin-top: 10px">

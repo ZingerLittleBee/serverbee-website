@@ -5,6 +5,7 @@ import { zhSidebar } from './sidebar'
 export default hopeTheme({
 	hostname: 'https://serverbee.app',
 
+	pageInfo: false,
 	// author: {
 	// 	name: 'ZingerLittleBee',
 	// 	url: 'https://github.com/ZingerLittleBee'
@@ -28,8 +29,6 @@ export default hopeTheme({
 	editLink: false,
 
 	repo: 'ZingerLittleBee/serverbee-website',
-
-	pageInfo: ['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime'],
 
 	locales: {
 		/**
@@ -69,16 +68,16 @@ export default hopeTheme({
 
 	plugins: {
 		copyCode: {},
-		comment: {
-			/**
-			 * Using Giscus
-			 */
-			provider: 'Giscus',
-			repo: 'ZingerLittleBee/serverbee-website',
-			repoId: 'R_kgDOIUGgBg',
-			category: 'General',
-			categoryId: 'DIC_kwDOIUGgBs4CSZiQ'
-		},
+		// comment: {
+		// 	/**
+		// 	 * Using Giscus
+		// 	 */
+		// 	provider: 'Giscus',
+		// 	repo: 'ZingerLittleBee/serverbee-website',
+		// 	repoId: 'R_kgDOIUGgBg',
+		// 	category: 'General',
+		// 	categoryId: 'DIC_kwDOIUGgBs4CSZiQ'
+		// },
 		mdEnhance: {
 			align: true,
 			attrs: true,
