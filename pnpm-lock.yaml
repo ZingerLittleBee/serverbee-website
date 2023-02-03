@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@vuepress/client': 2.0.0-beta.60
   '@vuepress/plugin-register-components': 2.0.0-beta.60
+  '@vuepress/utils': 2.0.0-beta.60
   vue: ^3.2.47
   vuepress: 2.0.0-beta.60
   vuepress-theme-hope: 2.0.0-beta.166
@@ -10,6 +11,7 @@ specifiers:
 devDependencies:
   '@vuepress/client': 2.0.0-beta.60
   '@vuepress/plugin-register-components': 2.0.0-beta.60
+  '@vuepress/utils': 2.0.0-beta.60
   vue: 3.2.47
   vuepress: 2.0.0-beta.60_snvqa5y7zj4eyr5mp3ym37ho7q
   vuepress-theme-hope: 2.0.0-beta.166_e7jwb2ulu5orbkux7obq5onfau
@@ -2261,7 +2263,7 @@ packages:
     resolution: {integrity: sha512-bwFksEtSQpbyAGJZkvRK9Z2zGmS144nv759vOzbRUZPPlGffeauzrPw9w7wxqp3gTJvIE/4Ufqt0AZTuSP/F/g==}
     dependencies:
       '@mdit-vue/types': 0.11.0
-      '@vue/shared': 3.2.45
+      '@vue/shared': 3.2.47
     dev: true
 
   /@vuepress/theme-default/2.0.0-beta.60:

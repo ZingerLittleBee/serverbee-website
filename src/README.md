@@ -1,10 +1,9 @@
 ---
 home: true
 icon: home
-title: 主页
 heroImage: /serverbee-logo.png
 heroText: ServerBee
-tagline: 掌控你所有 PC、服务器的状态.
+tagline: 监控、管理你所有桌面系统.
 actions:
   - text: 如何使用 💡
     link: /usage/
