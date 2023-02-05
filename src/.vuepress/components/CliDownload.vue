@@ -1,13 +1,14 @@
 <template>
   <div class="language-bash line-numbers-mode" data-ext="sh">
-    <button class="copy" aria-label="复制代码" data-copied="已复制" data-balloon-pos="left">
+    <button class="copy copy-code-button" aria-label="复制代码" data-copied="已复制">
       <div class="copy-icon"></div>
     </button>
     <pre class="language-bash" copy-code-registered="">
-<code><span class="token function">wget</span> {{url()}}
+<code><span class="token function">
+wget</span> {{url()}}
 <span class="token function">unzip</span> {{getZipName()}}
 ./{{getFileName()}}</code></pre><div class="line-numbers" aria-hidden="true">
-      <div v-for="i in 3" class="line-number"></div>
+      <div v-for="i in 4" class="line-number"></div>
     </div>
   </div>
 </template>
