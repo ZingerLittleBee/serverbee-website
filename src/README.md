@@ -42,6 +42,6 @@ footer: Copyright © 2023-present ServerBee.app
 <div align="center" style="margin-top: 10px">
 <a target="_blank" href="https://apps.apple.com/us/app/serverbee/id6443553714"><img src="/dl.svg"  alt=""/></a>
 <br />
-<span style="font-size: 14px">1.0.0 已发布</span>
+<span style="font-size: 14px">1.0.1 已发布</span>
 
 </div>
