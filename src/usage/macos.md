@@ -1,7 +1,7 @@
 ---
 title: macOS
 icon: fa-brands fa-apple
-order: 2
+order: 3
 sticky: true
 footer: false
 ---

@@ -8,6 +8,8 @@ comment: false
 
 ## 支持的平台
 
+- [Docker](docker.md)
+
 - [Linux](linux.md)
 
 - [Windows](windows.md)
@@ -16,5 +18,4 @@ comment: false
 
 - [QTS (威联通 nas 系统)](qts.md)
 
-- [Docker](docker.md)
 

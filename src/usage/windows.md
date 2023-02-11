@@ -1,7 +1,7 @@
 ---
 title: Windows
 icon: fa-brands fa-windows
-order: 3
+order: 4
 sticky: true
 footer: false
 ---

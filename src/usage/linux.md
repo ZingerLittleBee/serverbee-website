@@ -1,7 +1,7 @@
 ---
 title: Linux
 icon: fa-brands fa-linux
-order: 1
+order: 2
 sticky: true
 footer: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: Docker
 icon: fa-brands fa-docker
-order: 5
+order: 1
 sticky: true
 footer: false
 ---
@@ -35,12 +35,11 @@ systemctl status docker.service
 
 ```bash
 docker run -d \
-  --name=serverbee-web \
-  -p 9527:9527 \
   -v /proc:/proc \
   --privileged=true \
   --restart unless-stopped \
   --network=host \
+  --name=serverbee-web \
   zingerbee/serverbee-web
 ```
 
