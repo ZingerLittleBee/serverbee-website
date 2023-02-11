@@ -1,6 +1,6 @@
 ---
 title: Windows
-icon: windows
+icon: fa-brands fa-windows
 order: 3
 sticky: true
 footer: false

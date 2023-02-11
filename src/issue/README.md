@@ -1,7 +1,7 @@
 ---
 title: 已知问题
 index: false
-icon: info
+icon: fa-solid fa-circle-exclamation
 footer: false
 ---
 

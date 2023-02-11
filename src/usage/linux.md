@@ -1,10 +1,9 @@
 ---
 title: Linux
-icon: linux
+icon: fa-brands fa-linux
 order: 1
 sticky: true
 footer: false
-naiveUrl: google.com 
 ---
 
 ## Linux 桌面环境

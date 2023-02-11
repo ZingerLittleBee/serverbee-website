@@ -1,7 +1,7 @@
 ---
 title: 如何使用
 index: false
-icon: discover
+icon: fa-solid fa-palette
 footer: false
 comment: false
 ---
@@ -15,4 +15,6 @@ comment: false
 - [Macos](macos.md)
 
 - [QTS (威联通 nas 系统)](qts.md)
+
+- [Docker](docker.md)
 

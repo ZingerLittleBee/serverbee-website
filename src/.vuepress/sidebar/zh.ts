@@ -9,42 +9,42 @@ export const zhSidebar = sidebar({
 			children: [],
 		},
 		{
-			icon: 'discover',
+			icon: 'fa-solid fa-palette',
 			text: '如何使用',
 			prefix: 'usage/',
 			link: 'usage/',
 			children: 'structure'
 		},
 		{
-			icon: 'question',
+			icon: 'fa-solid fa-circle-question',
 			text: '常见问题',
 			prefix: 'faq/',
 			link: 'faq/',
 			children: 'structure'
 		},
 		{
-			icon: 'info',
+			icon: 'fa-solid fa-circle-exclamation',
 			text: '已知问题',
 			prefix: 'issue/',
 			link: 'issue/',
 			children: 'structure'
 		},
 		{
-			icon: 'add',
+			icon: 'fa-solid fa-circle-plus',
 			text: '需求墙',
 			prefix: 'roadmap/',
 			link: 'roadmap/',
 			children: 'structure'
 		},
 		{
-			icon: 'call',
+			icon: 'fa-solid fa-phone',
 			text: '联系我们',
 			prefix: 'contact/',
 			link: 'contact/',
 			children: 'structure'
 		},
 		{
-			icon: 'preview',
+			icon: 'fa-solid fa-eye',
 			text: '隐私政策',
 			prefix: 'privacy/',
 			link: 'privacy/',

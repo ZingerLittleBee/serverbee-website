@@ -1,7 +1,7 @@
 ---
 title: 隐私政策
 index: false
-icon: preview
+icon: fa-solid fa-eye
 footer: false
 comment: false
 ---

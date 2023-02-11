@@ -1,6 +1,6 @@
 ---
 title: macOS
-icon: computer
+icon: fa-brands fa-apple
 order: 2
 sticky: true
 footer: false

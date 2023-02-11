@@ -1,7 +1,7 @@
 ---
 title: 需求墙
 index: false
-icon: add
+icon: fa-solid fa-circle-plus
 footer: false
 ---
 

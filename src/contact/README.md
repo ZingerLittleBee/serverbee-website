@@ -1,7 +1,7 @@
 ---
 title: 联系我们
 index: false
-icon: call
+icon: fa-solid fa-phone
 footer: false
 ---
 

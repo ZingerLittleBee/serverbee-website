@@ -22,7 +22,7 @@ export default hopeTheme({
 
 	backToTop: true,
 
-	iconAssets: 'iconfont',
+	iconAssets: 'fontawesome-with-brands',
 
 	logo: '/serverbee-logo.png',
 
