@@ -14,14 +14,11 @@ wget</span> {{url()}}
 </template>
 
 <script setup lang="ts">
-import { CliLatestVersion } from '../const'
+import { CliLatestVersion, BASE_URL } from '../const'
 
-// https://github.com/ZingerLittleBee/server_bee-backend/releases/download/v1.1.2/serverbee-deploy-aarch64-apple-darwin.zip
-// https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/bin/v1.1.2/serverbee-deploy-aarch64-apple-darwin.zip
-const githubUrl = `https://github.com/ZingerLittleBee/server_bee-backend/releases/download/v${CliLatestVersion}`
-const cosUrl = `https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/bin/v${CliLatestVersion}`
+const preUrl = `${BASE_URL}/cli/v${CliLatestVersion}`
 
-const props = defineProps(['isGithub', 'os', 'arch', 'module'])
+const props = defineProps(['os', 'arch', 'module'])
 
 const getZipName = () => {
   let fileName = `serverbee-${props.module}-${props.arch}`
@@ -38,15 +35,7 @@ const getZipName = () => {
 const getFileName = () => `serverbee-${props.module}${props.os === 'windows' ? '.exe' : ''}`
 
 const url = () => {
-  let url = ''
-  if (props.isGithub) {
-    url += githubUrl
-  } else {
-    url += cosUrl
-  }
-  let zipName = getZipName()
-  url += '/' + zipName
-  return url
+  return `${preUrl}/${getZipName()}`
 }
 
 </script>

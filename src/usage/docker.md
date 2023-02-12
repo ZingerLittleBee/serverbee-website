@@ -31,7 +31,7 @@ systemctl status docker.service
 
 :::
 
-#### Docker 安装命令
+#### Docker 运行命令
 
 ```bash
 docker run -d \

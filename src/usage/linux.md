@@ -47,14 +47,14 @@ deploy 和 web ==任选其一==安装即可
 ### 安装 deploy（==推荐==）
 > 逐行复制执行或者全部复制执行
 
-::: tabs#download
-@tab:active 国内下载
+::: tabs#arch
+@tab:active x86_64
 
 <CliDownload os="linux" arch="x86_64" module="deploy" />
 
-@tab 国外下载
+@tab aarch64
 
-<CliDownload isGithub="true" os="linux" arch="x86_64" module="deploy" />
+<CliDownload os="linux" arch="aarch64" module="deploy" />
 
 :::
 
@@ -63,14 +63,14 @@ deploy 和 web ==任选其一==安装即可
 ![](/img/interactive.gif)
 
 ### 安装 web
-::: tabs#download
-@tab:active 国内下载
+::: tabs#arch
+@tab:active x86_64
 
 <CliDownload os="linux" arch="x86_64" module="web" />
 
-@tab 国外下载
+@tab aarch64
 
-<CliDownload isGithub="true" os="linux" arch="x86_64" module="web" />
+<CliDownload os="linux" arch="aarch64" module="web" />
 
 :::
 
@@ -78,6 +78,19 @@ deploy 和 web ==任选其一==安装即可
 ```bash
 ./serverbee-web -p 8081
 ```
+
+:::
+
+## Ubuntu 22 (OpenSSL 3.0)
+
+::: tabs#arch
+@tab:active x86_64
+
+<CliDownload os="linux" arch="ubuntu22-x86_64" module="web" />
+
+@tab aarch64
+
+<CliDownload os="linux" arch="ubuntu22-x86_64" module="web" />
 
 :::
 
