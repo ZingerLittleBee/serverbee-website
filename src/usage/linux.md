@@ -81,19 +81,6 @@ deploy 和 web ==任选其一==安装即可
 
 :::
 
-## Ubuntu 22 (OpenSSL 3.0)
-
-::: tabs#arch
-@tab:active x86_64
-
-<CliDownload os="linux" arch="ubuntu22-x86_64" module="web" />
-
-@tab aarch64
-
-<CliDownload os="linux" arch="ubuntu22-x86_64" module="web" />
-
-:::
-
 <script setup>
 import DesktopDownload from "@DesktopDownload";
 import CliDownload from "@CliDownload";
