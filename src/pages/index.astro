@@ -2,9 +2,10 @@
 import CallToAction from '../components/CallToAction.astro'
 import Features from '../components/Features.astro'
 import HeroSection from '../components/HeroSection.astro'
+import Price from '../components/Price.astro'
+import { PrimaryFeatures } from '../components/PrimaryFeatures'
 import Stats from '../components/Stats.astro'
 import Testimonials from '../components/Testimonials.astro'
-import Price from '../components/price.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
@@ -12,6 +13,7 @@ import Layout from '../layouts/Layout.astro'
 	<main class='space-y-40 mb-40'>
 		<HeroSection />
 		<Features />
+		<PrimaryFeatures client:load />
 		<Stats />
 		<Testimonials />
 		<CallToAction />
