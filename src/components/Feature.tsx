@@ -60,7 +60,10 @@ function Feature() {
 				<div className='-mx-4 flex flex-wrap'>
 					{data.map((item, index) => {
 						return (
-							<div className='w-full px-4 md:w-1/2 lg:w-1/4'>
+							<div
+								key={index}
+								className='w-full px-4 md:w-1/2 lg:w-1/4'
+							>
 								<div
 									className='wow fadeInUp group mb-12 bg-white'
 									data-wow-delay='.1s'
