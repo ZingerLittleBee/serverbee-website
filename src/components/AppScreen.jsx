@@ -16,7 +16,7 @@ AppScreen.Body = forwardRef(function AppScreenBody(
   return (
     <div
       ref={ref}
-      className={clsx('flex-auto rounded-t-2xl', className)}
+      className={clsx('flex-auto', className)}
     >
       {children}
     </div>

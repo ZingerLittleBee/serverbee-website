@@ -17,21 +17,21 @@ const features = [
   {
     name: '系统信息 & 处理器',
     description:
-      '',
+      '获悉系统基本信息，侦测各个 CPU 使用状态。',
     icon: DeviceUserIcon,
     path: '/images/previews/detail-1.png'
   },
   {
     name: '内存 & 网络',
     description:
-      '',
+      '内存使用率一目了然，实时监控各网卡流量。',
     icon: DeviceNotificationIcon,
     path: '/images/previews/detail-2.png'
   },
   {
     name: '磁盘',
     description:
-      '',
+      '磁盘用量直观具体，了然于心。',
     icon: DeviceTouchIcon,
     path: '/images/previews/detail-3.png'
   },
@@ -78,8 +78,8 @@ function DetailScreen({ custom, animated = false, path}) {
     <AppScreen className="w-full">
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <img
-          className='rounded-3xl'
-          src={path} alt="" />
+          className='rounded-t-3xl'
+          src={path} alt="serverbee-detail" />
       </MotionAppScreenBody>
     </AppScreen>
   )
@@ -163,10 +163,6 @@ function FeaturesDesktop() {
                     key={feature.name + changeCount}
                     className="col-start-1 row-start-1 flex focus:outline-offset-[32px] [&:not(:focus-visible)]:focus:outline-none"
                   >
-                    {/* <feature.screen
-                      animated
-                      custom={{ isForwards, changeCount }}
-                    /> */}
                     <DetailScreen animated custom={{ isForwards, changeCount }} path={feature.path} />
                   </Tab.Panel>
                 ) : null
@@ -281,10 +277,10 @@ export function PrimaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
           <h2 className="text-3xl font-medium tracking-tight text-white">
-            // TODO: Add some text here
+          全方位监控，保障系统稳定
           </h2>
           <p className="mt-2 text-lg text-gray-400">
-            // TODO: Add some text here
+          通过全方位监控服务器性能和资源使用情况，保障系统的稳定性和安全性
           </p>
         </div>
       </Container>
