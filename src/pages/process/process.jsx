@@ -7,19 +7,6 @@ import { PhoneFrame } from '../../components/PhoneFrame.jsx'
 import { AngleLeft, AngleRight } from '../../icons/Arrow'
 import './index.css'
 
-const data = [
-	{
-		title: '进程列表',
-		description: '进程列表',
-		path: '/images/previews/process-list.png'
-	},
-	{
-		title: '进程详情',
-		description: '进程详情',
-		path: '/images/previews/process-1.png'
-	}
-]
-
 const images = [
 	'/images/previews/process-list.png',
 	'/images/previews/process-1.png',
@@ -76,11 +63,11 @@ const Process = () => {
 		<div className='flex flex-row justify-center items-center w-full'>
 			<div
 				className='next hover:transform
-						hover:bg-primary hover:fill-white
+						hover:bg-primary  dark:hover:bg-primary-dark hover:fill-white
 						'
 				onClick={arrowClickLeft}
 			>
-				<AngleLeft height='30' />
+				<AngleLeft height='30' className='dark:fill-white' />
 			</div>
 			<PhoneFrame className='z-10 w-full max-w-[300px]'>
 				<AppScreen className='w-full'>
@@ -99,10 +86,10 @@ const Process = () => {
 			</PhoneFrame>
 			<div
 				className='prev hover:transform
-						hover:bg-primary hover:fill-white'
+						hover:bg-primary dark:hover:bg-primary-dark hover:fill-white'
 				onClick={arrowClickRight}
 			>
-				<AngleRight height='30' />
+				<AngleRight height='30' className='dark:fill-white' />
 			</div>
 		</div>
 	)

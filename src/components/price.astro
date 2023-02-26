@@ -1,5 +1,59 @@
 ---
 import Container from './Container.astro'
+
+const freePlan = {
+	title: '免费',
+	price: '0',
+	unit: '¥',
+	features: [
+		'无广告',
+		'密码解锁',
+		'系统信息',
+		'CPU 各核心状态',
+		'内存及交换区用量',
+		'网卡IO、各个网卡用量统计',
+		'磁盘IO、各个磁盘用量统计'
+	],
+	tips: '永久免费',
+	button: 'Get Started'
+}
+
+const lifetimePlan = {
+	title: '终身计划',
+	price: '45',
+	unit: '¥',
+	subscript: '/ 终身',
+	features: [
+		'包含所有免费功能',
+		'生物特征 (FaceID、TouchID) 解锁',
+		'进程管理',
+		'各个硬件温度（稍后推出）',
+		'GPU 基础信息（稍后推出）',
+		'SSH 终端（稍后推出）',
+		'所有后续新功能',
+		'一次性付费'
+	],
+
+	button: 'Get Started'
+}
+
+const annualPlan = {
+	title: '年度计划',
+	price: '18',
+	unit: '¥',
+	subscript: '/ 年',
+	features: [
+		'包含所有免费功能',
+		'生物特征 (FaceID、TouchID) 解锁',
+		'进程管理',
+		'各个硬件温度（稍后推出）',
+		'GPU 基础信息（稍后推出）',
+		'SSH 终端（稍后推出）',
+		'所有后续新功能'
+	],
+	tips: '按年付费',
+	button: 'Get Started'
+}
 ---
 
 <div class='relative py-16'>
@@ -17,17 +71,16 @@ import Container from './Container.astro'
 		</div>
 	</div>
 	<Container>
-		<div class='xl:container m-auto px-6 py-20 md:px-12 lg:px-20'>
+		<div class='m-auto py-20'>
 			<div class='m-auto text-center lg:w-7/12'>
 				<h2
 					class='text-2xl font-bold text-gray-800 dark:text-white md:text-4xl'
 				>
-					A Tailus Blocks subscription gives you access to our
-					components and more.
+					价格
 				</h2>
 			</div>
 			<div
-				class='mt-12 grid items-center gap-6 md:grid-cols-2 lg:flex lg:space-x-8'
+				class='mt-12 grid items-center gap-6 md:grid-cols-2 lg:flex xl:space-x-6'
 			>
 				<div class='group relative md:col-span-1 lg:w-[32%]'>
 					<div
@@ -39,58 +92,49 @@ import Container from './Container.astro'
 						<h3
 							class='text-center text-3xl font-semibold text-gray-700 dark:text-white'
 						>
-							Monthly
+							{freePlan.title}
 						</h3>
 						<div class='relative flex justify-around'>
 							<div class='flex'>
 								<span
-									class='-ml-6 mt-2 text-3xl font-bold text-primary'
-									>$</span
+									class='-ml-2 mt-2 text-3xl font-bold text-primary dark:text-primary-dark'
+									>{freePlan.unit}</span
 								>
 								<span
 									class='leading-0 text-8xl font-bold text-gray-800 dark:text-white'
-									>19</span
+									>{freePlan.price}</span
 								>
 							</div>
-							<span
-								class='absolute right-9 bottom-2 text-xl font-bold text-primary'
-								>/ Month</span
-							>
 						</div>
+						<span
+							class='block text-center text-xs text-primary dark:text-primary-dark'
+							>{freePlan.tips}</span
+						>
 						<ul
 							role='list'
 							class='m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300'
 						>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>First premium advantage</span>
-							</li>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>Second premium advantage</span>
-							</li>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>Third advantage</span>
-							</li>
+							{
+								freePlan.features.map(feature => (
+									<li class='space-x-2'>
+										<span class='font-semibold text-primary  dark:text-primary-dark'>
+											&check;
+										</span>
+										<span>{feature}</span>
+									</li>
+								))
+							}
 						</ul>
 						<button
-							class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
+							class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
 						>
 							<span
-								class='relative text-base font-semibold text-white dark:text-dark'
-								>Start plan</span
+								class='relative text-base font-semibold text-sky-600 dark:text-white'
+								>{freePlan.button}</span
 							>
 						</button>
 					</div>
 				</div>
-
 				<div
 					class='group relative row-start-1 md:col-span-2 lg:w-[36%]'
 				>
@@ -103,89 +147,57 @@ import Container from './Container.astro'
 						<h3
 							class='text-center text-3xl font-semibold text-gray-700 dark:text-white'
 						>
-							Annual
+							终身计划
 						</h3>
 						<div class='overflow-hidden'>
-							<div class='-mr-20 flex items-end justify-center'>
+							<div class='ml-12 flex items-end justify-center'>
 								<div class='flex'>
 									<span
-										class='-ml-6 mt-2 text-3xl font-bold text-primary'
-										>$</span
+										class='-ml-6 mt-2 text-3xl font-bold text-primary dark:text-primary-dark'
+										>{lifetimePlan.unit}</span
 									>
 									<span
 										class='leading-0 text-8xl font-bold text-gray-800 dark:text-white'
-										>15</span
+										>{lifetimePlan.price}</span
 									>
 								</div>
 								<div class='mb-2'>
 									<span
-										class='block text-xl font-bold text-gray-500 dark:text-gray-400'
-										>.56</span
-									>
-									<span
-										class='block text-xl font-bold text-primary'
-										>/ Month</span
+										class='block text-xl font-bold text-primary dark:text-primary-dark'
+										>{lifetimePlan.subscript}</span
 									>
 								</div>
 							</div>
-							<div class='text-center text-2xl font-medium'>
-								<span class='text-gray-400 line-through'
-									>$234</span
-								>
-								<span
-									class='font-semibold text-gray-700 dark:text-white'
-									>$190</span
-								>
-							</div>
-							<span
-								class='block text-center text-xs uppercase text-primary'
-								>BILLED YEARLY</span
-							>
 							<span
 								class='m-auto mt-4 block w-max rounded-full bg-gradient-to-r from-yellow-300 to-pink-300 px-4 py-1 text-sm font-medium text-yellow-900'
-								>1 Discount applied</span
+								>限时价格</span
 							>
 						</div>
 						<ul
 							role='list'
 							class='m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300'
 						>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>First premium advantage</span>
-							</li>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>Second premium advantage</span>
-							</li>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>Third advantage</span>
-							</li>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>Fourth organizations advantage</span>
-							</li>
+							{
+								lifetimePlan.features.map(feature => (
+									<li class='space-x-2'>
+										<span class='font-semibold text-primary dark:text-primary-dark'>
+											&check;
+										</span>
+										<span>{feature}</span>
+									</li>
+								))
+							}
 						</ul>
 						<button
-							class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
+							class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary dark:before:bg-primary-dark before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
 						>
 							<span
 								class='relative text-base font-semibold text-white dark:text-dark'
-								>Start plan</span
+								>{lifetimePlan.button}</span
 							>
 						</button>
 					</div>
 				</div>
-
 				<div class='group relative md:col-span-1 lg:w-[32%]'>
 					<div
 						aria-hidden='true'
@@ -196,49 +208,49 @@ import Container from './Container.astro'
 						<h3
 							class='text-center text-3xl font-semibold text-gray-700 dark:text-white'
 						>
-							Free
+							{annualPlan.title}
 						</h3>
-						<div class='relative flex justify-around'>
+						<div class='-mr-10 flex justify-around'>
 							<div class='flex'>
 								<span
-									class='-ml-2 mt-2 text-3xl font-bold text-primary'
-									>$</span
+									class='-ml-6 mt-2 text-3xl font-bold text-primary dark:text-primary-dark'
+									>{annualPlan.unit}</span
 								>
 								<span
 									class='leading-0 text-8xl font-bold text-gray-800 dark:text-white'
-									>0</span
+									>{annualPlan.price}</span
+								>
+								<span
+									class='flex items-end text-xl font-bold text-primary dark:text-primary-dark'
+									>{annualPlan.subscript}</span
 								>
 							</div>
 						</div>
+						<span
+							class='block text-center text-xs text-primary dark:text-primary-dark'
+							>{annualPlan.tips}</span
+						>
 						<ul
 							role='list'
 							class='m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300'
 						>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>First premium advantage</span>
-							</li>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>Second premium advantage</span>
-							</li>
-							<li class='space-x-2'>
-								<span class='font-semibold text-primary'
-									>&check;</span
-								>
-								<span>Third advantage</span>
-							</li>
+							{
+								annualPlan.features.map(feature => (
+									<li class='space-x-2'>
+										<span class='font-semibold text-primary dark:text-primary-dark'>
+											&check;
+										</span>
+										<span>{feature}</span>
+									</li>
+								))
+							}
 						</ul>
 						<button
-							class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
+							class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary dark:before:bg-primary-dark before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
 						>
 							<span
-								class='relative text-base font-semibold text-sky-600 dark:text-white'
-								>Get Started</span
+								class='relative text-base font-semibold text-white dark:text-dark'
+								>{annualPlan.button}</span
 							>
 						</button>
 					</div>

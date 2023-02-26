@@ -38,7 +38,7 @@ const tips = [
 					class='text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl'
 				>
 					<p>监控管理你所有的</p>
-					<p class='text-primary dark:text-white'>桌面平台</p>
+					<p class='text-primary dark:text-primary-dark'>桌面平台</p>
 				</h1>
 				<p class='mt-8 text-gray-700 dark:text-gray-300'>
 					一款支持跨平台集监控、管理和终端的效率工具，支持 Linux
@@ -49,7 +49,7 @@ const tips = [
 				>
 					<a
 						href='#'
-						class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max'
+						class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary dark:before:bg-primary-dark before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max'
 					>
 						<span
 							class='relative text-base font-semibold text-white'
@@ -78,7 +78,7 @@ const tips = [
 					class='hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between'
 				>
 					{
-						tips.map((tip, index) => (
+						tips.map(tip => (
 							<div class='text-left'>
 								<h6 class='text-lg font-semibold text-gray-700 dark:text-white'>
 									{tip.title}
@@ -87,80 +87,6 @@ const tips = [
 							</div>
 						))
 					}
-				</div>
-			</div>
-			<div class='mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6'>
-				<div
-					class='p-4 grayscale transition duration-200 hover:grayscale-0'
-				>
-					<img
-						src='./images/clients/microsoft.svg'
-						class='h-12 w-auto mx-auto'
-						loading='lazy'
-						alt='client logo'
-						width=''
-						height=''
-					/>
-				</div>
-				<div
-					class='p-4 grayscale transition duration-200 hover:grayscale-0'
-				>
-					<img
-						src='./images/clients/airbnb.svg'
-						class='h-12 w-auto mx-auto'
-						loading='lazy'
-						alt='client logo'
-						width=''
-						height=''
-					/>
-				</div>
-				<div
-					class='p-4 flex grayscale transition duration-200 hover:grayscale-0'
-				>
-					<img
-						src='./images/clients/google.svg'
-						class='h-9 w-auto m-auto'
-						loading='lazy'
-						alt='client logo'
-						width=''
-						height=''
-					/>
-				</div>
-				<div
-					class='p-4 grayscale transition duration-200 hover:grayscale-0'
-				>
-					<img
-						src='./images/clients/ge.svg'
-						class='h-12 w-auto mx-auto'
-						loading='lazy'
-						alt='client logo'
-						width=''
-						height=''
-					/>
-				</div>
-				<div
-					class='p-4 flex grayscale transition duration-200 hover:grayscale-0'
-				>
-					<img
-						src='./images/clients/netflix.svg'
-						class='h-8 w-auto m-auto'
-						loading='lazy'
-						alt='client logo'
-						width=''
-						height=''
-					/>
-				</div>
-				<div
-					class='p-4 grayscale transition duration-200 hover:grayscale-0'
-				>
-					<img
-						src='./images/clients/google-cloud.svg'
-						class='h-12 w-auto mx-auto'
-						loading='lazy'
-						alt='client logo'
-						width=''
-						height=''
-					/>
 				</div>
 			</div>
 		</div>

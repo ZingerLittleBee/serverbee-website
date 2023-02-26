@@ -1,13 +1,12 @@
 ---
 import Blog from '../components/Blog.astro'
-import CallToAction from '../components/CallToAction.astro'
-import Features from '../components/Features.astro'
 import HeroSection from '../components/HeroSection.astro'
 import Price from '../components/Price.astro'
 import Stats from '../components/Stats.astro'
 import Testimonials from '../components/Testimonials.astro'
 import Layout from '../layouts/Layout.astro'
 import Detail from './detail/index.astro'
+import Features from './feature/index.astro'
 import Process from './process/index.astro'
 ---
 
@@ -17,9 +16,8 @@ import Process from './process/index.astro'
 		<Features />
 		<Detail />
 		<Stats />
-		<Testimonials />
-		<CallToAction />
 		<Process />
+		<Testimonials />
 		<Price />
 		<Blog />
 	</main>
@@ -30,4 +28,42 @@ import Process from './process/index.astro'
 		--tw-text-opacity: 1;
 		color: rgb(9 14 52 / var(--tw-text-opacity));
 	}
+
+	/* .container {
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+
+	@media (min-width: 540px) {
+		.container {
+			max-width: 540px;
+		}
+	}
+
+	@media (min-width: 720px) {
+		.container {
+			max-width: 720px;
+		}
+	}
+
+	@media (min-width: 960px) {
+		.container {
+			max-width: 960px;
+		}
+	}
+
+	@media (min-width: 1140px) {
+		.container {
+			max-width: 1140px;
+		}
+	}
+
+	@media (min-width: 1320px) {
+		.container {
+			max-width: 1320px;
+		}
+	} */
 </style>
