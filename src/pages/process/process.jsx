@@ -73,59 +73,36 @@ const Process = () => {
 	)
 
 	return (
-		<div className='w-full'>
-			<div className='items-center justify-around overflow-hidden lg:flex'>
-				<div className='w-full py-12 px-7 sm:px-12 md:p-16 lg:max-w-[565px] lg:py-9 lg:px-16 xl:max-w-[640px] xl:p-[70px]'>
-					<span className='mb-5 rounded-full inline-block bg-primary py-2 px-5 text-sm font-medium text-white'>
-						进程管理
-					</span>
-					<h2 className='mb-6 text-3xl font-bold text-dark sm:text-4xl sm:leading-snug 2xl:text-[40px]'>
-						Brilliant Toolkit to Build Nextgen Website Faster.
-					</h2>
-					<p className='mb-9 text-base leading-relaxed text-body-color'>
-						The main ‘thrust' is to focus on educating attendees on
-						how to best protect highly vulnerable business
-						applications with interactive panel discussions and
-						roundtables led by subject matter experts.
-					</p>
-					<p className='mb-9 text-base leading-relaxed text-body-color'>
-						The main ‘thrust' is to focus on educating attendees on
-						how to best protect highly vulnerable business
-						applications with interactive panel.
-					</p>
-				</div>
-				<div className='flex flex-row justify-center items-center w-full'>
-					<div
-						className='next hover:transform
+		<div className='flex flex-row justify-center items-center w-full'>
+			<div
+				className='next hover:transform
 						hover:bg-primary hover:fill-white
 						'
-						onClick={arrowClickLeft}
-					>
-						<AngleLeft height='30' />
-					</div>
-					<PhoneFrame className='z-10 w-full max-w-[300px]'>
-						<AppScreen className='w-full'>
-							<AnimatePresence initial={false} custom={direction}>
-								<motion.img
-									key={page}
-									src={images[imageIndex]}
-									custom={direction}
-									variants={variants}
-									initial='enter'
-									animate='center'
-									exit='exit'
-								/>
-							</AnimatePresence>
-						</AppScreen>
-					</PhoneFrame>
-					<div
-						className='prev hover:transform
+				onClick={arrowClickLeft}
+			>
+				<AngleLeft height='30' />
+			</div>
+			<PhoneFrame className='z-10 w-full max-w-[300px]'>
+				<AppScreen className='w-full'>
+					<AnimatePresence initial={false} custom={direction}>
+						<motion.img
+							key={page}
+							src={images[imageIndex]}
+							custom={direction}
+							variants={variants}
+							initial='enter'
+							animate='center'
+							exit='exit'
+						/>
+					</AnimatePresence>
+				</AppScreen>
+			</PhoneFrame>
+			<div
+				className='prev hover:transform
 						hover:bg-primary hover:fill-white'
-						onClick={arrowClickRight}
-					>
-						<AngleRight height='30' />
-					</div>
-				</div>
+				onClick={arrowClickRight}
+			>
+				<AngleRight height='30' />
 			</div>
 		</div>
 	)
