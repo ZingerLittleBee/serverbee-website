@@ -298,15 +298,13 @@ export function PrimaryFeatures() {
 		>
 			<Container>
 				<div className='mx-auto'>
-					<div class=''>
-						<div class='mb-12 max-w-[620px] lg:mb-20'>
-							<h2 className='text-3xl font-medium tracking-tight text-white'>
-								全方位监控，保障系统稳定
-							</h2>
-							<p className='mt-2 text-lg text-gray-400'>
-								通过全方位监控服务器性能和资源使用情况，保障系统的稳定性和安全性
-							</p>
-						</div>
+					<div className='mb-12 max-w-[620px] lg:mb-20'>
+						<h2 className='text-3xl font-medium tracking-tight text-white'>
+							全方位监控，保障系统稳定
+						</h2>
+						<p className='mt-2 text-lg text-gray-400'>
+							通过全方位监控服务器性能和资源使用情况，保障系统的稳定性和安全性
+						</p>
 					</div>
 				</div>
 			</Container>
