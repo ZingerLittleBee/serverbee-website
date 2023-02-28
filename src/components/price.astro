@@ -56,204 +56,187 @@ const annualPlan = {
 }
 ---
 
-<div class='relative py-16'>
-	<div
-		aria-hidden='true'
-		class='absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20'
-	>
-		<div
-			class='blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700'
-		>
-		</div>
-		<div
-			class='blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600'
-		>
-		</div>
-	</div>
+<div class='relative py-10'>
 	<Container>
-		<div class='m-auto py-20'>
-			<div class='m-auto text-center lg:w-7/12'>
-				<h2
-					class='text-2xl font-bold text-gray-800 dark:text-white md:text-4xl'
-				>
-					价格
-				</h2>
-			</div>
-			<div
-				class='mt-12 grid items-center gap-6 md:grid-cols-2 lg:flex xl:space-x-6'
+		<div class='m-auto text-center lg:w-7/12'>
+			<h2
+				class='text-2xl font-bold text-gray-800 dark:text-white md:text-4xl'
 			>
-				<div class='group relative md:col-span-1 lg:w-[32%]'>
-					<div
-						aria-hidden='true'
-						class='absolute top-0 h-full w-full rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-2xl shadow-gray-600/10 dark:shadow-none transition duration-500 group-hover:scale-105 lg:group-hover:scale-110'
-					>
-					</div>
-					<div class='relative space-y-8 p-8'>
-						<h3
-							class='text-center text-3xl font-semibold text-gray-700 dark:text-white'
-						>
-							{freePlan.title}
-						</h3>
-						<div class='relative flex justify-around'>
-							<div class='flex'>
-								<span
-									class='-ml-2 mt-2 text-3xl font-bold text-primary dark:text-primary-dark'
-									>{freePlan.unit}</span
-								>
-								<span
-									class='leading-0 text-8xl font-bold text-gray-800 dark:text-white'
-									>{freePlan.price}</span
-								>
-							</div>
-						</div>
-						<span
-							class='block text-center text-xs text-primary dark:text-primary-dark'
-							>{freePlan.tips}</span
-						>
-						<ul
-							role='list'
-							class='m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300'
-						>
-							{
-								freePlan.features.map(feature => (
-									<li class='space-x-2'>
-										<span class='font-semibold text-primary  dark:text-primary-dark'>
-											&check;
-										</span>
-										<span>{feature}</span>
-									</li>
-								))
-							}
-						</ul>
-						<button
-							class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
-						>
-							<span
-								class='relative text-base font-semibold text-sky-600 dark:text-white'
-								>{freePlan.button}</span
-							>
-						</button>
-					</div>
-				</div>
+				价格
+			</h2>
+		</div>
+		<div
+			class='mt-12 grid items-center gap-6 md:grid-cols-2 lg:flex xl:space-x-6'
+		>
+			<div class='group relative md:col-span-1 lg:w-[32%]'>
 				<div
-					class='group relative row-start-1 md:col-span-2 lg:w-[36%]'
+					aria-hidden='true'
+					class='absolute top-0 h-full w-full rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-2xl shadow-gray-600/10 dark:shadow-none transition duration-500 group-hover:scale-105 lg:group-hover:scale-110'
 				>
-					<div
-						aria-hidden='true'
-						class='absolute top-0 h-full w-full rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-2xl shadow-gray-600/10 dark:shadow-none transition duration-500 group-hover:scale-105 lg:group-hover:scale-110'
+				</div>
+				<div class='relative space-y-8 p-8'>
+					<h3
+						class='text-center text-3xl font-semibold text-gray-700 dark:text-white'
 					>
-					</div>
-					<div class='relative space-y-8 p-8'>
-						<h3
-							class='text-center text-3xl font-semibold text-gray-700 dark:text-white'
-						>
-							终身计划
-						</h3>
-						<div class='overflow-hidden'>
-							<div class='ml-12 flex items-end justify-center'>
-								<div class='flex'>
-									<span
-										class='-ml-6 mt-2 text-3xl font-bold text-primary dark:text-primary-dark'
-										>{lifetimePlan.unit}</span
-									>
-									<span
-										class='leading-0 text-8xl font-bold text-gray-800 dark:text-white'
-										>{lifetimePlan.price}</span
-									>
-								</div>
-								<div class='mb-2'>
-									<span
-										class='block text-xl font-bold text-primary dark:text-primary-dark'
-										>{lifetimePlan.subscript}</span
-									>
-								</div>
-							</div>
+						{freePlan.title}
+					</h3>
+					<div class='relative flex justify-around'>
+						<div class='flex'>
 							<span
-								class='m-auto mt-4 block w-max rounded-full bg-gradient-to-r from-yellow-300 to-pink-300 px-4 py-1 text-sm font-medium text-yellow-900'
-								>限时价格</span
+								class='-ml-2 mt-2 text-3xl font-bold text-primary dark:text-primary-dark'
+								>{freePlan.unit}</span
+							>
+							<span
+								class='leading-0 text-8xl font-bold text-gray-800 dark:text-white'
+								>{freePlan.price}</span
 							>
 						</div>
-						<ul
-							role='list'
-							class='m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300'
-						>
-							{
-								lifetimePlan.features.map(feature => (
-									<li class='space-x-2'>
-										<span class='font-semibold text-primary dark:text-primary-dark'>
-											&check;
-										</span>
-										<span>{feature}</span>
-									</li>
-								))
-							}
-						</ul>
-						<button
-							class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary dark:before:bg-primary-dark before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
-						>
-							<span
-								class='relative text-base font-semibold text-white dark:text-dark'
-								>{lifetimePlan.button}</span
-							>
-						</button>
 					</div>
-				</div>
-				<div class='group relative md:col-span-1 lg:w-[32%]'>
-					<div
-						aria-hidden='true'
-						class='absolute top-0 h-full w-full rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-2xl shadow-gray-600/10 dark:shadow-none transition duration-500 group-hover:scale-105 lg:group-hover:scale-110'
+					<span
+						class='block text-center text-xs text-primary dark:text-primary-dark'
+						>{freePlan.tips}</span
 					>
-					</div>
-					<div class='relative space-y-8 p-8'>
-						<h3
-							class='text-center text-3xl font-semibold text-gray-700 dark:text-white'
+					<ul
+						role='list'
+						class='m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300'
+					>
+						{
+							freePlan.features.map(feature => (
+								<li class='space-x-2'>
+									<span class='font-semibold text-primary  dark:text-primary-dark'>
+										&check;
+									</span>
+									<span>{feature}</span>
+								</li>
+							))
+						}
+					</ul>
+					<button
+						class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-xl before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
+					>
+						<span
+							class='relative text-base font-semibold text-sky-600 dark:text-white'
+							>{freePlan.button}</span
 						>
-							{annualPlan.title}
-						</h3>
-						<div class='-mr-10 flex justify-around'>
+					</button>
+				</div>
+			</div>
+			<div class='group relative row-start-1 md:col-span-2 lg:w-[36%]'>
+				<div
+					aria-hidden='true'
+					class='absolute top-0 h-full w-full rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-2xl shadow-gray-600/10 dark:shadow-none transition duration-500 group-hover:scale-105 lg:group-hover:scale-110'
+				>
+				</div>
+				<div class='relative space-y-8 p-8'>
+					<h3
+						class='text-center text-3xl font-semibold text-gray-700 dark:text-white'
+					>
+						终身计划
+					</h3>
+					<div class='overflow-hidden'>
+						<div class='ml-12 flex items-end justify-center'>
 							<div class='flex'>
 								<span
 									class='-ml-6 mt-2 text-3xl font-bold text-primary dark:text-primary-dark'
-									>{annualPlan.unit}</span
+									>{lifetimePlan.unit}</span
 								>
 								<span
 									class='leading-0 text-8xl font-bold text-gray-800 dark:text-white'
-									>{annualPlan.price}</span
+									>{lifetimePlan.price}</span
 								>
+							</div>
+							<div class='mb-2'>
 								<span
-									class='flex items-end text-xl font-bold text-primary dark:text-primary-dark'
-									>{annualPlan.subscript}</span
+									class='block text-xl font-bold text-primary dark:text-primary-dark'
+									>{lifetimePlan.subscript}</span
 								>
 							</div>
 						</div>
 						<span
-							class='block text-center text-xs text-primary dark:text-primary-dark'
-							>{annualPlan.tips}</span
+							class='m-auto mt-4 block w-max rounded-full bg-gradient-to-r from-yellow-300 to-pink-300 px-4 py-1 text-sm font-medium text-yellow-900'
+							>限时价格</span
 						>
-						<ul
-							role='list'
-							class='m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300'
-						>
-							{
-								annualPlan.features.map(feature => (
-									<li class='space-x-2'>
-										<span class='font-semibold text-primary dark:text-primary-dark'>
-											&check;
-										</span>
-										<span>{feature}</span>
-									</li>
-								))
-							}
-						</ul>
-						<button
-							class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary dark:before:bg-primary-dark before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
-						>
-							<span
-								class='relative text-base font-semibold text-white dark:text-dark'
-								>{annualPlan.button}</span
-							>
-						</button>
 					</div>
+					<ul
+						role='list'
+						class='m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300'
+					>
+						{
+							lifetimePlan.features.map(feature => (
+								<li class='space-x-2'>
+									<span class='font-semibold text-primary dark:text-primary-dark'>
+										&check;
+									</span>
+									<span>{feature}</span>
+								</li>
+							))
+						}
+					</ul>
+					<button
+						class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-xl before:bg-primary dark:before:bg-primary-dark before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
+					>
+						<span
+							class='relative text-base font-semibold text-white dark:text-dark'
+							>{lifetimePlan.button}</span
+						>
+					</button>
+				</div>
+			</div>
+			<div class='group relative md:col-span-1 lg:w-[32%]'>
+				<div
+					aria-hidden='true'
+					class='absolute top-0 h-full w-full rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-2xl shadow-gray-600/10 dark:shadow-none transition duration-500 group-hover:scale-105 lg:group-hover:scale-110'
+				>
+				</div>
+				<div class='relative space-y-8 p-8'>
+					<h3
+						class='text-center text-3xl font-semibold text-gray-700 dark:text-white'
+					>
+						{annualPlan.title}
+					</h3>
+					<div class='-mr-10 flex justify-around'>
+						<div class='flex'>
+							<span
+								class='-ml-6 mt-2 text-3xl font-bold text-primary dark:text-primary-dark'
+								>{annualPlan.unit}</span
+							>
+							<span
+								class='leading-0 text-8xl font-bold text-gray-800 dark:text-white'
+								>{annualPlan.price}</span
+							>
+							<span
+								class='flex items-end text-xl font-bold text-primary dark:text-primary-dark'
+								>{annualPlan.subscript}</span
+							>
+						</div>
+					</div>
+					<span
+						class='block text-center text-xs text-primary dark:text-primary-dark'
+						>{annualPlan.tips}</span
+					>
+					<ul
+						role='list'
+						class='m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300'
+					>
+						{
+							annualPlan.features.map(feature => (
+								<li class='space-x-2'>
+									<span class='font-semibold text-primary dark:text-primary-dark'>
+										&check;
+									</span>
+									<span>{feature}</span>
+								</li>
+							))
+						}
+					</ul>
+					<button
+						class='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-xl before:bg-primary dark:before:bg-primary-dark before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95'
+					>
+						<span
+							class='relative text-base font-semibold text-white dark:text-dark'
+							>{annualPlan.button}</span
+						>
+					</button>
 				</div>
 			</div>
 		</div>

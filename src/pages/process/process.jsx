@@ -3,7 +3,7 @@ import { wrap } from 'popmotion'
 import React, { useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 import { AppScreen } from '../../components/AppScreen.jsx'
-import { PhoneFrame } from '../../components/PhoneFrame.jsx'
+import PhoneFrame from '../../components/PhoneFrame.jsx'
 import { AngleLeft, AngleRight } from '../../icons/Arrow'
 import './index.css'
 

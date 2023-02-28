@@ -125,7 +125,12 @@ module.exports = {
 			spin: 'spin 1s linear infinite',
 			ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
 			pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-			bounce: 'bounce 1s infinite'
+			bounce: 'bounce 1s infinite',
+			'spin-slow': 'spin 4s linear infinite',
+			'spin-slower': 'spin 6s linear infinite',
+			'spin-reverse': 'spin-reverse 1s linear infinite',
+			'spin-reverse-slow': 'spin-reverse 4s linear infinite',
+			'spin-reverse-slower': 'spin-reverse 6s linear infinite'
 		},
 		aspectRatio: {
 			auto: 'auto',
@@ -615,6 +620,24 @@ module.exports = {
 					transform: 'none',
 					animationTimingFunction: 'cubic-bezier(0,0,0.2,1)'
 				}
+			},
+			'fade-in': {
+				from: {
+					opacity: 0
+				},
+				to: {
+					opacity: 1
+				}
+			},
+			marquee: {
+				'100%': {
+					transform: 'translateY(-50%)'
+				}
+			},
+			'spin-reverse': {
+				to: {
+					transform: 'rotate(-360deg)'
+				}
 			}
 		},
 		letterSpacing: {
@@ -987,5 +1010,6 @@ module.exports = {
 		'active',
 		'disabled'
 	],
+
 	plugins: []
 }

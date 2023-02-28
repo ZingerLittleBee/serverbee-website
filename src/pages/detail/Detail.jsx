@@ -6,14 +6,13 @@ import { useDebouncedCallback } from 'use-debounce'
 
 import { AppScreen } from '../../components/AppScreen'
 import { CircleBackground } from '../../components/CircleBackground'
-import { Container } from '../../components/Container'
-import { PhoneFrame } from '../../components/PhoneFrame'
+import Container from '../../components/Container'
+import PhoneFrame from '../../components/PhoneFrame'
 import {
 	DeviceNotificationIcon,
 	DeviceTouchIcon,
 	DeviceUserIcon
 } from '../../icons/DeviceIcon'
-import './index.css'
 
 const MotionAppScreenBody = motion(AppScreen.Body)
 
@@ -158,7 +157,7 @@ function DetailDesktop() {
 			<div className='relative col-span-6'>
 				<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
 					<CircleBackground
-						color='#13B5C8'
+						color='#9333EA'
 						className='animate-spin-slower'
 					/>
 				</div>

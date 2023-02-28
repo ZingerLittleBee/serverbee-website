@@ -104,7 +104,11 @@ const data = [
 			)
 			for (let i = 0; i < 5; i++) {
 				const span = document.createElement('span')
-				span.classList.add('mr-1', 'text-[#fbb040]')
+				span.classList.add(
+					'mr-1',
+					'text-primary-dark',
+					'dark:text-[#fbb040]'
+				)
 				span.innerHTML = `
                 <svg
 								width='18'
