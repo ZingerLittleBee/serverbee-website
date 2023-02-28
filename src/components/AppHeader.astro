@@ -2,7 +2,7 @@
 import Container from './Container.astro'
 ---
 
-<nav class='header w-full sticky top-0'>
+<nav class='header z-50 w-full sticky top-0'>
 	<Container>
 		<div
 			class='flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0'
@@ -137,8 +137,13 @@ import Container from './Container.astro'
 <style>
 	.sticky-header {
 		backdrop-filter: blur(5px);
-		z-index: 9999;
 		@apply bg-white dark:bg-gray-800 shadow opacity-90;
+	}
+
+	.sticky-header input[type='checkbox']:checked {
+		color: red;
+		font-weight: bold;
+		background-color: bisque;
 	}
 
 	#toggle_nav:checked ~ div #hamburger #line {
