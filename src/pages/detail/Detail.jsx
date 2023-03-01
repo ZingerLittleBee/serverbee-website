@@ -291,7 +291,7 @@ function DetailMobile() {
 export function PrimaryFeatures() {
 	return (
 		<section
-			id='details'
+			id='Details'
 			aria-label='details'
 			className='bg-gray-900 py-20 sm:py-32'
 		>
