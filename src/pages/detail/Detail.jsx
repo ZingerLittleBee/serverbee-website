@@ -4,15 +4,15 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 
-import { AppScreen } from '../../components/AppScreen'
-import { CircleBackground } from '../../components/CircleBackground'
-import Container from '../../components/Container'
-import PhoneFrame from '../../components/PhoneFrame'
+import { AppScreen } from '@components/AppScreen'
+import { CircleBackground } from '@components/CircleBackground'
+import Container from '@components/Container'
+import PhoneFrame from '@components/PhoneFrame'
 import {
 	DeviceNotificationIcon,
 	DeviceTouchIcon,
 	DeviceUserIcon
-} from '../../icons/DeviceIcon'
+} from '@icons/DeviceIcon'
 
 const MotionAppScreenBody = motion(AppScreen.Body)
 
