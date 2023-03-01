@@ -1,7 +1,8 @@
 {
   "name": "serverbee-website",
-  "version": "1.0.",
+  "version": "1.0.0",
   "description": "ServerBee Website",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -11,19 +12,27 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@algolia/client-search": "^4.13.1",
+    "@astrojs/preact": "^2.0.3",
+    "@astrojs/react": "^2.0.2",
+    "@astrojs/tailwind": "^3.0.1",
+    "@docsearch/css": "^3.1.0",
+    "@docsearch/react": "^3.1.0",
     "@headlessui/react": "^1.7.11",
-    "astro": "^1.1.5",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^2.0.16",
     "clsx": "^1.2.1",
     "framer-motion": "^9.1.6",
+    "popmotion": "^11.0.5",
+    "preact": "^10.7.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^3.2.7",
     "use-debounce": "^9.0.3"
   },
   "devDependencies": {
-    "@astrojs/react": "^2.0.2",
-    "@astrojs/tailwind": "^1.0.0",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "popmotion": "^11.0.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "html-escaper": "^3.0.3"
   }
 }
