@@ -1,0 +1,7 @@
+---
+import { TabDemo } from '@components/tabs'
+
+const props = Astro.props
+---
+
+<TabDemo acc={(<slot></slot>)} client:load />

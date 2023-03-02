@@ -67,8 +67,8 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"docs": {
-"en/introduction.md": {
-  id: "en/introduction.md",
+"en/introduction.mdx": {
+  id: "en/introduction.mdx",
   slug: "en/introduction",
   body: string,
   collection: "docs",
@@ -91,6 +91,83 @@ declare module 'astro:content' {
 "en/page-4.md": {
   id: "en/page-4.md",
   slug: "en/page-4",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/introduction.mdx": {
+  id: "zh/introduction.mdx",
+  slug: "zh/introduction",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/page-2.md": {
+  id: "zh/page-2.md",
+  slug: "zh/page-2",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/page-3.md": {
+  id: "zh/page-3.md",
+  slug: "zh/page-3",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/page-4.md": {
+  id: "zh/page-4.md",
+  slug: "zh/page-4",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/privacy.md": {
+  id: "zh/privacy.md",
+  slug: "zh/privacy",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/usage/README.md": {
+  id: "zh/usage/README.md",
+  slug: "zh/usage/readme",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/usage/docker.mdx": {
+  id: "zh/usage/docker.mdx",
+  slug: "zh/usage/docker",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/usage/linux.mdx": {
+  id: "zh/usage/linux.mdx",
+  slug: "zh/usage/linux",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/usage/macos.md": {
+  id: "zh/usage/macos.md",
+  slug: "zh/usage/macos",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/usage/qts.md": {
+  id: "zh/usage/qts.md",
+  slug: "zh/usage/qts",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/usage/windows.md": {
+  id: "zh/usage/windows.md",
+  slug: "zh/usage/windows",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">

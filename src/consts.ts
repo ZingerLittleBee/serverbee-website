@@ -1,7 +1,7 @@
 export const SITE = {
-	title: 'Documentation',
+	title: 'ServerBee Documentation',
 	description: 'Your website description.',
-	defaultLanguage: 'en-us'
+	defaultLanguage: 'zh'
 } as const
 
 export const OPEN_GRAPH = {
@@ -11,11 +11,12 @@ export const OPEN_GRAPH = {
 			'astro logo on a starry expanse of space,' +
 			' with a purple saturn-like planet floating in the right foreground'
 	},
-	twitter: 'astrodotbuild'
+	twitter: 'zinger_bee'
 }
 
 export const KNOWN_LANGUAGES = {
-	English: 'en'
+	English: 'en',
+	简体中文: 'zh'
 } as const
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES)
 
@@ -36,11 +37,21 @@ export type Sidebar = Record<
 >
 export const SIDEBAR: Sidebar = {
 	en: {
-		'Section Header': [
+		'How to use': [
 			{ text: 'Introduction', link: 'en/introduction' },
 			{ text: 'Page 2', link: 'en/page-2' },
 			{ text: 'Page 3', link: 'en/page-3' }
 		],
-		'Another Section': [{ text: 'Page 4', link: 'en/page-4' }]
+		'Another Section': [{ text: 'Page 4', link: 'en/page-4' }],
+		'': [{ text: 'Page 5', link: 'en/page-4' }]
+	},
+	zh: {
+		'How to use': [
+			{ text: 'Docker', link: 'zh/usage/docker' },
+			{ text: 'Linux', link: 'zh/usage/linux' },
+			{ text: 'macOS', link: 'zh/usage/macos' },
+			{ text: 'Windows', link: 'zh/usage/windows' },
+			{ text: 'qts', link: 'zh/usage/qts' }
+		]
 	}
 }
