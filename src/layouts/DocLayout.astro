@@ -146,7 +146,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 		<style is:global>
 			.astro-code .code-copy {
 				position: absolute;
-				left: calc(100% - 60px);
+				left: calc(100% - 40px);
 				margin-right: -20px;
 				margin-bottom: -30px;
 				opacity: 0.75;
@@ -161,7 +161,10 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 				opacity: 1;
 			}
 		</style>
-		<script>
+		<!-- <script>
+			const successIconHtml = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>`
+			const copyIconHtml = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`
+
 			function handleCopyClick(e: MouseEvent) {
 				const target = e.target as HTMLButtonElement & {
 					_timerId: NodeJS.Timeout
@@ -174,13 +177,14 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 
 				navigator.clipboard.writeText(copyText)
 				target.classList.add('copied')
-				target.innerText = 'Copied!'
+				// target.innerText = 'Copied!'
+				target.innerHTML = successIconHtml
 
 				if (target._timerId) {
 					clearTimeout(target._timerId)
 				}
 				target._timerId = setTimeout(() => {
-					target.innerText = 'Copy'
+					target.innerHTML = copyIconHtml
 					target.classList.remove('copied')
 				}, 2000)
 			}
@@ -189,11 +193,11 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 
 			codeBlocks.forEach(div => {
 				const copy = document.createElement('div')
-				copy.innerHTML = 'Copy'
+				copy.innerHTML = copyIconHtml
 				copy.classList.add('code-copy')
 				copy.addEventListener('click', handleCopyClick)
 				div.prepend(copy)
 			})
-		</script>
+		</script> -->
 	</body>
 </html>
