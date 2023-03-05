@@ -1,0 +1,33 @@
+---
+const DesktopLatestVersion = '1.1.0'
+
+const BASE_URL = 'https://db.serverbee.app'
+
+const githubUrl = `https://github.com/ZingerLittleBee/ServerMilk/releases/download/v${DesktopLatestVersion}`
+const cosUrl = `https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/desktop/v${DesktopLatestVersion}`
+const linuxFileName = `server-milk_${DesktopLatestVersion}_amd64.AppImage`
+const macFileName = `ServerMilk.app.tar.gz`
+const windowsFileName = `ServerMilk_${DesktopLatestVersion}_x64_en-US.msi.zip`
+
+const props = Astro.props
+
+const url = () => {
+	let _url = ''
+	if (props.isGithub === 'true') {
+		_url += githubUrl
+	} else {
+		_url += cosUrl
+	}
+
+	if (props.os === 'linux') {
+		_url += `/${linuxFileName}`
+	} else if (props.os === 'mac') {
+		_url += `/${macFileName}`
+	} else if (props.os === 'windows') {
+		_url += `/${windowsFileName}`
+	}
+	return _url
+}
+---
+
+<a href={url()}>{props.label}</a>

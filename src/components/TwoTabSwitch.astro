@@ -63,14 +63,17 @@ const props = Astro.props
 			const copyBtn = this.querySelector('#copy-btn')
 
 			copyBtn?.addEventListener('click', () => {
-				let codeBlock
+				let copyText
 				tabContents?.forEach(tabContent => {
 					if (!tabContent.classList.contains('hidden')) {
-						codeBlock = tabContent.querySelector('code')
+						copyText = tabContent.querySelector('code')?.textContent
+						if (!copyText) {
+							copyText = tabContent.querySelector('a')?.href
+						}
 					}
 				})
 
-				navigator.clipboard.writeText(codeBlock?.textContent ?? '')
+				navigator.clipboard.writeText(copyText ?? '')
 				copy?.classList.add('hidden')
 				copied?.classList.remove('hidden')
 

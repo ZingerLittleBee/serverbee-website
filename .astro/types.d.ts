@@ -151,22 +151,22 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/usage/macos.md": {
-  id: "zh/usage/macos.md",
+"zh/usage/macos.mdx": {
+  id: "zh/usage/macos.mdx",
   slug: "zh/usage/macos",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/usage/qts.md": {
-  id: "zh/usage/qts.md",
+"zh/usage/qts.mdx": {
+  id: "zh/usage/qts.mdx",
   slug: "zh/usage/qts",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/usage/windows.md": {
-  id: "zh/usage/windows.md",
+"zh/usage/windows.mdx": {
+  id: "zh/usage/windows.mdx",
   slug: "zh/usage/windows",
   body: string,
   collection: "docs",

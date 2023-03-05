@@ -1,0 +1,36 @@
+---
+import { Code } from 'astro/components'
+
+const CliLatestVersion = '1.1.5'
+
+const BASE_URL = 'https://db.serverbee.app'
+
+const preUrl = `${BASE_URL}/cli/v${CliLatestVersion}`
+
+const props = Astro.props
+
+const getZipName = () => {
+	let fileName = `serverbee-${props.module}-${props.arch}`
+	if (props.os === 'linux') {
+		fileName += '-unknown-linux-musl.zip'
+	} else if (props.os === 'mac') {
+		fileName += '-apple-darwin.zip'
+	} else if (props.os === 'windows') {
+		fileName += '-pc-windows-msvc.zip'
+	}
+	return fileName
+}
+
+const getFileName = () =>
+	`serverbee-${props.module}${props.os === 'windows' ? '.exe' : ''}`
+
+const url = () => {
+	return `${preUrl}/${getZipName()}`
+}
+
+const code = `wget ${url()}
+unzip ${getZipName()}
+./${getFileName()}`
+---
+
+<Code code={code} lang='js' />
