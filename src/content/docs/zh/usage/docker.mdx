@@ -2,7 +2,9 @@
 title: Docker
 ---
 
-安装 Docker
+import Collapse from '@components/Collapse.astro'
+
+<Collapse title='安装 Docker'>
 
 ```bash
 curl -fsSL https://get.docker.com | bash
@@ -30,6 +32,8 @@ systemctl enable docker.service
 systemctl status docker.service
 
 ```
+
+</Collapse>
 
 ## Docker 运行命令
 

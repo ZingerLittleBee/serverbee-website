@@ -4,37 +4,8 @@ title: Linux
 
 import ServerMilkLogo from '@components/ServerMilkLogo.astro'
 import TwoTabSwitch from '@components/TwoTabSwitch.astro'
-import Pre from '@components/Pre.astro'
-export const components = { pre: Pre }
 
 ## Linux 桌面环境
-
-```bash
-curl -fsSL https://get.docker.com | bash
-
-# 安装 docker-compose
-
-# curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# chmod a+x /usr/local/bin/docker-compose
-
-# 启动 docker
-
-systemctl start docker
-
-# 启动 docker
-
-# service docker start
-
-# 开机自启
-
-systemctl enable docker.service
-
-# 查看 docker 状态
-
-systemctl status docker.service
-
-```
 
 <TwoTabSwitch one='111' two='123'>
 	<p slot='tab1'>
@@ -71,29 +42,7 @@ systemctl status docker.service
 
     ```bash
 
-curl -fsSL https://get.docker.com | bash
-
-# 安装 docker-compose
-
-# curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# chmod a+x /usr/local/bin/docker-compose
-
-# 启动 docker
-
-systemctl start docker
-
-# 启动 docker
-
-# service docker start
-
-# 开机自启
-
-systemctl enable docker.service
-
-# 查看 docker 状态
-
-systemctl status docker.service
+1234
 
 ```
 

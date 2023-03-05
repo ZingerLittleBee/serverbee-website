@@ -1010,5 +1010,8 @@ module.exports = {
 		'active',
 		'disabled'
 	],
+	daisyui: {
+		themes: ['light', 'dark']
+	},
 	plugins: [require('daisyui')]
 }

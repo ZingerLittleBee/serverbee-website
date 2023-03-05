@@ -8,21 +8,39 @@ const props = Astro.props
 			<div class='tab tab-active'>{props.one}</div>
 			<div class='tab'>{props.two}</div>
 		</div>
-		<svg
-			class='pr-1'
-			xmlns='http://www.w3.org/2000/svg'
-			width='24'
-			height='24'
-			viewBox='0 0 24 24'
-			fill='none'
-			stroke='currentColor'
-			stroke-width='2'
-			stroke-linecap='round'
-			stroke-linejoin='round'
-			><rect x='9' y='9' width='13' height='13' rx='2' ry='2'></rect><path
-				d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'
-			></path></svg
-		>
+		<button id='copy-btn'>
+			<svg
+				id='copy'
+				class='pr-1'
+				xmlns='http://www.w3.org/2000/svg'
+				width='24'
+				height='24'
+				viewBox='0 0 24 24'
+				fill='none'
+				stroke='currentColor'
+				stroke-width='2'
+				stroke-linecap='round'
+				stroke-linejoin='round'
+				><rect x='9' y='9' width='13' height='13' rx='2' ry='2'
+				></rect><path
+					d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'
+				></path></svg
+			>
+			<svg
+				id='copied'
+				class='hidden'
+				xmlns='http://www.w3.org/2000/svg'
+				width='24'
+				height='24'
+				viewBox='0 0 24 24'
+				fill='none'
+				stroke='currentColor'
+				stroke-width='2'
+				stroke-linecap='round'
+				stroke-linejoin='round'
+				><polyline points='20 6 9 17 4 12'></polyline></svg
+			>
+		</button>
 	</div>
 	<div class='tab-content'>
 		<slot name='tab1' />
@@ -38,6 +56,29 @@ const props = Astro.props
 
 			const tabs = this.querySelectorAll('.tab')
 			const tabContents = this.querySelectorAll('.tab-content')
+
+			const copy = this.querySelector('#copy')
+			const copied = this.querySelector('#copied')
+
+			const copyBtn = this.querySelector('#copy-btn')
+
+			copyBtn?.addEventListener('click', () => {
+				let codeBlock
+				tabContents?.forEach(tabContent => {
+					if (!tabContent.classList.contains('hidden')) {
+						codeBlock = tabContent.querySelector('code')
+					}
+				})
+
+				navigator.clipboard.writeText(codeBlock?.textContent ?? '')
+				copy?.classList.add('hidden')
+				copied?.classList.remove('hidden')
+
+				setTimeout(() => {
+					copy?.classList.remove('hidden')
+					copied?.classList.add('hidden')
+				}, 2000)
+			})
 
 			tabs.forEach((tab, index) => {
 				tab.addEventListener('click', () => {

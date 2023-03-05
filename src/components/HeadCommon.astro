@@ -31,9 +31,11 @@ import '../styles/theme.css'
 		theme === 'dark' ||
 		(!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
 	) {
-		root.classList.add('theme-dark')
+		root.classList.add('theme-dark', 'dark')
+		root.setAttribute('data-theme', 'dark')
 	} else {
-		root.classList.remove('theme-dark')
+		root.classList.remove('theme-dark', 'dark')
+		root.setAttribute('data-theme', 'light')
 	}
 </script>
 
