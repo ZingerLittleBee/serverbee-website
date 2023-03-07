@@ -79,7 +79,7 @@ import AppHeader from '@components/AppHeader.astro'
 	})
 </script>
 
-<style>
+<style is:global>
 	html {
 		font-family: Urbanist, sans-serif;
 		scroll-behavior: smooth;
@@ -87,5 +87,13 @@ import AppHeader from '@components/AppHeader.astro'
 
 	body {
 		margin: 0;
+	}
+
+	* {
+		-webkit-user-drag: none; /* Safari */
+		-khtml-user-drag: none; /* Konqueror */
+		-moz-user-drag: none; /* Firefox */
+		-ms-user-drag: none; /* Internet Explorer/Edge */
+		user-drag: none; /* Standard syntax */
 	}
 </style>
