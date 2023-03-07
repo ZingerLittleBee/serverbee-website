@@ -57,7 +57,7 @@ const tips = [
 					<div class='mt-8 flex flex-wrap gap-x-6 gap-y-4'>
 						<AppStoreLink />
 						<a
-							href='#'
+							href='/zh/introduction'
 							class='relative flex py-2 items-center justify-center px-4 before:absolute before:inset-0 before:rounded-lg before:bg-white before:border dark:before:bg-transparent before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max'
 						>
 							<div class='flex justify-center items-center'>
@@ -94,27 +94,3 @@ const tips = [
 		</Container>
 	</div>
 </div>
-
-<script>
-	const theme = (() => {
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			return 'dark'
-		}
-		return 'light'
-	})()
-
-	const pic = document.getElementById('home-pic')
-
-	if (theme === 'dark') {
-		pic.setAttribute('src', '/images/previews/dark.png')
-	}
-
-	const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-	darkModeMediaQuery.addEventListener('change', event => {
-		if (event.matches) {
-			pic.setAttribute('src', '/images/previews/dark.png')
-		} else {
-			pic.setAttribute('src', '/images/previews/home.png')
-		}
-	})
-</script>

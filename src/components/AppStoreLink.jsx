@@ -1,8 +1,9 @@
 function AppStoreLink() {
 	return (
 		<a
-			href='#'
+			href='https://apps.apple.com/us/app/serverbee/id6443553714'
 			aria-label='Download on the App Store'
+			target='_blank'
 			className='
 			before:bg-gray-900 before:hover:bg-gray-900 dark:before:hover:bg-white dark:before:bg-white before:absolute relative before:inset-0 before:rounded-lg before:border dark:before:bg-transparent before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95
 			rounded-lg transition-colors text-white dark:text-gray-900'

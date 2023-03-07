@@ -1,6 +1,5 @@
 ---
 import BackToTop from '@components/BackToTop.astro'
-import Blog from '@components/Blog.astro'
 import Price from '@components/Price.astro'
 import Stats from '@components/Stats.astro'
 import Layout from '../layouts/Layout.astro'
@@ -22,7 +21,6 @@ import Testimonials from './testimonials/index.astro'
 		<Price />
 		<Testimonials />
 		<Faq />
-		<Blog />
 		<BackToTop />
 	</main>
 </Layout>
@@ -30,5 +28,4 @@ import Testimonials from './testimonials/index.astro'
 <script is:inline>
 	// Redirect your homepage to the first page of documentation.
 	// If you have a landing page, remove this script and add it here!
-	window.location.pathname = `/zh/introduction`
 </script>

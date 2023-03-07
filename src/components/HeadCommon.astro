@@ -34,6 +34,19 @@ import '../styles/theme.css'
 		root.classList.remove('theme-dark', 'dark')
 		root.setAttribute('data-theme', 'light')
 	}
+
+	const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+	darkModeMediaQuery.addEventListener('change', event => {
+		if (event.matches) {
+			root.setAttribute('data-theme', 'dark')
+			root.classList.add('theme-dark')
+			localStorage.setItem('theme', 'dark')
+		} else {
+			root.classList.remove('theme-dark')
+			root.removeAttribute('data-theme')
+			localStorage.setItem('theme', 'light')
+		}
+	})
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
