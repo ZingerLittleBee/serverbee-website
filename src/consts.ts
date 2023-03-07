@@ -1,15 +1,13 @@
 export const SITE = {
-	title: 'ServerBee Documentation',
+	title: 'ServerBee',
 	description: 'Your website description.',
 	defaultLanguage: 'zh'
 } as const
 
 export const OPEN_GRAPH = {
 	image: {
-		src: 'https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true',
-		alt:
-			'astro logo on a starry expanse of space,' +
-			' with a purple saturn-like planet floating in the right foreground'
+		src: '/images/serverbee-logo.png',
+		alt: 'ServerBee Logo'
 	},
 	twitter: 'zinger_bee'
 }
@@ -46,12 +44,13 @@ export const SIDEBAR: Sidebar = {
 		'': [{ text: 'Page 5', link: 'en/page-4' }]
 	},
 	zh: {
-		'How to use': [
+		如何使用: [
 			{ text: 'Docker', link: 'zh/usage/docker' },
 			{ text: 'Linux', link: 'zh/usage/linux' },
 			{ text: 'macOS', link: 'zh/usage/macos' },
 			{ text: 'Windows', link: 'zh/usage/windows' },
-			{ text: 'qts', link: 'zh/usage/qts' }
+			{ text: 'QTS', link: 'zh/usage/qts' },
+			{ text: 'Synology', link: 'zh/usage/synology' }
 		]
 	}
 }

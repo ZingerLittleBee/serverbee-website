@@ -1,36 +1,43 @@
 ---
-import { getLanguageFromURL } from '../../languages';
-import { SIDEBAR } from '../../consts';
+import { SIDEBAR } from '../../consts'
+import { getLanguageFromURL } from '../../languages'
 
 type Props = {
-	currentPage: string;
-};
+	currentPage: string
+}
 
-const { currentPage } = Astro.props;
+const { currentPage } = Astro.props
 const currentPageMatch = currentPage.endsWith('/')
 	? currentPage.slice(1, -1)
-	: currentPage.slice(1);
-const langCode = getLanguageFromURL(currentPage);
-const sidebar = SIDEBAR[langCode];
+	: currentPage.slice(1)
+const langCode = getLanguageFromURL(currentPage)
+const sidebar = SIDEBAR[langCode]
 ---
 
-<nav aria-labelledby="grid-left">
-	<ul class="nav-groups">
+<nav aria-labelledby='grid-left'>
+	<ul class='nav-groups'>
 		{
 			Object.entries(sidebar).map(([header, children]) => (
 				<li>
-					<div class="nav-group">
-						<h2>{header}</h2>
+					<div class='nav-group'>
+						<h4>{header}</h4>
 						<ul>
-							{children.map((child) => {
-								const url = Astro.site?.pathname + child.link;
+							{children.map(child => {
+								const url = Astro.site?.pathname + child.link
 								return (
-									<li class="nav-link">
-										<a href={url} aria-current={currentPageMatch === child.link ? 'page' : false}>
+									<li class='nav-link'>
+										<a
+											href={url}
+											aria-current={
+												currentPageMatch === child.link
+													? 'page'
+													: false
+											}
+										>
 											{child.text}
 										</a>
 									</li>
-								);
+								)
 							})}
 						</ul>
 					</div>
@@ -42,11 +49,11 @@ const sidebar = SIDEBAR[langCode];
 
 <script is:inline>
 	window.addEventListener('DOMContentLoaded', () => {
-		var target = document.querySelector('[aria-current="page"]');
+		var target = document.querySelector('[aria-current="page"]')
 		if (target && target.offsetTop > window.innerHeight - 100) {
-			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+			document.querySelector('.nav-groups').scrollTop = target.offsetTop
 		}
-	});
+	})
 </script>
 
 <style>

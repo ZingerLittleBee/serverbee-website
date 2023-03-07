@@ -165,6 +165,13 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
+"zh/usage/synology.mdx": {
+  id: "zh/usage/synology.mdx",
+  slug: "zh/usage/synology",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
 "zh/usage/windows.mdx": {
   id: "zh/usage/windows.mdx",
   slug: "zh/usage/windows",
