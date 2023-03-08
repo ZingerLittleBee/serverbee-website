@@ -95,37 +95,65 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/introduction.mdx": {
-  id: "zh/introduction.mdx",
-  slug: "zh/introduction",
+"zh/contact/way.md": {
+  id: "zh/contact/way.md",
+  slug: "zh/contact/way",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/page-2.md": {
-  id: "zh/page-2.md",
-  slug: "zh/page-2",
+"zh/policy/privacy.md": {
+  id: "zh/policy/privacy.md",
+  slug: "zh/policy/privacy",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/page-3.md": {
-  id: "zh/page-3.md",
-  slug: "zh/page-3",
+"zh/question/faq.md": {
+  id: "zh/question/faq.md",
+  slug: "zh/question/faq",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/page-4.md": {
-  id: "zh/page-4.md",
-  slug: "zh/page-4",
+"zh/question/known-problem.md": {
+  id: "zh/question/known-problem.md",
+  slug: "zh/question/known-problem",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/privacy.md": {
-  id: "zh/privacy.md",
-  slug: "zh/privacy",
+"zh/starter/changelog.md": {
+  id: "zh/starter/changelog.md",
+  slug: "zh/starter/changelog",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/starter/deploy.md": {
+  id: "zh/starter/deploy.md",
+  slug: "zh/starter/deploy",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/starter/getting-started.md": {
+  id: "zh/starter/getting-started.md",
+  slug: "zh/starter/getting-started",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/starter/module.md": {
+  id: "zh/starter/module.md",
+  slug: "zh/starter/module",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/starter/web.md": {
+  id: "zh/starter/web.md",
+  slug: "zh/starter/web",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">

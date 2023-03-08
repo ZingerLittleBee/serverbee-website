@@ -65,7 +65,7 @@
 	--theme-text: hsla(var(--color-gray-10), 1);
 	--theme-text-light: hsla(var(--color-gray-40), 1);
 	/* @@@: not used anywhere */
-	--theme-text-lighter: hsla(var(--color-gray-80), 1);
+	--theme-text-lighter: hsla(var(--color-gray-30), 1);
 	--theme-bg: hsla(var(--color-base-white), 100%, 1);
 	--theme-bg-hover: hsla(var(--color-gray-95), 1);
 	--theme-bg-offset: hsla(var(--color-gray-90), 1);
@@ -95,7 +95,7 @@ body {
 	--theme-text-light: hsla(var(--color-gray-80), 1);
 
 	/* @@@: not used anywhere */
-	--theme-text-lighter: hsla(var(--color-gray-40), 1);
+	--theme-text-lighter: hsla(var(--color-gray-70), 1);
 	--theme-bg: hsla(215, 28%, 17%, 1);
 	--theme-bg-hover: hsla(var(--color-gray-40), 1);
 	--theme-bg-offset: hsla(var(--color-gray-5), 1);

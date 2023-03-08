@@ -1,5 +1,4 @@
 ---
-import Footer from '@components/Footer/Footer.astro'
 import HeadCommon from '@components/HeadCommon.astro'
 import HeadSEO from '@components/HeadSEO.astro'
 import Header from '@components/Header/Header.astro'
@@ -37,11 +36,8 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 		}
 
 		.layout {
-			display: grid;
-			grid-auto-flow: column;
-			grid-template-columns:
-				minmax(var(--gutter), 1fr) minmax(0, var(--max-width))
-				minmax(var(--gutter), 1fr);
+			width: 100%;
+			position: relative;
 			overflow-x: hidden;
 		}
 
@@ -57,14 +53,16 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 			background-color: var(--theme-bg);
 			z-index: 10;
 			display: none;
+			padding-left: var(--gutter);
 		}
 
 		#grid-main {
+			position: absolute;
 			padding: var(--doc-padding) var(--gutter);
-			grid-column: 2;
 			display: flex;
 			flex-direction: column;
 			height: 100%;
+			width: 100%;
 		}
 
 		#grid-right {
@@ -74,28 +72,51 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 		@media (min-width: 50em) {
 			.layout {
 				overflow: initial;
-				grid-template-columns: 20rem minmax(0, var(--max-width));
 				gap: 1em;
+			}
+
+			#grid-main {
+				margin-top: var(--theme-navbar-height);
+				left: var(--theme-left-sidebar-width);
+				right: var(--theme-right-sidebar-width);
+				width: calc(100% - var(--theme-left-sidebar-width)) -
+					var(--theme-right-sidebar-width);
 			}
 
 			#grid-left {
 				display: flex;
 				padding-left: 2rem;
-				position: sticky;
-				grid-column: 1;
+				position: fixed;
+				margin-top: 6rem;
+				width: var(--theme-left-sidebar-width);
+			}
+
+			#grid-right {
+				display: flex;
+				padding-right: 2rem;
+				position: fixed;
+				right: 0;
+				margin-top: 6rem;
+				width: var(--theme-left-sidebar-width);
 			}
 		}
 
 		@media (min-width: 72em) {
 			.layout {
-				grid-template-columns: 20rem minmax(0, var(--max-width)) 18rem;
 				padding-left: 0;
 				padding-right: 0;
 				margin: 0 auto;
 			}
 
+			.grid-main {
+				right: var(--theme-right-sidebar-width);
+				left: var(--theme-left-sidebar-width);
+				width: calc(
+					100% - var(--theme-left-sidebar-width) -var(--theme-right-sidebar-width)
+				);
+			}
+
 			#grid-right {
-				grid-column: 3;
 				display: flex;
 			}
 		}
@@ -112,17 +133,21 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 
 		.mobile-sidebar-toggle #grid-left {
 			display: block;
-			top: 2rem;
+			top: 3rem;
 		}
 	</style>
 
 	<body>
 		<Header currentPage={currentPage} />
 		<main class='layout'>
-			<aside id='grid-left' class='grid-sidebar' title='Site Navigation'>
+			<aside
+				id='grid-left'
+				class='grid-sidebar sidebar'
+				title='Site Navigation'
+			>
 				<LeftSidebar currentPage={currentPage} />
 			</aside>
-			<div id='grid-main'>
+			<div id='grid-main' class='grid-main'>
 				<PageContent
 					title={data.title}
 					headings={headings}
@@ -142,8 +167,8 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 				/>
 			</aside>
 		</main>
-		<Footer path={currentFile} />
-		<style is:global>
+		<!-- <Footer path={currentFile} /> -->
+		<!-- <style is:global>
 			.astro-code .code-copy {
 				position: absolute;
 				left: calc(100% - 40px);
@@ -160,7 +185,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 				left: calc(100% - 70px);
 				opacity: 1;
 			}
-		</style>
+		</style> -->
 		<!-- <script>
 			const successIconHtml = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>`
 			const copyIconHtml = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`

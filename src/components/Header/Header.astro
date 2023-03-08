@@ -5,7 +5,6 @@ import LanguageSelect from './LanguageSelect'
 import Search from './Search'
 import ServerBeeLogo from './ServerBeeLogo.astro'
 import SidebarToggle from './SidebarToggle'
-import SkipToContent from './SkipToContent.astro'
 
 type Props = {
 	currentPage: string
@@ -15,8 +14,8 @@ const { currentPage } = Astro.props
 const lang = getLanguageFromURL(currentPage)
 ---
 
-<header>
-	<SkipToContent />
+<header class='header'>
+	<!-- <SkipToContent /> -->
 	<nav class='nav-wrapper' title='Top Navigation'>
 		<div class='menu-toggle'>
 			<SidebarToggle client:idle />
@@ -27,7 +26,6 @@ const lang = getLanguageFromURL(currentPage)
 				<h1>{SITE.title ?? 'Documentation'}</h1>
 			</a>
 		</div>
-		<div style='flex-grow: 1;'></div>
 		{
 			KNOWN_LANGUAGE_CODES.length > 1 && (
 				<LanguageSelect lang={lang} client:idle />
@@ -98,13 +96,20 @@ const lang = getLanguageFromURL(currentPage)
 		justify-content: flex-end;
 		gap: 1em;
 		width: 100%;
-		max-width: 82em;
+		padding-left: 0rem;
+		padding-right: 0rem;
+		/* max-width: 82em; */
 	}
 
 	@media (min-width: 50em) {
 		header {
-			position: static;
+			position: fixed;
 			padding: 2rem 0rem;
+		}
+
+		.nav-wrapper {
+			padding-left: 2rem;
+			padding-right: 2rem;
 		}
 
 		.logo {

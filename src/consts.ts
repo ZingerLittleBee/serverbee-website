@@ -44,13 +44,26 @@ export const SIDEBAR: Sidebar = {
 		'': [{ text: 'Page 5', link: 'en/page-4' }]
 	},
 	zh: {
-		如何使用: [
+		'起步 🛫️': [
+			{ text: '入门指南', link: 'zh/starter/getting-started' },
+			{ text: 'Deploy vs Web', link: 'zh/starter/module' },
+			{ text: 'Deploy', link: 'zh/starter/deploy' },
+			{ text: 'Web', link: 'zh/starter/web' },
+			{ text: '发行说明', link: 'zh/starter/changelog' }
+		],
+		'使用指南 🧭': [
 			{ text: 'Docker', link: 'zh/usage/docker' },
 			{ text: 'Linux', link: 'zh/usage/linux' },
 			{ text: 'macOS', link: 'zh/usage/macos' },
 			{ text: 'Windows', link: 'zh/usage/windows' },
 			{ text: 'QTS', link: 'zh/usage/qts' },
 			{ text: 'Synology', link: 'zh/usage/synology' }
-		]
+		],
+		'问题 ❓': [
+			{ text: '常见问题', link: 'zh/question/faq' },
+			{ text: '已知问题', link: 'zh/question/known-problem' }
+		],
+		'联系我们 ☎️': [{ text: '联系方式', link: 'zh/contact/way' }],
+		'使用政策 📖': [{ text: '隐私政策', link: 'zh/policy/privacy' }]
 	}
 }

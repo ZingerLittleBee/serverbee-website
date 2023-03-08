@@ -1,19 +1,19 @@
 ---
-import type { MarkdownHeading } from 'astro';
-import TableOfContents from './TableOfContents';
-import MoreMenu from './MoreMenu.astro';
+import type { MarkdownHeading } from 'astro'
+import MoreMenu from './MoreMenu.astro'
+import TableOfContents from './TableOfContents'
 
 type Props = {
-	headings: MarkdownHeading[];
-	githubEditUrl: string;
-};
+	headings: MarkdownHeading[]
+	githubEditUrl: string
+}
 
-const { headings, githubEditUrl } = Astro.props;
+const { headings, githubEditUrl } = Astro.props
 ---
 
-<nav class="sidebar-nav" aria-labelledby="grid-right">
-	<div class="sidebar-nav-inner">
-		<TableOfContents client:media="(min-width: 50em)" headings={headings} />
+<nav class='sidebar-nav' aria-labelledby='grid-right'>
+	<div class='sidebar-nav-inner'>
+		<TableOfContents client:media='(min-width: 50em)' headings={headings} />
 		<MoreMenu editHref={githubEditUrl} />
 	</div>
 </nav>
@@ -28,6 +28,7 @@ const { headings, githubEditUrl } = Astro.props;
 	.sidebar-nav-inner {
 		height: 100%;
 		padding: 0;
+		padding-bottom: 6rem;
 		padding-top: var(--doc-padding);
 		overflow: auto;
 	}
