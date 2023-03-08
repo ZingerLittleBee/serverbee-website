@@ -15,7 +15,7 @@ const { title, headings, githubEditUrl } = Astro.props
 <article id='article' class='content'>
 	<section class='main-section'>
 		<h1 class='content-title' id='overview'>{title}</h1>
-		<nav class='block sm:hidden'>
+		<nav id='inner-nav' class='block'>
 			<TableOfContents
 				client:media='(max-width: 50em)'
 				headings={headings}
@@ -23,12 +23,18 @@ const { title, headings, githubEditUrl } = Astro.props
 		</nav>
 		<slot />
 	</section>
-	<nav class='block sm:hidden'>
+	<nav id='inner-nav' class='block'>
 		<MoreMenu editHref={githubEditUrl} />
 	</nav>
 </article>
 
 <style>
+	@media (min-width: 72em) {
+		#inner-nav {
+			display: none;
+		}
+	}
+
 	.content {
 		padding: 0;
 		max-width: 75ch;

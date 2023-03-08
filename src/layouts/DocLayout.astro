@@ -20,7 +20,12 @@ const currentFile = `src/content/docs${currentPage.replace(/\/$/, '')}.md`
 const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 ---
 
-<html dir={data.dir} lang={data.lang} class='initial'>
+<html
+	dir={data.dir}
+	lang={data.lang}
+	class='initial'
+	style='background-color: var(--theme-bg);'
+>
 	<HeadCommon />
 	<HeadSEO {...data} canonicalUrl={canonicalURL} />
 	<title>
@@ -78,24 +83,13 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 			#grid-main {
 				margin-top: var(--theme-navbar-height);
 				left: var(--theme-left-sidebar-width);
-				right: var(--theme-right-sidebar-width);
-				width: calc(100% - var(--theme-left-sidebar-width)) -
-					var(--theme-right-sidebar-width);
+				width: calc(100% - var(--theme-left-sidebar-width));
 			}
 
 			#grid-left {
 				display: flex;
 				padding-left: 2rem;
 				position: fixed;
-				margin-top: 6rem;
-				width: var(--theme-left-sidebar-width);
-			}
-
-			#grid-right {
-				display: flex;
-				padding-right: 2rem;
-				position: fixed;
-				right: 0;
 				margin-top: 6rem;
 				width: var(--theme-left-sidebar-width);
 			}
@@ -110,14 +104,18 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 
 			.grid-main {
 				right: var(--theme-right-sidebar-width);
-				left: var(--theme-left-sidebar-width);
 				width: calc(
 					100% - var(--theme-left-sidebar-width) -var(--theme-right-sidebar-width)
-				);
+				) !important;
 			}
 
 			#grid-right {
 				display: flex;
+				padding-right: 2rem;
+				position: fixed;
+				right: 0;
+				margin-top: 6rem;
+				width: var(--theme-left-sidebar-width);
 			}
 		}
 	</style>

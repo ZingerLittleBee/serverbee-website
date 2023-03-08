@@ -83,7 +83,9 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 					.filter(({ depth }) => depth > 1 && depth < 4)
 					.map(heading => (
 						<li
-							className={`header-link depth-${heading.depth} ${
+							className={`header-link 
+							text-gray-500
+							depth-${heading.depth} ${
 								currentID === heading.slug
 									? 'current-header-link'
 									: ''
