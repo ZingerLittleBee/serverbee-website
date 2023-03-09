@@ -25,7 +25,7 @@ const sidebar = SIDEBAR[langCode]
 const { type, defaultActiveTab } = Astro.props as Props
 ---
 
-<nav aria-labelledby='grid-left' class='overflow-auto'>
+<nav aria-labelledby='grid-left'>
 	{
 		Object.entries(sidebar).map(([header, children]) => (
 			<li
@@ -88,7 +88,7 @@ const { type, defaultActiveTab } = Astro.props as Props
 	})
 </script>
 
-<style>
+<style lang='scss'>
 	nav {
 		width: 100%;
 		margin-right: 1rem;
@@ -150,7 +150,7 @@ const { type, defaultActiveTab } = Astro.props as Props
 		}
 	}
 
-	<style lang='scss' > .nav-group {
+	.nav-group {
 		margin-bottom: 1rem;
 	}
 	.nav-group .placeholder {

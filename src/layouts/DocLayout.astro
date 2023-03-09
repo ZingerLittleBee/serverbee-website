@@ -47,7 +47,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 		}
 
 		.grid-sidebar {
-			height: 100vh;
+			height: 100%;
 			position: sticky;
 			top: 0;
 			padding: 0;
@@ -59,6 +59,8 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 			z-index: 10;
 			display: none;
 			padding-left: var(--gutter);
+			padding-right: var(--gutter);
+			padding-top: var(--theme-navbar-height);
 		}
 
 		#grid-main {
@@ -131,16 +133,15 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 
 		.mobile-sidebar-toggle #grid-left {
 			display: block;
-			top: 3rem;
 		}
 	</style>
 
-	<body>
+	<body class=''>
 		<Header currentPage={currentPage} />
 		<main class='layout'>
 			<aside
 				id='grid-left'
-				class='grid-sidebar sidebar'
+				class='grid-sidebar overflow-x-hidden overflow-y-scroll'
 				title='Site Navigation'
 			>
 				<LeftSidebar currentPage={currentPage} />
