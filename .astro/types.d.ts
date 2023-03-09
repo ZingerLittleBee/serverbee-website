@@ -130,8 +130,8 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/starter/deploy.md": {
-  id: "zh/starter/deploy.md",
+"zh/starter/deploy.mdx": {
+  id: "zh/starter/deploy.mdx",
   slug: "zh/starter/deploy",
   body: string,
   collection: "docs",
@@ -151,8 +151,8 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"zh/starter/web.md": {
-  id: "zh/starter/web.md",
+"zh/starter/web.mdx": {
+  id: "zh/starter/web.mdx",
   slug: "zh/starter/web",
   body: string,
   collection: "docs",
