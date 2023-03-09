@@ -1,0 +1,67 @@
+---
+title: Docker
+---
+
+import Collapse from '@components/Collapse.astro'
+import CodeBlock from '@components/CodeBlock.astro'
+
+<Collapse title='Install Docker'>
+
+  <CodeBlock lang='bash'>
+
+```bash
+curl -fsSL https://get.docker.com | bash
+
+# Install docker-compose
+
+# curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# chmod a+x /usr/local/bin/docker-compose
+
+# start docker
+
+systemctl start docker
+
+# start docker
+
+# service docker start
+
+# Auto-start on boot
+
+systemctl enable docker.service
+
+# check docker status
+
+systemctl status docker.service
+
+```
+
+  </CodeBlock>
+
+</Collapse>
+
+## Docker run command
+
+<CodeBlock>
+
+```bash
+docker run -d \
+  -v /proc:/proc \
+  --privileged=true \
+  --restart unless-stopped \
+  --network=host \
+  --name=serverbee-web \
+  zingerbee/serverbee-web
+```
+
+</CodeBlock>
+
+## Container logs
+
+<CodeBlock>
+
+```bash
+docker logs serverbee-web
+```
+
+</CodeBlock>

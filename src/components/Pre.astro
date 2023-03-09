@@ -1,0 +1,125 @@
+---
+export interface Props {
+	hovered?: boolean
+	copied?: boolean
+}
+const { hovered = false, copied = false } = Astro.props
+---
+
+<copy-button
+	copied={copied ? '' : undefined}
+	hovered={hovered ? '' : undefined}
+>
+	<div id='preContainer' class='relative'>
+		<button
+			id='copyCodeButton'
+			aria-label='Copy code'
+			type='button'
+			class={`z-50 absolute right-2 top-2 h-8 w-8 rounded border-2 bg-gray-700 p-1 dark:bg-gray-800 border-gray-300"}`}
+		>
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				viewBox='0 0 24 24'
+				stroke='currentColor'
+				fill='none'
+				class='text-gray-300'
+			>
+				{
+					copied ? (
+						<>
+							<path d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' />
+						</>
+					) : (
+						<>
+							<path d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' />
+						</>
+					)
+				}
+			</svg>
+		</button>
+
+		<pre><slot /></pre>
+	</div>
+</copy-button>
+
+<style>
+	copy-button[hovered] #copyCodeButton {
+		display: block;
+	}
+
+	copy-button:not([hovered]) #copyCodeButton {
+		display: none;
+	}
+
+	copy-button[copied] svg {
+		display: none;
+	}
+
+	copy-button:not([copied]) svg {
+		display: block;
+	}
+</style>
+
+<script>
+	class CopyButton extends HTMLElement {
+		#mainDiv = this.querySelector<HTMLDivElement>('#preContainer')!
+		#code = this.querySelector<HTMLElement>('code')!
+		#button = this.querySelector<HTMLButtonElement>('button')!
+		#handleClick = this.handleClick.bind(this)
+		#onEnter = this.onEnter.bind(this)
+		#onLeave = this.onLeave.bind(this)
+
+		connectedCallback() {
+			this.#button.addEventListener('click', this.#handleClick, false)
+			this.#mainDiv.addEventListener('mouseover', this.#onEnter, false)
+			this.#mainDiv.addEventListener('mouseleave', this.#onLeave, false)
+		}
+
+		disconnectedCallback() {
+			this.#button.addEventListener('click', this.#handleClick)
+			this.#mainDiv.addEventListener('mouseover', this.#onEnter)
+			this.#mainDiv.addEventListener('mouseleave', this.#onLeave, false)
+		}
+
+		get hovered() {
+			return this.hasAttribute('hovered')
+		}
+
+		set hovered(value: boolean) {
+			if (value) {
+				this.setAttribute('hovered', '')
+			} else {
+				this.removeAttribute('hovered')
+			}
+		}
+
+		get copied() {
+			return this.hasAttribute('copied')
+		}
+
+		set copied(value: boolean) {
+			if (value) {
+				this.setAttribute('copied', '')
+			} else {
+				this.removeAttribute('copied')
+			}
+		}
+
+		handleClick() {
+			navigator.clipboard.writeText(this.#code?.textContent!)
+			this.copied = true
+			setTimeout(() => {
+				this.copied = false
+			}, 500)
+		}
+
+		onEnter() {
+			this.hovered = true
+		}
+
+		onLeave() {
+			this.hovered = false
+		}
+	}
+	customElements.define('copy-button', CopyButton)
+</script>

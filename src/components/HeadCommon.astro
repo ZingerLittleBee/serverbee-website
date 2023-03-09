@@ -1,0 +1,60 @@
+---
+import '../styles/base.css'
+import '../styles/index.css'
+import '../styles/theme.css'
+---
+
+<!-- Global Metadata -->
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width' />
+<meta name='generator' content={Astro.generator} />
+
+<link rel='icon' type='image/png' href='/favicon.png' />
+
+<link rel='sitemap' href='/sitemap.xml' />
+
+<!-- Preload Fonts -->
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+<link
+	href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap'
+	rel='stylesheet'
+/>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script is:inline>
+	const root = document.documentElement
+	const theme = localStorage.getItem('theme')
+	if (
+		theme === 'dark' ||
+		(!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+	) {
+		root.classList.add('theme-dark', 'dark')
+		root.setAttribute('data-theme', 'dark')
+	} else {
+		root.classList.remove('theme-dark', 'dark')
+		root.setAttribute('data-theme', 'light')
+	}
+
+	const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+	darkModeMediaQuery.addEventListener('change', event => {
+		if (event.matches) {
+			root.setAttribute('data-theme', 'dark')
+			root.classList.add('theme-dark')
+			localStorage.setItem('theme', 'dark')
+		} else {
+			root.classList.remove('theme-dark')
+			root.removeAttribute('data-theme')
+			localStorage.setItem('theme', 'light')
+		}
+	})
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-TEL60V1WM9" is:inline></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TEL60V1WM9');
+</script> -->

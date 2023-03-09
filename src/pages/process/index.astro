@@ -1,0 +1,53 @@
+---
+import Container from '@components/Container.astro'
+import Process from './process'
+---
+
+<div class='py-10 bg-[#F2F2F7] dark:bg-[#0F172A]' id='Process'>
+	<Container>
+		<div class='flex flex-wrap'>
+			<div class='w-full'>
+				<div
+					class='items-center justify-around overflow-hidden lg:flex'
+				>
+					<div
+						class='w-full py-12 lg:max-w-[565px] lg:py-9 xl:max-w-[640px]'
+					>
+						<span
+							class='mb-5 rounded-lg inline-block bg-primary dark:bg-primary-dark py-2 px-5 text-sm font-medium text-white'
+						>
+							进程管理
+						</span>
+						<h2
+							class='mb-6 text-3xl font-bold dark:text-white sm:text-4xl sm:leading-snug 2xl:text-[40px]'
+						>
+							进程尽在掌握之中
+						</h2>
+						<p
+							class='mb-9 text-base dark:text-white/70 leading-relaxed text-body-color'
+						>
+							获取服务器上正在运行的进程列表，并支持排序，以便快速浏览和了解当前服务器上的进程状态。
+						</p>
+						<p
+							class='mb-9 text-base dark:text-white/70 leading-relaxed text-body-color'
+						>
+							进程详情可以显示进程的 PID、进程名称、运行状态、占用
+							CPU、内存、启动时间、执行命令、环境参数等信息，便于进行资源分配和优化。
+						</p>
+						<p
+							class='mb-9 text-base dark:text-white/70 leading-relaxed text-body-color'
+						>
+							父子进程跳转是一个重要操作，它可以直接跳转到一个进程的父进程或子进程，以便更好地查看和管理进程间的关系。
+						</p>
+						<p
+							class='mb-9 text-base dark:text-white/70 leading-relaxed text-body-color'
+						>
+							杀死进程是另一个重要操作，它可以终止某个进程的运行，避免进程耗尽服务器资源，影响服务器的正常运行。
+						</p>
+					</div>
+					<Process client:load />
+				</div>
+			</div>
+		</div>
+	</Container>
+</div>

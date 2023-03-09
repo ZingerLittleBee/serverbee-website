@@ -1,0 +1,183 @@
+---
+import Container from '@components/Container.astro'
+import { AngleDown } from '@icons/Arrow'
+
+const faq = [
+	{
+		question: '为什么有些数据始终为 0 或者不显示',
+		answer: '由于平台差异性，某些平台没有此概念，也有可能该功能暂时未实现。'
+	},
+	{
+		question: '安装、使用时遇到问题，如何请求帮助？',
+		answer: '请查看`联系我们`页面，选择你常用的通信方式，联系我们获得帮助。'
+	},
+	{
+		question: '是否提供免费试用？',
+		answer: '我们提供 14 天免费使用，APP 中选择按年订阅即可，如不续订请前往 AppStore 主动关闭。'
+	},
+	{
+		question: '是否提供退款服务？',
+		answer: 'AppStore 购买请参阅 Apple 退款政策，其他地方购买不支持退款。'
+	}
+]
+---
+
+<section
+	class='relative z-20 overflow-hidden bg-[#f3f4ff] dark:bg-gray-900 pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]'
+>
+	<Container>
+		<div class='-mx-4 flex flex-wrap'>
+			<div class='w-full px-4'>
+				<div
+					class='mx-auto mb-[60px] max-w-[620px] text-center lg:mb-20'
+				>
+					<span
+						class='mb-2 block text-lg font-semibold text-primary dark:text-primary-dark'
+					>
+						FAQ
+					</span>
+					<h2
+						class='mb-4 text-3xl font-bold dark:text-white sm:text-4xl md:text-[42px]'
+					>
+						常见问题
+					</h2>
+					<p
+						class='text-lg leading-relaxed dark:text-white/70 text-body-color sm:text-xl sm:leading-relaxed'
+					>
+						这里是常见的问题汇总，如果你的问题没有在这里找到，不要犹豫，请联系我们。
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class='-mx-4 flex flex-wrap'>
+			<div class='w-full px-4 lg:w-1/2'>
+				{
+					faq.map((item, index) =>
+						index < faq.length / 2 ? (
+							<faq-item>
+								<div class='faq-item-container'>
+									<button
+										aria-label='faq'
+										class='faq-item-container__btn'
+									>
+										<div class='icon'>
+											<AngleDown className='fill-primary dark:fill-white' />
+										</div>
+										<div class='w-full'>
+											<h4 class='faq-item-container__question'>
+												{item.question}
+											</h4>
+										</div>
+									</button>
+									<div class='faq-content hidden pl-[62px]'>
+										<p class='faq-item-container__answer'>
+											{item.answer}
+										</p>
+									</div>
+								</div>
+							</faq-item>
+						) : null
+					)
+				}
+			</div>
+			<div class='w-full px-4 lg:w-1/2'>
+				{
+					faq.map((item, index) =>
+						index >= faq.length / 2 ? (
+							<faq-item>
+								<div class='faq-item-container'>
+									<button
+										aria-label='faq'
+										class='faq-item-container__btn'
+									>
+										<div class='icon'>
+											<AngleDown className='fill-primary dark:fill-white' />
+										</div>
+										<div class='w-full'>
+											<h4 class='faq-item-container__question'>
+												{item.question}
+											</h4>
+										</div>
+									</button>
+									<div class='faq-content hidden pl-[62px]'>
+										<p class='faq-item-container__answer'>
+											{item.answer}
+										</p>
+									</div>
+								</div>
+							</faq-item>
+						) : null
+					)
+				}
+			</div>
+		</div>
+	</Container>
+
+	<div class='absolute bottom-0 right-0 z-[-1]'>
+		<svg
+			width='1440'
+			height='886'
+			viewBox='0 0 1440 886'
+			fill='none'
+			xmlns='http://www.w3.org/2000/svg'
+		>
+			<path
+				opacity='0.5'
+				d='M193.307 -273.321L1480.87 1014.24L1121.85 1373.26C1121.85 1373.26 731.745 983.231 478.513 729.927C225.976 477.317 -165.714 85.6993 -165.714 85.6993L193.307 -273.321Z'
+				fill='url(#paint0_linear)'></path>
+			<defs>
+				<linearGradient
+					id='paint0_linear'
+					x1='1308.65'
+					y1='1142.58'
+					x2='602.827'
+					y2='-418.681'
+					gradientUnits='userSpaceOnUse'
+				>
+					<stop stop-color='#3056D3' stop-opacity='0.36'></stop>
+					<stop offset='1' stop-color='#F5F2FD' stop-opacity='0'
+					></stop>
+					<stop
+						offset='1'
+						stop-color='#F5F2FD'
+						stop-opacity='0.096144'></stop>
+				</linearGradient>
+			</defs>
+		</svg>
+	</div>
+</section>
+
+<script>
+	class FaqItem extends HTMLElement {
+		constructor() {
+			super()
+			const button = this.querySelector('button')
+			const content = this.querySelector('.faq-content')
+
+			button?.addEventListener('click', () => {
+				content?.classList.toggle('hidden')
+			})
+		}
+	}
+
+	customElements.define('faq-item', FaqItem)
+</script>
+
+<style is:global lang='scss'>
+	.faq-item-container {
+		@apply mb-8 w-full rounded-lg border border-[#F3F4FE] dark:border-none bg-white dark:bg-gray-700 p-5 sm:p-8;
+		&__btn {
+			@apply flex w-full items-center text-left;
+			.icon {
+				@apply mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary dark:bg-gray-800 bg-opacity-5 text-primary dark:text-primary-dark;
+			}
+		}
+		&__question {
+			@apply text-base font-semibold dark:text-white sm:text-lg;
+		}
+		&__answer {
+			@apply py-3 text-base leading-relaxed dark:text-white/70;
+		}
+	}
+</style>

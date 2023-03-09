@@ -1,0 +1,92 @@
+---
+title: Linux
+---
+
+import ServerMilkLogo from '@components/ServerMilkLogo.astro'
+import TwoTabSwitch from '@components/TwoTabSwitch.astro'
+import Collapse from '@components/Collapse.astro'
+import Download from './Download.astro'
+import InfoMessage from '@components/InfoMessage.astro'
+import CodeBlock from '@components/CodeBlock.astro'
+
+## Linux desktop
+
+<ServerMilkLogo />
+<TwoTabSwitch one='Download in China' two='International download'>
+	<p slot='tab1' class='p-2'>
+        [Click to download AppImage (China download)](https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/desktop/v1.1.0/server-milk_1.1.0_amd64.AppImage)
+    </p>
+    <p slot='tab2' class='p-2'>
+        [Click to download AppImage (International download)](https://github.com/ZingerLittleBee/ServerMilk/releases/download/v1.1.0/server-milk_1.1.0_amd64.AppImage)
+    </p>
+
+</TwoTabSwitch>
+
+## Command-line installation (without graphical interface)
+
+<Collapse title='need to install wget、unzip'>
+
+    <TwoTabSwitch one='Debian' two='CentOS'>
+        <div slot='tab1'>
+
+            ```bash
+            apt -y update && apt -y install wget unzip
+            ```
+
+        </div>
+        <div slot='tab2'>
+
+            ```bash
+            yum -y update && yum -y install wget unzip
+            ```
+
+        </div>
+
+    </TwoTabSwitch>
+
+</Collapse>
+
+Either `deploy` or `web` can be installed, **choose one to install**
+
+-   deploy (includes web functions and additional features such as **interactive installation**, **automatic startup**, and **automatic updates**)
+-   web (needs to be **manually** started and updated)
+
+### Install deploy（**recommend**）
+
+> Copy and execute line by line or copy all and execute.
+
+<TwoTabSwitch one='x86_64' two='aarch64'>
+	<div slot='tab1'>
+		<Download os='linux' module='deploy' arch='x86_64' />
+	</div>
+	<div slot='tab2'>
+		<Download os='linux' module='deploy' arch='arrch64' />
+	</div>
+</TwoTabSwitch>
+
+interactive installation
+
+![](/images/interactive.gif)
+
+### Install web
+
+<TwoTabSwitch one='x86_64' two='aarch64'>
+	<div slot='tab1'>
+		<Download os='linux' module='web' arch='x86_64' />
+	</div>
+	<div slot='tab2'>
+		<Download os='linux' module='web' arch='arrch64' />
+	</div>
+</TwoTabSwitch>
+
+<InfoMessage title='use custom port'>
+
+    <CodeBlock class='w-full'>
+
+    ```bash
+    ./serverbee-web -p 8081
+    ```
+
+    </CodeBlock>
+
+</InfoMessage>

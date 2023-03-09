@@ -1,0 +1,31 @@
+---
+title: Windows
+DesktopLatestVersion: '1.1.0'
+---
+
+import ServerMilkLogo from '@components/ServerMilkLogo.astro'
+import TwoTabSwitch from '@components/TwoTabSwitch.astro'
+import DesktopDownload from './DesktopDownload.astro'
+
+## Windows 桌面环境
+
+<ServerMilkLogo />
+
+<TwoTabSwitch one='国内下载' two='国外下载'>
+	<div slot='tab1' class='p-2'>
+		<DesktopDownload
+			label='点击下载 Windows 桌面程序（国内地址）'
+			os='windows'
+			isGithub='false'
+			os='windows'
+		/>
+	</div>
+	<div slot='tab2' class='p-2'>
+		<DesktopDownload
+			label='点击下载 Windows 桌面程序（国外地址）'
+			os='windows'
+			isGithub='true'
+			os='windows'
+		/>
+	</div>
+</TwoTabSwitch>

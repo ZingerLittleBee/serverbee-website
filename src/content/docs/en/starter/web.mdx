@@ -1,0 +1,71 @@
+---
+title: Web
+---
+
+import CodeBlock from '@components/CodeBlock.astro'
+
+<div class='flex space-x-2 space-y-1 flex-wrap'>
+	<img
+		src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub release (latest by date)'
+	/>
+	<img
+		src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+		alt='GitHub Workflow Status'
+	/>
+	<img
+		src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub last commit'
+	/>
+</div>
+
+## Features
+
+-   CPU load
+-   Average load
+-   Memory usage
+-   Normal operation, startup time
+-   File system loading (and disk usage)
+-   Disk I/O statistics
+-   Network interface
+-   Network traffic statistics
+-   Process list
+-   Detailed process information
+-   Kill process
+-   Child processes belonging to the process.
+
+## More Settings
+
+### Use custom port
+
+<CodeBlock>
+
+```bash
+./serverbee-web -p 8081
+```
+
+</CodeBlock>
+
+## Compile from source code
+
+<CodeBlock>
+
+```bash
+cargo build --bin serverbee-web --release
+```
+
+</CodeBlock>
+
+Then you can find the executable file `serverbee-web` in `target/release`.
+
+## Report a problem or suggest an improvement
+
+<a
+	href='https://github.com/zingerlittlebee/server_bee-backend/issues/new'
+	target='_blank'
+	draggable='false'
+	class='btn
+    no-underline hover:no-underline focus:no-underline'
+>
+	<p class='text-white'>create issue</p>
+</a>

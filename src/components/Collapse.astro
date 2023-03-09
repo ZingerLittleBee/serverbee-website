@@ -1,0 +1,27 @@
+---
+const props = Astro.props
+---
+
+<div
+	id='collapse'
+	class='collapse collapse-arrow border border-base-300 bg-base-100 rounded-box'
+>
+	<div
+		id='collapse-title'
+		class='collapse-title font-medium cursor-pointer select-none'
+	>
+		{props.title}
+	</div>
+	<div class='collapse-content'>
+		<slot />
+	</div>
+</div>
+
+<script>
+	const collapse = document.getElementById('collapse')
+	const collapseTitle = document.getElementById('collapse-title')
+
+	collapseTitle?.addEventListener('click', () => {
+		collapse?.classList.toggle('collapse-open')
+	})
+</script>

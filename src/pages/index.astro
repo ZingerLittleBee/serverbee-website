@@ -1,0 +1,31 @@
+---
+import BackToTop from '@components/BackToTop.astro'
+import Price from '@components/Price.astro'
+import Stats from '@components/Stats.astro'
+import Layout from '../layouts/Layout.astro'
+import Detail from './detail/index.astro'
+import Faq from './faq/index.astro'
+import Features from './feature/index.astro'
+import HeroSection from './hero/index.astro'
+import Process from './process/index.astro'
+import Testimonials from './testimonials/index.astro'
+---
+
+<Layout>
+	<main class='space-y-20'>
+		<HeroSection />
+		<Features />
+		<Detail />
+		<Stats />
+		<Process />
+		<Price />
+		<Testimonials />
+		<Faq />
+		<BackToTop />
+	</main>
+</Layout>
+
+<script is:inline>
+	// Redirect your homepage to the first page of documentation.
+	// If you have a landing page, remove this script and add it here!
+</script>

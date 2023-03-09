@@ -1,0 +1,8 @@
+
+.next,
+.prev {
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  @apply flex justify-center items-center select-none cursor-pointer
+}

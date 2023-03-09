@@ -1,0 +1,99 @@
+---
+import AppFooter from '@components/AppFooter.astro'
+import AppHeader from '@components/AppHeader.astro'
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/png' href='/favicon.png' />
+		<meta name='generator' content={Astro.generator} />
+		<meta
+			name='description'
+			content='ServerBee is an iOS app that functions as a cross-platform server monitoring tool.'
+		/>
+		<title>ServerBee</title>
+
+		<link
+			href='https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap'
+			rel='stylesheet'
+		/>
+	</head>
+	<body class='bg-white dark:bg-gray-900'>
+		<AppHeader />
+		<slot />
+		<AppFooter />
+	</body>
+</html>
+
+<script>
+	const getTheme = () => {
+		if (import.meta.env.SSR) {
+			return undefined
+		}
+		if (
+			typeof localStorage !== undefined &&
+			localStorage.getItem('theme')
+		) {
+			return localStorage.getItem('theme')
+		}
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			return 'dark'
+		}
+		return 'light'
+	}
+
+	const root = document.documentElement
+
+	const theme = getTheme()
+
+	if (theme === 'light') {
+		root.classList.remove('theme-dark')
+		root.removeAttribute('data-theme')
+	} else {
+		root.setAttribute('data-theme', 'dark')
+		root.classList.add('theme-dark')
+	}
+
+	const pic = document.getElementById('home-pic')
+
+	if (theme === 'dark') {
+		pic?.setAttribute('src', '/images/previews/dark.png')
+	}
+
+	const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+	darkModeMediaQuery.addEventListener('change', event => {
+		if (event.matches) {
+			root.setAttribute('data-theme', 'dark')
+			root.classList.add('theme-dark')
+			pic?.setAttribute('src', '/images/previews/dark.png')
+			localStorage.setItem('theme', 'dark')
+		} else {
+			root.classList.remove('theme-dark')
+			root.removeAttribute('data-theme')
+			pic?.setAttribute('src', '/images/previews/home.png')
+			localStorage.setItem('theme', 'light')
+		}
+	})
+</script>
+
+<style is:global>
+	html {
+		font-family: Urbanist, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+	}
+
+	* {
+		-webkit-user-drag: none; /* Safari */
+		-khtml-user-drag: none; /* Konqueror */
+		-moz-user-drag: none; /* Firefox */
+		-ms-user-drag: none; /* Internet Explorer/Edge */
+		user-drag: none; /* Standard syntax */
+	}
+</style>

@@ -1,0 +1,104 @@
+---
+title: Deloy
+---
+
+import CodeBlock from '@components/CodeBlock.astro'
+
+<div class='flex space-x-2 space-y-1 flex-wrap'>
+	<img
+		src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub release (latest by date)'
+	/>
+	<img
+		src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+		alt='GitHub Workflow Status'
+	/>
+	<img
+		src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub last commit'
+	/>
+</div>
+
+## 功能
+
+-   开机启动
+-   交互式安装
+-   自动下载 Web 模块
+-   自动运行 Web 模块
+-   自动更新 Web 模块
+
+## 更多配置
+
+### 交互式安装 (默认)
+
+<CodeBlock>
+    
+```bash
+./serverbee-deploy -i
+```
+
+</CodeBlock>
+
+### 使用自定义端口
+
+<CodeBlock>
+
+```bash
+./serverbee-deploy -p 8081
+```
+
+</CodeBlock>
+
+### 开机自启 (默认打开)
+
+<CodeBlock>
+
+```bash
+./serverbee-deploy -a true
+```
+
+</CodeBlock>
+
+### 关闭开机自启
+
+<CodeBlock>
+
+```bash
+./serverbee-deploy -a false
+```
+
+</CodeBlock>
+
+### 例子
+
+<CodeBlock>
+
+```bash
+./serverbee-deploy -p 8081 -a false
+```
+
+</CodeBlock>
+
+## 从源码编译
+
+<CodeBlock>
+
+```bash
+cargo build --bin serverbee-deploy --release
+```
+
+</CodeBlock>
+
+然后你可以在 `target/release` 找到可执行文件 `serverbee-deploy`
+
+## 发现问题或提出建议
+
+<a
+	href='https://github.com/zingerlittlebee/server_bee-backend/issues/new'
+	target='_blank'
+	draggable='false'
+	class='btn
+    no-underline hover:no-underline focus:no-underline'
+>
+	<p class='text-white'>创建 issue</p>
+</a>

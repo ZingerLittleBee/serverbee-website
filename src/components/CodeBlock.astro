@@ -1,0 +1,70 @@
+<float-copy-btn class='w-full relative'>
+	<div class='absolute top-3 right-3 z-50'>
+		<button
+			id='copy-btn'
+			class='bg-transparent text-white dark:text-var(--theme-text)'
+		>
+			<svg
+				id='copy'
+				xmlns='http://www.w3.org/2000/svg'
+				width='18'
+				height='18'
+				viewBox='0 0 24 24'
+				fill='none'
+				stroke='currentColor'
+				stroke-width='2'
+				stroke-linecap='round'
+				stroke-linejoin='round'
+				><rect x='9' y='9' width='13' height='13' rx='2' ry='2'
+				></rect><path
+					d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'
+				></path></svg
+			>
+			<svg
+				id='copied'
+				class='hidden'
+				xmlns='http://www.w3.org/2000/svg'
+				width='18'
+				height='18'
+				viewBox='0 0 24 24'
+				fill='none'
+				stroke='currentColor'
+				stroke-width='2'
+				stroke-linecap='round'
+				stroke-linejoin='round'
+				><polyline points='20 6 9 17 4 12'></polyline></svg
+			>
+		</button>
+	</div>
+	<slot />
+</float-copy-btn>
+
+<script>
+	class FloatCopyBtn extends HTMLElement {
+		constructor() {
+			super()
+
+			const copy = this.querySelector('#copy')
+			const copied = this.querySelector('#copied')
+
+			const copyBtn = this.querySelector('#copy-btn')
+
+			const code = this.querySelector('code')
+
+			copyBtn?.addEventListener('click', () => {
+				let copyText = code?.textContent
+
+				navigator.clipboard.writeText(copyText ?? '')
+				copy?.classList.add('hidden')
+				copied?.classList.remove('hidden')
+
+				setTimeout(() => {
+					copy?.classList.remove('hidden')
+					copied?.classList.add('hidden')
+				}, 2000)
+			})
+		}
+	}
+
+	customElements.define('float-copy-btn', FloatCopyBtn)
+</script>

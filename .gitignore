@@ -1,15 +1,22 @@
-node_modules
-*.log*
-.nuxt
-.nitro
-.cache
-.output
-.env
-dist
-.idea
-.history
+# build output
+dist/
+.output/
 
-# Vuepress Cache
-.cache/
-# Vuepress Temp
-.temp/
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# vscode
+.history

@@ -2,19 +2,41 @@
   "name": "serverbee-website",
   "version": "1.0.0",
   "description": "ServerBee Website",
-  "license": "MIT",
   "type": "module",
+  "private": true,
   "scripts": {
-    "docs:build": "vuepress build src",
-    "docs:clean-dev": "vuepress dev src --clean-cache",
-    "docs:dev": "vuepress dev src"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@algolia/client-search": "^4.13.1",
+    "@astrojs/mdx": "^0.17.2",
+    "@astrojs/preact": "^2.0.3",
+    "@astrojs/react": "^2.0.2",
+    "@astrojs/tailwind": "^3.0.1",
+    "@docsearch/css": "^3.1.0",
+    "@docsearch/react": "^3.1.0",
+    "@headlessui/react": "^1.7.11",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^2.0.16",
+    "clsx": "^1.2.1",
+    "framer-motion": "^9.1.6",
+    "popmotion": "^11.0.5",
+    "preact": "^10.7.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^3.2.7",
+    "use-debounce": "^9.0.3"
   },
   "devDependencies": {
-    "@vuepress/client": "2.0.0-beta.60",
-    "@vuepress/plugin-register-components": "2.0.0-beta.60",
-    "@vuepress/utils": "2.0.0-beta.60",
-    "vue": "^3.2.47",
-    "vuepress": "2.0.0-beta.60",
-    "vuepress-theme-hope": "2.0.0-beta.166"
+    "html-escaper": "^3.0.3",
+    "sass": "^1.58.3",
+    "autoprefixer": "^10.4.2",
+    "daisyui": "^2.6.0"
   }
 }
