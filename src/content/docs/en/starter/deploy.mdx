@@ -1,0 +1,104 @@
+---
+title: Deloy
+---
+
+import CodeBlock from '@components/CodeBlock.astro'
+
+<div class='flex space-x-2 space-y-1 flex-wrap'>
+	<img
+		src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub release (latest by date)'
+	/>
+	<img
+		src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+		alt='GitHub Workflow Status'
+	/>
+	<img
+		src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub last commit'
+	/>
+</div>
+
+## Features
+
+-   Automatic startup
+-   Interactive installation
+-   Automatic download of web modules
+-   Automatic running of web modules
+-   Automatic updating of web modules
+
+## Additional Configuration
+
+### Interactive installation (default)
+
+<CodeBlock>
+    
+```bash
+./serverbee-deploy -i
+```
+
+</CodeBlock>
+
+### Using custom ports
+
+<CodeBlock>
+
+```bash
+./serverbee-deploy -p 8081
+```
+
+</CodeBlock>
+
+### Automatic startup (enabled by default)
+
+<CodeBlock>
+
+```bash
+./serverbee-deploy -a true
+```
+
+</CodeBlock>
+
+### Disable automatic startup
+
+<CodeBlock>
+
+```bash
+./serverbee-deploy -a false
+```
+
+</CodeBlock>
+
+### Example
+
+<CodeBlock>
+
+```bash
+./serverbee-deploy -p 8081 -a false
+```
+
+</CodeBlock>
+
+## Compiling from source code
+
+<CodeBlock>
+
+```bash
+cargo build --bin serverbee-deploy --release
+```
+
+</CodeBlock>
+
+Then you can find the executable file `serverbee-deploy` in `target/release`.
+
+## Report an issue or suggest an improvement
+
+<a
+	href='https://github.com/zingerlittlebee/server_bee-backend/issues/new'
+	target='_blank'
+	draggable='false'
+	class='btn
+    no-underline hover:no-underline focus:no-underline'
+>
+	<p class='text-white'>create issue</p>
+</a>

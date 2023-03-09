@@ -35,13 +35,27 @@ export type Sidebar = Record<
 >
 export const SIDEBAR: Sidebar = {
 	en: {
-		'How to use': [
-			{ text: 'Introduction', link: 'en/introduction' },
-			{ text: 'Page 2', link: 'en/page-2' },
-			{ text: 'Page 3', link: 'en/page-3' }
+		'Start 🛫️': [
+			{ text: 'Getting Started', link: 'en/starter/getting-started' },
+			{ text: 'Deploy vs Web', link: 'en/starter/module' },
+			{ text: 'Deploy', link: 'en/starter/deploy' },
+			{ text: 'Web', link: 'en/starter/web' },
+			{ text: 'Release Notes', link: 'en/starter/changelog' }
 		],
-		'Another Section': [{ text: 'Page 4', link: 'en/page-4' }],
-		'': [{ text: 'Page 5', link: 'en/page-4' }]
+		'Guide 🧭': [
+			{ text: 'Docker', link: 'en/usage/docker' },
+			{ text: 'Linux', link: 'en/usage/linux' },
+			{ text: 'macOS', link: 'en/usage/macos' },
+			{ text: 'Windows', link: 'en/usage/windows' },
+			{ text: 'QTS', link: 'en/usage/qts' },
+			{ text: 'Synology', link: 'en/usage/synology' }
+		],
+		'Question ❓': [
+			{ text: 'FAQ', link: 'en/question/faq' },
+			{ text: 'Known Issues', link: 'en/question/known-problem' }
+		],
+		'Contact ☎️': [{ text: 'Info', link: 'en/contact/way' }],
+		'Policy 📖': [{ text: 'Privacy', link: 'en/policy/privacy' }]
 	},
 	zh: {
 		'起步 🛫️': [

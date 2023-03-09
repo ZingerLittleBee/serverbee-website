@@ -1,0 +1,33 @@
+---
+title: Windows
+DesktopLatestVersion: '1.1.0'
+---
+
+import ServerMilkLogo from '@components/ServerMilkLogo.astro'
+import TwoTabSwitch from '@components/TwoTabSwitch.astro'
+import DesktopDownload from './DesktopDownload.astro'
+
+## Windows desktop
+
+<ServerMilkLogo />
+
+<TwoTabSwitch one='Download in China' two='International download'>
+	<div slot='tab1' class='p-2'>
+		<DesktopDownload
+			label='Click to download the Windows desktop application (Download in
+		China)'
+			os='windows'
+			isGithub='false'
+			os='windows'
+		/>
+	</div>
+	<div slot='tab2' class='p-2'>
+		<DesktopDownload
+			label='Click to download the Windows desktop application (International
+		download)'
+			os='windows'
+			isGithub='true'
+			os='windows'
+		/>
+	</div>
+</TwoTabSwitch>

@@ -67,30 +67,114 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"docs": {
-"en/introduction.mdx": {
-  id: "en/introduction.mdx",
-  slug: "en/introduction",
+"en/contact/way.md": {
+  id: "en/contact/way.md",
+  slug: "en/contact/way",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"en/page-2.md": {
-  id: "en/page-2.md",
-  slug: "en/page-2",
+"en/policy/privacy.md": {
+  id: "en/policy/privacy.md",
+  slug: "en/policy/privacy",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"en/page-3.md": {
-  id: "en/page-3.md",
-  slug: "en/page-3",
+"en/question/faq.md": {
+  id: "en/question/faq.md",
+  slug: "en/question/faq",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
-"en/page-4.md": {
-  id: "en/page-4.md",
-  slug: "en/page-4",
+"en/question/known-problem.md": {
+  id: "en/question/known-problem.md",
+  slug: "en/question/known-problem",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/starter/changelog.md": {
+  id: "en/starter/changelog.md",
+  slug: "en/starter/changelog",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/starter/deploy.mdx": {
+  id: "en/starter/deploy.mdx",
+  slug: "en/starter/deploy",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/starter/getting-started.md": {
+  id: "en/starter/getting-started.md",
+  slug: "en/starter/getting-started",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/starter/module.md": {
+  id: "en/starter/module.md",
+  slug: "en/starter/module",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/starter/web.mdx": {
+  id: "en/starter/web.mdx",
+  slug: "en/starter/web",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/usage/README.md": {
+  id: "en/usage/README.md",
+  slug: "en/usage/readme",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/usage/docker.mdx": {
+  id: "en/usage/docker.mdx",
+  slug: "en/usage/docker",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/usage/linux.mdx": {
+  id: "en/usage/linux.mdx",
+  slug: "en/usage/linux",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/usage/macos.mdx": {
+  id: "en/usage/macos.mdx",
+  slug: "en/usage/macos",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/usage/qts.mdx": {
+  id: "en/usage/qts.mdx",
+  slug: "en/usage/qts",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/usage/synology.mdx": {
+  id: "en/usage/synology.mdx",
+  slug: "en/usage/synology",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/usage/windows.mdx": {
+  id: "en/usage/windows.mdx",
+  slug: "en/usage/windows",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
