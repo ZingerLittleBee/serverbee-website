@@ -3,8 +3,11 @@ title: Docker
 ---
 
 import Collapse from '@components/Collapse.astro'
+import CodeBlock from '@components/CodeBlock.astro'
 
 <Collapse title='安装 Docker'>
+
+  <CodeBlock lang='bash'>
 
 ```bash
 curl -fsSL https://get.docker.com | bash
@@ -33,9 +36,13 @@ systemctl status docker.service
 
 ```
 
+  </CodeBlock>
+
 </Collapse>
 
 ## Docker 运行命令
+
+<CodeBlock lang='bash'>
 
 ```bash
 docker run -d \
@@ -47,8 +54,14 @@ docker run -d \
   zingerbee/serverbee-web
 ```
 
+</CodeBlock>
+
 ## 查看容器日志
+
+<CodeBlock lang='bash'>
 
 ```bash
 docker logs serverbee-web
 ```
+
+</CodeBlock>

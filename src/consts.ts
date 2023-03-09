@@ -18,9 +18,9 @@ export const KNOWN_LANGUAGES = {
 } as const
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES)
 
-export const GITHUB_EDIT_URL = `https://github.com/withastro/astro/tree/main/examples/docs`
+export const GITHUB_EDIT_URL = `https://github.com/ZingerLittleBee/serverbee-website/tree/main/src/content/docs`
 
-export const COMMUNITY_INVITE_URL = `https://astro.build/chat`
+export const COMMUNITY_INVITE_URL = `https://t.me/serverbee`
 
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {

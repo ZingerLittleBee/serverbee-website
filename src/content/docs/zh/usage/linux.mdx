@@ -7,6 +7,7 @@ import TwoTabSwitch from '@components/TwoTabSwitch.astro'
 import Collapse from '@components/Collapse.astro'
 import Download from './Download.astro'
 import InfoMessage from '@components/InfoMessage.astro'
+import CodeBlock from '@components/CodeBlock.astro'
 
 ## Linux 桌面环境
 
@@ -80,8 +81,12 @@ deploy 和 web ==任选其一==安装即可
 
 <InfoMessage title='自定义端口号'>
 
+    <CodeBlock class='w-full'>
+
     ```bash
     ./serverbee-web -p 8081
     ```
+
+    </CodeBlock>
 
 </InfoMessage>

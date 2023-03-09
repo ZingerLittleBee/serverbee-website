@@ -81,7 +81,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 			}
 
 			#grid-main {
-				margin-top: var(--theme-navbar-height);
+				padding-top: var(--theme-navbar-height);
 				left: var(--theme-left-sidebar-width);
 				width: calc(100% - var(--theme-left-sidebar-width));
 			}
@@ -90,7 +90,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 				display: flex;
 				padding-left: 2rem;
 				position: fixed;
-				margin-top: 6rem;
+				padding-top: 6rem;
 				width: var(--theme-left-sidebar-width);
 			}
 		}
@@ -114,7 +114,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 				padding-right: 2rem;
 				position: fixed;
 				right: 0;
-				margin-top: 6rem;
+				padding-top: 6rem;
 				width: var(--theme-left-sidebar-width);
 			}
 		}
@@ -166,61 +166,5 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 			</aside>
 		</main>
 		<!-- <Footer path={currentFile} /> -->
-		<!-- <style is:global>
-			.astro-code .code-copy {
-				position: absolute;
-				left: calc(100% - 40px);
-				margin-right: -20px;
-				margin-bottom: -30px;
-				opacity: 0.75;
-				cursor: pointer;
-				transition: opacity 0.2s ease-in-out;
-			}
-			.astro-code .code-copy:hover {
-				opacity: 1;
-			}
-			.astro-code .code-copy.copied {
-				left: calc(100% - 70px);
-				opacity: 1;
-			}
-		</style> -->
-		<!-- <script>
-			const successIconHtml = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>`
-			const copyIconHtml = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`
-
-			function handleCopyClick(e: MouseEvent) {
-				const target = e.target as HTMLButtonElement & {
-					_timerId: NodeJS.Timeout
-				}
-				let copyText = target
-					.closest('pre')
-					?.querySelector('code')?.innerText
-
-				if (!copyText) return
-
-				navigator.clipboard.writeText(copyText)
-				target.classList.add('copied')
-				// target.innerText = 'Copied!'
-				target.innerHTML = successIconHtml
-
-				if (target._timerId) {
-					clearTimeout(target._timerId)
-				}
-				target._timerId = setTimeout(() => {
-					target.innerHTML = copyIconHtml
-					target.classList.remove('copied')
-				}, 2000)
-			}
-
-			const codeBlocks = document.querySelectorAll('pre.astro-code')
-
-			codeBlocks.forEach(div => {
-				const copy = document.createElement('div')
-				copy.innerHTML = copyIconHtml
-				copy.classList.add('code-copy')
-				copy.addEventListener('click', handleCopyClick)
-				div.prepend(copy)
-			})
-		</script> -->
 	</body>
 </html>
