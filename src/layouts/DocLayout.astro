@@ -64,12 +64,11 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 		}
 
 		#grid-main {
-			position: absolute;
-			padding: var(--doc-padding) var(--gutter);
 			display: flex;
 			flex-direction: column;
-			height: 100%;
-			width: 100%;
+			width: 100vw;
+			padding-left: calc(2 * var(--gutter));
+			padding-right: var(--gutter);
 		}
 
 		#grid-right {
@@ -84,8 +83,9 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 
 			#grid-main {
 				padding-top: var(--theme-navbar-height);
-				left: var(--theme-left-sidebar-width);
-				width: calc(100% - var(--theme-left-sidebar-width));
+				padding-left: calc(
+					var(--theme-left-sidebar-width) + var(--gutter)
+				);
 			}
 
 			#grid-left {
@@ -105,10 +105,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 			}
 
 			.grid-main {
-				right: var(--theme-right-sidebar-width);
-				width: calc(
-					100% - var(--theme-left-sidebar-width) -var(--theme-right-sidebar-width)
-				) !important;
+				padding-right: var(--theme-right-sidebar-width) !important;
 			}
 
 			#grid-right {
