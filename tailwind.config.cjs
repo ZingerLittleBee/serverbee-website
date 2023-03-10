@@ -1011,7 +1011,26 @@ module.exports = {
 		'disabled'
 	],
 	daisyui: {
-		themes: ['light', 'dark']
+		// themes: ['light', 'dark']
+
+		themes: [
+			{
+				light: {
+					...require('daisyui/src/colors/themes')[
+						'[data-theme=light]'
+					],
+					primary: '#6200EE'
+				}
+			},
+			{
+				dark: {
+					...require('daisyui/src/colors/themes')[
+						'[data-theme=dark]'
+					],
+					primary: '#9333EA'
+				}
+			}
+		]
 	},
 	plugins: [require('daisyui')]
 }
