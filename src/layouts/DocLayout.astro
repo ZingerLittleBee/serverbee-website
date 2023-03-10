@@ -133,12 +133,12 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 		}
 	</style>
 
-	<body class=''>
+	<body class='overflow-x-hidden'>
 		<Header currentPage={currentPage} />
 		<main class='layout'>
 			<aside
 				id='grid-left'
-				class='grid-sidebar overflow-x-hidden overflow-y-scroll'
+				class='grid-sidebar overflow-x-hidden overflow-y-auto'
 				title='Site Navigation'
 			>
 				<LeftSidebar currentPage={currentPage} />

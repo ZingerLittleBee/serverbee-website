@@ -62,7 +62,6 @@ const lang = getLanguageFromURL(currentPage)
 		line-height: 1;
 		color: hsla(var(--color-base-white), 100%, 1);
 		gap: 0.25em;
-		z-index: -1;
 	}
 
 	.logo a {
@@ -142,11 +141,8 @@ const lang = getLanguageFromURL(currentPage)
 		display: flex;
 		max-width: 200px;
 	}
-
-	@media (min-width: 50em) {
-		.search-item {
-			max-width: 400px;
-		}
+	.search-item {
+		max-width: 400px;
 	}
 </style>
 

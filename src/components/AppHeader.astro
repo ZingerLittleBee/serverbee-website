@@ -125,14 +125,14 @@ import Container from './Container.astro'
 
 <script>
 	window.onscroll = function () {
-		const navbar: HTMLElement = document.querySelector('.header')
+		const navbar: HTMLElement | null = document.querySelector('.header')
 		if (
 			document.body.scrollTop > 50 ||
 			document.documentElement.scrollTop > 50
 		) {
-			navbar.classList.add('sticky-header')
+			navbar?.classList.add('sticky-header')
 		} else {
-			navbar.classList.remove('sticky-header')
+			navbar?.classList.remove('sticky-header')
 		}
 	}
 </script>
