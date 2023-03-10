@@ -74,6 +74,20 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 },
+"en/future/requirement-wall.md": {
+  id: "en/future/requirement-wall.md",
+  slug: "en/future/requirement-wall",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"en/future/roadmap.md": {
+  id: "en/future/roadmap.md",
+  slug: "en/future/roadmap",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
 "en/policy/privacy.md": {
   id: "en/policy/privacy.md",
   slug: "en/policy/privacy",
@@ -182,6 +196,20 @@ declare module 'astro:content' {
 "zh/contact/way.md": {
   id: "zh/contact/way.md",
   slug: "zh/contact/way",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/future/requirement-wall.md": {
+  id: "zh/future/requirement-wall.md",
+  slug: "zh/future/requirement-wall",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+},
+"zh/future/roadmap.md": {
+  id: "zh/future/roadmap.md",
+  slug: "zh/future/roadmap",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">

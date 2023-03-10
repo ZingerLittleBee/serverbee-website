@@ -54,6 +54,10 @@ export const SIDEBAR: Sidebar = {
 			{ text: 'FAQ', link: 'en/question/faq' },
 			{ text: 'Known Issues', link: 'en/question/known-problem' }
 		],
+		'Future 🌟': [
+			{ text: 'Requirement Wall', link: 'en/future/requirement-wall' },
+			{ text: 'Roadmap', link: 'en/future/roadmap' }
+		],
 		'Contact ☎️': [{ text: 'Info', link: 'en/contact/way' }],
 		'Policy 📖': [{ text: 'Privacy', link: 'en/policy/privacy' }]
 	},
@@ -76,6 +80,10 @@ export const SIDEBAR: Sidebar = {
 		'问题 ❓': [
 			{ text: '常见问题', link: 'zh/question/faq' },
 			{ text: '已知问题', link: 'zh/question/known-problem' }
+		],
+		'发展 🌟': [
+			{ text: '需求墙', link: 'zh/future/requirement-wall' },
+			{ text: 'Roadmap', link: 'zh/future/roadmap' }
 		],
 		'联系我们 ☎️': [{ text: '联系方式', link: 'zh/contact/way' }],
 		'使用政策 📖': [{ text: '隐私政策', link: 'zh/policy/privacy' }]
