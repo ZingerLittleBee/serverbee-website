@@ -66,9 +66,9 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 		#grid-main {
 			display: flex;
 			flex-direction: column;
-			width: 100vw;
+			width: calc(100vw - 4 * var(--gutter));
 			padding-left: calc(2 * var(--gutter));
-			padding-right: var(--gutter);
+			padding-right: calc(2 * var(--gutter));
 		}
 
 		#grid-right {
