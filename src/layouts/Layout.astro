@@ -20,64 +20,73 @@ import AppHeader from '@components/AppHeader.astro'
 			href='https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap'
 			rel='stylesheet'
 		/>
+
+		<script>
+			const getTheme = () => {
+				if (import.meta.env.SSR) {
+					return window.matchMedia('(prefers-color-scheme: dark)')
+						.matches
+						? 'dark'
+						: 'light'
+				}
+				if (
+					typeof localStorage !== undefined &&
+					localStorage.getItem('theme')
+				) {
+					return localStorage.getItem('theme')
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark'
+				}
+				return 'light'
+			}
+
+			const root = document.documentElement
+
+			const theme = getTheme()
+
+			if (theme === 'light') {
+				root.classList.remove('theme-dark')
+				root.removeAttribute('data-theme')
+			}
+			if (theme === 'dark') {
+				root.setAttribute('data-theme', 'dark')
+				root.classList.add('theme-dark')
+			}
+
+			const pic = document.getElementById('home-pic')
+
+			if (theme === 'dark') {
+				pic?.setAttribute('src', '/images/previews/dark.png')
+			}
+
+			const darkModeMediaQuery = window.matchMedia(
+				'(prefers-color-scheme: dark)'
+			)
+
+			darkModeMediaQuery.addEventListener('change', event => {
+				if (event.matches) {
+					root.setAttribute('data-theme', 'dark')
+					root.classList.add('theme-dark')
+					pic?.setAttribute('src', '/images/previews/dark.png')
+					localStorage.setItem('theme', 'dark')
+				} else {
+					root.classList.remove('theme-dark')
+					root.removeAttribute('data-theme')
+					pic?.setAttribute('src', '/images/previews/home.png')
+					localStorage.setItem('theme', 'light')
+				}
+			})
+
+			document.body.style.display = 'block'
+		</script>
 	</head>
-	<body class='bg-white dark:bg-gray-900'>
+	<body class='bg-white dark:bg-gray-900' style='display: none;'>
 		<AppHeader />
 		<slot />
 		<AppFooter />
 	</body>
 </html>
-
-<script>
-	const getTheme = () => {
-		if (import.meta.env.SSR) {
-			return undefined
-		}
-		if (
-			typeof localStorage !== undefined &&
-			localStorage.getItem('theme')
-		) {
-			return localStorage.getItem('theme')
-		}
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			return 'dark'
-		}
-		return 'light'
-	}
-
-	const root = document.documentElement
-
-	const theme = getTheme()
-
-	if (theme === 'light') {
-		root.classList.remove('theme-dark')
-		root.removeAttribute('data-theme')
-	} else {
-		root.setAttribute('data-theme', 'dark')
-		root.classList.add('theme-dark')
-	}
-
-	const pic = document.getElementById('home-pic')
-
-	if (theme === 'dark') {
-		pic?.setAttribute('src', '/images/previews/dark.png')
-	}
-
-	const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-	darkModeMediaQuery.addEventListener('change', event => {
-		if (event.matches) {
-			root.setAttribute('data-theme', 'dark')
-			root.classList.add('theme-dark')
-			pic?.setAttribute('src', '/images/previews/dark.png')
-			localStorage.setItem('theme', 'dark')
-		} else {
-			root.classList.remove('theme-dark')
-			root.removeAttribute('data-theme')
-			pic?.setAttribute('src', '/images/previews/home.png')
-			localStorage.setItem('theme', 'light')
-		}
-	})
-</script>
 
 <style is:global>
 	html {
