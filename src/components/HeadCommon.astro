@@ -45,6 +45,7 @@ import '../styles/theme.css'
 		} else {
 			root.classList.remove('theme-dark')
 			root.removeAttribute('data-theme')
+			root.setAttribute('data-theme', 'light')
 			localStorage.setItem('theme', 'light')
 		}
 	})
