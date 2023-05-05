@@ -105,4 +105,8 @@ import AppHeader from '@components/AppHeader.astro'
 		-ms-user-drag: none; /* Internet Explorer/Edge */
 		user-drag: none; /* Standard syntax */
 	}
+
+	::selection {
+		@apply bg-primary/40 dark:bg-primary-dark/40;
+	}
 </style>
