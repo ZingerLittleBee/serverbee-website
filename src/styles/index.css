@@ -156,7 +156,7 @@ small,
 }
 
 a {
-	color: var(--theme-text-accent);
+	color: var(--hyper-link-text-accent);
 	font-weight: 400;
 	text-underline-offset: 0.08em;
 	align-items: center;
