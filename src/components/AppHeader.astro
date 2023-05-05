@@ -1,5 +1,6 @@
 ---
 import AppStoreLink from '@components/AppStoreLink'
+import ThemeToggleButton from '@components/RightSidebar/ThemeToggleButton'
 import Container from './Container.astro'
 ---
 
@@ -69,8 +70,11 @@ import Container from './Container.astro'
 					class='text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0'
 				>
 					<ul
-						class='tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0'
+						class='tracking-wide font-medium lg:text-sm flex-col flex items-center lg:flex-row gap-6 lg:gap-0'
 					>
+						<li>
+							<ThemeToggleButton client:visible />
+						</li>
 						<li>
 							<a
 								href='#features'

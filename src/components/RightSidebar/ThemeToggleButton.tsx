@@ -48,10 +48,13 @@ const ThemeToggle: FunctionalComponent = () => {
 
 	useEffect(() => {
 		const root = document.documentElement
+		const pic = document.getElementById('home-pic')
 		if (theme === 'light') {
+			pic?.setAttribute('src', '/images/previews/home.png')
 			root.classList.remove('theme-dark')
 			root.setAttribute('data-theme', 'light')
 		} else {
+			pic?.setAttribute('src', '/images/previews/dark.png')
 			root.setAttribute('data-theme', 'dark')
 			root.classList.add('theme-dark')
 		}

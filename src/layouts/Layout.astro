@@ -65,6 +65,7 @@ import AppHeader from '@components/AppHeader.astro'
 			)
 
 			darkModeMediaQuery.addEventListener('change', event => {
+				console.log('listener theme change')
 				if (event.matches) {
 					root.setAttribute('data-theme', 'dark')
 					root.classList.add('theme-dark')
