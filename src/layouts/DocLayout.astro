@@ -60,7 +60,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 			display: none;
 			padding-left: var(--gutter);
 			padding-right: var(--gutter);
-			padding-top: var(--theme-navbar-height);
+			margin-top: var(--theme-navbar-height);
 		}
 
 		#grid-main {
@@ -92,7 +92,6 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 				display: flex;
 				padding-left: 2rem;
 				position: fixed;
-				padding-top: 6rem;
 				width: var(--theme-left-sidebar-width);
 			}
 		}
@@ -138,7 +137,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
 		<main class='layout'>
 			<aside
 				id='grid-left'
-				class='grid-sidebar overflow-x-hidden overflow-y-auto'
+				class='grid-sidebar overflow-x-hidden'
 				title='Site Navigation'
 			>
 				<LeftSidebar currentPage={currentPage} />
