@@ -5,6 +5,13 @@ dist/
 # dependencies
 node_modules/
 
+# Production
+build/
+
+# Generated files
+.docusaurus
+.cache-loader
+
 # logs
 npm-debug.log*
 yarn-debug.log*
