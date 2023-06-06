@@ -2,25 +2,23 @@
 title: Linux
 ---
 
-import Index from '@components/ServerMilkLogo.astro'
-import TwoTabSwitch from '@components/TwoTabSwitch.astro'
-import Collapse from '@components/Collapse.astro'
-import Download from './Download.astro'
-import InfoMessage from '@components/InfoMessage.astro'
-import CodeBlock from '@components/CodeBlock.astro'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ServerMilkLogo from "../../src/components/ServerMilkLogo/index";
 
 ## Linux 桌面环境
 
 <ServerMilkLogo />
-<TwoTabSwitch one='国内下载' two='国外下载'>
-	<p slot='tab1' class='p-2'>
-        [点击下载 AppImage（国内地址）](https://serverbee-1253263310.cos.ap-shanghai.myqcloud.com/desktop/v1.1.0/server-milk_1.1.0_amd64.AppImage)
-    </p>
-    <p slot='tab2' class='p-2'>
-        [点击下载 AppImage（国外地址）](https://github.com/ZingerLittleBee/ServerMilk/releases/download/v1.1.0/server-milk_1.1.0_amd64.AppImage)
-    </p>
 
-</TwoTabSwitch>
+<Tabs groupId="architecture">
+    <TabItem value="amd" label="x86_64"><a href='https://github.com/ZingerLittleBee/ServerMilk/releases/download/v1.1.0/server-milk_1.1.0_amd64.AppImage'>点击下载 AppImage 格式镜像</a></TabItem>
+    <TabItem value="arm" label="arrch64">Use Command + C to copy.</TabItem>
+</Tabs>
+
+<Tabs groupId="architecture">
+    <TabItem value="amd" label="x86_64">Use Ctrl + V to paste.</TabItem>
+    <TabItem value="arm" label="arrch64">Use Command + V to paste.</TabItem>
+</Tabs>
 
 ## 命令行安装 (适合无图形系统使用)
 
@@ -64,9 +62,20 @@ deploy 和 web ==任选其一==安装即可
 	</div>
 </TwoTabSwitch>
 
+<Tabs groupId="architecture">
+    <TabItem value="amd" label="x86_64">Use Ctrl + C to copy.</TabItem>
+    <TabItem value="arm" label="arrch64">Use Command + C to copy.</TabItem>
+</Tabs>
+
+<Tabs groupId="architecture">
+    <TabItem value="amd" label="x86_64">Use Ctrl + V to paste.</TabItem>
+    <TabItem value="arm" label="arrch64">Use Command + V to paste.</TabItem>
+</Tabs>
+
+
 交互式安装
 
-![](/images/interactive.gif)
+[//]: # (![]&#40;/images/interactive.gif&#41;)
 
 #### 设置自启动
 

@@ -1,0 +1,7 @@
+position: 1
+label: '使用指南 🧭'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   description: 5 分钟快速部署 ServerBee 服务端（被控制端）

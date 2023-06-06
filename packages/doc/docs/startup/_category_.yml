@@ -1,0 +1,7 @@
+position: 0
+label: '起步 🛫️'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   description: 5 minutes to learn the most important Docusaurus concepts.

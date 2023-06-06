@@ -1,0 +1,67 @@
+---
+title: Web 模块
+sidebar_position: 3
+description: Web 模块功能与用法
+---
+
+<div className='flex space-x-2 flex-wrap'>
+	<img
+		src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub release (latest by date)'
+	/>
+	<img
+		src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+		alt='GitHub Workflow Status'
+	/>
+	<img
+		src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub last commit'
+	/>
+</div>
+
+## 功能
+
+-   CPU 负载
+-   平均负载
+-   内存使用情况
+-   正常运行、启动时间
+-   文件系统装载（和磁盘使用）
+-   磁盘 I/O 统计信息
+-   网络接口
+-   网络流量统计
+-   进程列表
+-   进程详细信息
+-   杀死进程
+-   进程所属子进程
+
+## 更多设置
+
+### 使用自定义端口
+
+
+```bash
+./serverbee-web -p 8081
+```
+
+
+## 从源码编译
+
+
+```bash
+cargo build --bin serverbee-web --release
+```
+
+
+然后你可以在 `target/release` 找到可执行文件 `serverbee-web`
+
+## 发现问题或提出建议
+
+<a
+	href='https://github.com/zingerlittlebee/server_bee-backend/issues/new'
+	target='_blank'
+	draggable='false'
+    className='btn
+    no-underline hover:no-underline focus:no-underline'
+>
+	<p className='text-white'>创建 issue</p>
+</a>
