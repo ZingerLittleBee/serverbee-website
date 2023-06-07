@@ -2,80 +2,64 @@
 title: Linux
 ---
 
-import Tabs from '@theme/Tabs';
+import {install} from "../../src/cmd/install";import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import ServerMilkLogo from "../../src/components/ServerMilkLogo/index";
+import {getDesktopDownloadUrl, osEnum} from "@site/config";
+import CodeBlock from '@theme/CodeBlock';
+import {archEnum, moduleEnum} from "../../config";
+import daemonCMD from "../../src/cmd/daemon";
+
 
 ## Linux 桌面环境
-
 <ServerMilkLogo />
 
-<Tabs groupId="architecture">
-    <TabItem value="amd" label="x86_64"><a href='https://github.com/ZingerLittleBee/ServerMilk/releases/download/v1.1.0/server-milk_1.1.0_amd64.AppImage'>点击下载 AppImage 格式镜像</a></TabItem>
-    <TabItem value="arm" label="arrch64">Use Command + C to copy.</TabItem>
-</Tabs>
-
-<Tabs groupId="architecture">
-    <TabItem value="amd" label="x86_64">Use Ctrl + V to paste.</TabItem>
-    <TabItem value="arm" label="arrch64">Use Command + V to paste.</TabItem>
+<Tabs>
+<TabItem value="amd" label="x86_64">
+    <a href={getDesktopDownloadUrl(osEnum.linux)}>👉 点击下载 AppImage 镜像</a>
+</TabItem>
 </Tabs>
 
 ## 命令行安装 (适合无图形系统使用)
 
-<Collapse title='需要安装 wget、unzip'>
+<details>
+    <summary>需要安装 wget、unzip</summary>
+<Tabs>
+<TabItem value="Debian" label="Debian、Ubuntu">
 
-    <TwoTabSwitch one='Debian' two='CentOS'>
-        <div slot='tab1'>
+```bash
+apt -y update && apt -y install wget unzip
+```
 
-            ```bash
-            apt -y update && apt -y install wget unzip
-            ```
+</TabItem>
+<TabItem value="CentOS" label="CentOS">
 
-        </div>
-        <div slot='tab2'>
+```bash
+yum -y update && yum -y install wget unzip
+```
 
-            ```bash
-            yum -y update && yum -y install wget unzip
-            ```
+</TabItem>
+</Tabs>
+</details>
 
-        </div>
+*deploy* 和 *web* **任选其一**安装即可
 
-    </TwoTabSwitch>
-
-</Collapse>
-
-deploy 和 web ==任选其一==安装即可
-
--   deploy（包含 web 功能，并额外提供**交互式安装**、**开机自启**、**自动更新**等功能）
--   web（需要手动启动、手动更新）
+- *deploy*（包含 web 功能，并额外提供**交互式安装**、**开机自启**、**自动更新**等功能）
+- *web*（需要手动启动、手动更新）
 
 ### 安装 deploy（**推荐**）
 
-> 逐行复制执行或者全部复制执行
-
-<TwoTabSwitch one='x86_64' two='aarch64'>
-	<div slot='tab1'>
-		<Download os='linux' module='deploy' arch='x86_64' />
-	</div>
-	<div slot='tab2'>
-		<Download os='linux' module='deploy' arch='arrch64' />
-	</div>
-</TwoTabSwitch>
+:::tip
+逐行复制执行或者全部复制执行
+:::
 
 <Tabs groupId="architecture">
-    <TabItem value="amd" label="x86_64">Use Ctrl + C to copy.</TabItem>
-    <TabItem value="arm" label="arrch64">Use Command + C to copy.</TabItem>
+    <TabItem value="amd" label="x86_64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.x86, moduleEnum.deploy)}</CodeBlock></TabItem>
+    <TabItem value="arm" label="arrch64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.arm, moduleEnum.deploy)}</CodeBlock></TabItem>
 </Tabs>
 
-<Tabs groupId="architecture">
-    <TabItem value="amd" label="x86_64">Use Ctrl + V to paste.</TabItem>
-    <TabItem value="arm" label="arrch64">Use Command + V to paste.</TabItem>
-</Tabs>
-
-
-交互式安装
-
-[//]: # (![]&#40;/images/interactive.gif&#41;)
+#### 交互式安装
+![](/img/interactive.gif)
 
 #### 设置自启动
 
@@ -84,25 +68,21 @@ deploy 和 web ==任选其一==安装即可
 复制红框内的命令，执行即可
 ![linux-daemon](https://assets.serverbee.app/docs/linux-daemon.jpg)
 
+<details>
+    <summary>具体代码在这里</summary>
+    <CodeBlock language="bash" >{daemonCMD}</CodeBlock>
+</details>
+
 ### 安装 web
 
-<TwoTabSwitch one='x86_64' two='aarch64'>
-	<div slot='tab1'>
-		<Download os='linux' module='web' arch='x86_64' />
-	</div>
-	<div slot='tab2'>
-		<Download os='linux' module='web' arch='arrch64' />
-	</div>
-</TwoTabSwitch>
+<Tabs groupId="architecture">
+    <TabItem value="amd" label="x86_64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.x86, moduleEnum.web)}</CodeBlock></TabItem>
+    <TabItem value="arm" label="arrch64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.arm, moduleEnum.web)}</CodeBlock></TabItem>
+</Tabs>
 
-<InfoMessage title='自定义端口号'>
+:::info 自定义端口号
+```bash
+./serverbee-web -p 9528
+```
+:::
 
-    <CodeBlock class='w-full'>
-
-    ```bash
-    ./serverbee-web -p 8081
-    ```
-
-    </CodeBlock>
-
-</InfoMessage>
