@@ -1,0 +1,32 @@
+---
+title: Docker
+sidebar_position: 0
+---
+
+import dockerCMD from "@site/src/cmd/docker";
+import CodeBlock from '@theme/CodeBlock';
+
+<details>
+    <summary>Install Docker</summary>
+    <CodeBlock>{dockerCMD}</CodeBlock>
+</details>
+
+## Docker Run Command
+
+```bash
+docker run -d \
+  -v /proc:/proc \
+  --privileged=true \
+  --restart unless-stopped \
+  --network=host \
+  --name=serverbee-web \
+  zingerbee/serverbee-web -p 9527
+```
+Replace `9527` with any port you want.
+
+
+## View Container Logs
+
+```bash
+docker logs serverbee-web
+```

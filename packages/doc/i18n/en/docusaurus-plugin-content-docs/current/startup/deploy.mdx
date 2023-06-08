@@ -1,0 +1,78 @@
+---
+title: Deploy Module
+sidebar_position: 2
+description: Deploy module function and usage
+---
+
+<div className='flex space-x-2 flex-wrap'>
+	<img
+		src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub release (latest by date)'
+	/>
+	<img
+		src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+		alt='GitHub Workflow Status'
+	/>
+	<img
+		src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub last commit'
+	/>
+</div>
+
+## Function
+
+- Start up automatically
+- Interactive installation
+- Automatic download of Web modules
+- Automatic execution of Web modules
+- Automatic update of Web modules
+
+## More configurations
+
+### Interactive installation (default)
+
+
+```bash
+./serverbee-deploy -i
+```
+
+### 使用自定义端口
+
+
+```bash
+./serverbee-deploy -p 8081
+```
+
+### Start on boot (enabled by default)
+
+```bash
+./serverbee-deploy -a true
+```
+
+### Disable start on boot
+
+```bash
+./serverbee-deploy -a false
+```
+
+### Example
+
+
+```bash
+./serverbee-deploy -p 8081 -a false
+```
+
+## Compile from source code
+
+
+```bash
+cargo build --bin serverbee-deploy --release
+```
+
+Then you can find the executable file `serverbee-deploy` in `target/release`.
+
+## Report issues or make suggestions
+
+<Button url='https://github.com/zingerlittlebee/server_bee-backend/issues/new'>
+    Create issue
+</Button>

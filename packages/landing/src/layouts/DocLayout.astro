@@ -1,0 +1,167 @@
+---
+import HeadCommon from '../components/HeadCommon.astro'
+import HeadSEO from '../components/HeadSEO.astro'
+import Header from '../components/Header/Header.astro'
+import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro'
+import PageContent from '../components/PageContent/PageContent.astro'
+import RightSidebar from '../components/RightSidebar/RightSidebar.astro'
+import type { MarkdownHeading } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import { GITHUB_EDIT_URL, SITE } from '../consts'
+
+type Props = CollectionEntry<'docs'>['data'] & {
+	headings: MarkdownHeading[]
+}
+
+const { headings, ...data } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const currentPage = Astro.url.pathname
+const currentFile = `src/content/docs${currentPage.replace(/\/$/, '')}.md`
+const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`
+---
+
+<html
+	dir={data.dir}
+	lang={data.lang}
+	class='initial'
+	style='background-color: var(--theme-bg);'
+>
+	<HeadCommon />
+	<HeadSEO {...data} canonicalUrl={canonicalURL} />
+	<title>
+		{`${data.title} 🚀 ${SITE.title}`}
+	</title>
+	<style>
+		body {
+			width: 100%;
+			display: grid;
+			grid-template-rows: var(--theme-navbar-height) 1fr;
+			--gutter: 0.5rem;
+			--doc-padding: 2rem;
+		}
+
+		.layout {
+			width: 100%;
+			position: relative;
+			overflow-x: hidden;
+		}
+
+		.grid-sidebar {
+			height: 100%;
+			position: sticky;
+			top: 0;
+			padding: 0;
+		}
+
+		#grid-left {
+			position: fixed;
+			background-color: var(--theme-bg);
+			z-index: 10;
+			display: none;
+			padding-left: var(--gutter);
+			padding-right: var(--gutter);
+			margin-top: var(--theme-navbar-height);
+		}
+
+		#grid-main {
+			display: flex;
+			flex-direction: column;
+			width: calc(100vw - 4 * var(--gutter));
+			padding-left: calc(2 * var(--gutter));
+			padding-right: calc(2 * var(--gutter));
+		}
+
+		#grid-right {
+			display: none;
+		}
+
+		@media (min-width: 50em) {
+			.layout {
+				overflow: initial;
+				gap: 1em;
+			}
+
+			#grid-main {
+				padding-top: var(--theme-navbar-height);
+				padding-left: calc(
+					var(--theme-left-sidebar-width) + var(--gutter)
+				);
+			}
+
+			#grid-left {
+				display: flex;
+				padding-left: 2rem;
+				position: fixed;
+				width: var(--theme-left-sidebar-width);
+			}
+		}
+
+		@media (min-width: 72em) {
+			.layout {
+				padding-left: 0;
+				padding-right: 0;
+				margin: 0 auto;
+			}
+
+			.grid-main {
+				padding-right: var(--theme-right-sidebar-width) !important;
+			}
+
+			#grid-right {
+				display: flex;
+				padding-right: 2rem;
+				position: fixed;
+				right: 0;
+				padding-top: 6rem;
+				width: var(--theme-left-sidebar-width);
+			}
+		}
+	</style>
+	<style is:global>
+		.layout > * {
+			width: 100%;
+			height: 100%;
+		}
+
+		.mobile-sidebar-toggle {
+			overflow: hidden;
+		}
+
+		.mobile-sidebar-toggle #grid-left {
+			display: block;
+		}
+	</style>
+
+	<body class='overflow-x-hidden'>
+		<Header currentPage={currentPage} />
+		<main class='layout'>
+			<aside
+				id='grid-left'
+				class='grid-sidebar overflow-x-hidden'
+				title='Site Navigation'
+			>
+				<LeftSidebar currentPage={currentPage} />
+			</aside>
+			<div id='grid-main' class='grid-main'>
+				<PageContent
+					title={data.title}
+					headings={headings}
+					githubEditUrl={githubEditUrl}
+				>
+					<slot />
+				</PageContent>
+			</div>
+			<aside
+				id='grid-right'
+				class='grid-sidebar'
+				title='Table of Contents'
+			>
+				<RightSidebar
+					headings={headings}
+					githubEditUrl={githubEditUrl}
+				/>
+			</aside>
+		</main>
+		<!-- <Footer path={currentFile} /> -->
+	</body>
+</html>

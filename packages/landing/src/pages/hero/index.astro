@@ -1,0 +1,96 @@
+---
+import AppStoreLink from '@components/AppStoreLink'
+import BackgroundIllustration from '@components/BackgroundIllustration'
+import Container from '../../components/Container.astro'
+import PhoneFrame from '@components/PhoneFrame'
+import DocumentIcon from '../../icons/DocumentIcon'
+
+const tips = [
+	{
+		title: '快速',
+		content: '高性能服务端'
+	},
+	{
+		title: '直观',
+		content: '可视化数据展示'
+	},
+	{
+		title: '安全',
+		content: '严格权限管理'
+	}
+]
+---
+
+<div class='relative' id='home'>
+	<div
+		aria-hidden='true'
+		class='absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20'
+	>
+		<div
+			class='blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700'
+		>
+		</div>
+		<div
+			class='blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600'
+		>
+		</div>
+	</div>
+
+	<div class='overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36'>
+		<Container>
+			<div class='lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20'>
+				<div
+					class='relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6'
+				>
+					<h1
+						class='text-gray-900 dark:text-white font-bold text-3xl md:text-5xl xl:text-7xl'
+					>
+						<p>监控管理你所有的</p>
+						<p class='text-primary dark:text-primary-dark'>
+							桌面平台
+						</p>
+					</h1>
+					<p class='mt-6 text-lg text-gray-700 dark:text-gray-300'>
+						一款支持跨平台集监控、管理和终端的效率工具，支持 Linux
+						、Windows 、macOS ，甚至是 Nas 系统。
+					</p>
+					<div class='mt-8 flex flex-wrap gap-x-6 gap-y-4'>
+						<AppStoreLink />
+						<a
+							href='https://docs.serverbee.app'
+							class='relative flex py-2 items-center justify-center px-4 before:absolute before:inset-0 before:rounded-lg before:bg-white before:border dark:before:bg-transparent before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max'
+						>
+							<div class='flex justify-center items-center'>
+								<DocumentIcon
+									height='24'
+									className=' dark:fill-white z-10'
+								/>
+								<span
+									class='ml-2 relative text-sm font-semibold text-black dark:text-white'
+									>如何使用</span
+								>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div
+					class='relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6'
+				>
+					<BackgroundIllustration
+						className='hidden absolute md:block lg:block xl:block 2xl:block left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0'
+					/>
+					<div
+						class='-mx-4 h-[448px] px-9 [mask-image:linear-gradient(to_bottom,white_60%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-top-10 lg:-bottom-20 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32'
+					>
+						<PhoneFrame className='mx-auto max-w-[366px]'>
+							<img
+								id='home-pic'
+								src='/images/previews/home.png'
+							/>
+						</PhoneFrame>
+					</div>
+				</div>
+			</div>
+		</Container>
+	</div>
+</div>

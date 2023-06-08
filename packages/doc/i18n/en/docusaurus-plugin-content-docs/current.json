@@ -1,0 +1,54 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.startupSidebar.category.起步 🛫️": {
+    "message": "Startup 🛫️",
+    "description": "The label for category 起步 🛫️ in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.起步 🛫️.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category 起步 🛫️ in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.使用指南 🧭": {
+    "message": "Using Guide 🧭",
+    "description": "The label for category 使用指南 🧭 in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.使用指南 🧭.link.generated-index.description": {
+    "message": "5-Minute Quick Deployment of ServerBee Server-side (Controlled Side)",
+    "description": "The generated-index page description for category 使用指南 🧭 in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.问题 ❓": {
+    "message": "Questions ❓",
+    "description": "The label for category 问题 ❓ in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.问题 ❓.link.generated-index.description": {
+    "message": "Frequently asked questions summary",
+    "description": "The generated-index page description for category 问题 ❓ in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.发展 🌟": {
+    "message": "Development 🌟",
+    "description": "The label for category 发展 🌟 in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.发展 🌟.link.generated-index.description": {
+    "message": "Software development planning, requirements gathering",
+    "description": "The generated-index page description for category 发展 🌟 in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.联系我们 ☎️": {
+    "message": "Contact Us ☎️",
+    "description": "The label for category 联系我们 ☎️ in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.联系我们 ☎️.link.generated-index.description": {
+    "message": "Feel free to contact us whenever you have any questions or concerns",
+    "description": "The generated-index page description for category 联系我们 ☎️ in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.使用政策 📖": {
+    "message": "Usage Policy 📖",
+    "description": "The label for category 使用政策 📖 in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.使用政策 📖.link.generated-index.description": {
+    "message": "Usage policies you should be aware of",
+    "description": "The generated-index page description for category 使用政策 📖 in sidebar startupSidebar"
+  }
+}
