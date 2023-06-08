@@ -2,7 +2,8 @@ const daemonCMD =
 `cat > /etc/systemd/system/serverbee-deploy.service <<EOF
 [Unit]
 Description=ServerBee Deploy
-After=network.target
+After=network-online.target systemd-resolved.service
+Wants=network-online.target systemd-resolved.service
 
 [Service]
 Type=oneshot
