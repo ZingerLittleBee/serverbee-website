@@ -1,0 +1,8 @@
+position: 3
+label: '发展 🌟'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   slug: '/future'
+   description: 软件开发规划，需求征集
