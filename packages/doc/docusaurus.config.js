@@ -61,7 +61,7 @@ const config = {
         logo: {
           alt: 'ServerBee Logo',
           src: 'img/logo.png',
-          href: 'https://serverbee.app',
+          // href: 'https://serverbee.app',
         },
         hideOnScroll: true,
         items: [
@@ -91,15 +91,15 @@ const config = {
             items: [
               {
                 label: 'serverbee-website',
-                to: 'https://github.com/ZingerLittleBee/serverbee-website',
+                href: 'https://github.com/ZingerLittleBee/serverbee-website',
               },
               {
                 label: 'server_bee-backend',
-                to: 'https://github.com/ZingerLittleBee/server_bee-backend',
+                href: 'https://github.com/ZingerLittleBee/server_bee-backend',
               },
               {
                 label: 'ServerMilk',
-                to: 'https://github.com/ZingerLittleBee/ServerMilk',
+                href: 'https://github.com/ZingerLittleBee/ServerMilk',
               }
             ],
           },
@@ -129,7 +129,11 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/ZingerLittleBee/serverbee-website',
+                href: 'https://github.com/ZingerLittleBee',
+              },
+              {
+                label: 'Official Website',
+                href: 'https://serverbee.app',
               },
             ],
           },
