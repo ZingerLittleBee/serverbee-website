@@ -1,0 +1,7 @@
+position: 2
+label: 'Questions ❓'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   description: Frequently asked questions summary

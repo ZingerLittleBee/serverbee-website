@@ -1,0 +1,59 @@
+---
+title: Web Module
+sidebar_position: 3
+description: Web Module Features and Usage
+---
+
+import Button from "@site/src/components/Button";
+
+<div className='flex space-x-2 flex-wrap'>
+	<img
+		src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub release (latest by date)'
+	/>
+	<img
+		src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+		alt='GitHub Workflow Status'
+	/>
+	<img
+		src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub last commit'
+	/>
+</div>
+
+## Features
+
+-   CPU load
+-   Average load
+-   Memory usage
+-   System uptime and startup time
+-   File system mounts (and disk usage)
+-   Disk I/O statistics
+-   Network interfaces
+-   Network traffic statistics
+-   Process list
+-   Process details
+-   Kill processes
+-   Child processes of a process
+
+## More Settings
+
+### Use a Custom Port
+
+```bash
+./serverbee-web -p 8081
+```
+
+## Compile from Source Code
+
+```bash
+cargo build --bin serverbee-web --release
+```
+
+Then you can find the executable file `serverbee-web` in `target/release`.
+
+## Report issues or make suggestions
+
+<Button url='https://github.com/zingerlittlebee/server_bee-backend/issues/new'>
+    Create issue
+</Button>

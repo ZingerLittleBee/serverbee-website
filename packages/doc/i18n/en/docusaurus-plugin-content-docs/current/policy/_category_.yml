@@ -1,0 +1,7 @@
+position: 5
+label: 'Usage Policy 📖'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   description: Usage policies you should be aware of

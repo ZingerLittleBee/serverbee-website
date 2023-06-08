@@ -1,0 +1,7 @@
+position: 1
+label: 'Using Guide 🧭'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   description: 5-Minute Quick Deployment of ServerBee Server-side (Controlled Side)
