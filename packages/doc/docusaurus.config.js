@@ -41,6 +41,7 @@ const config = {
         blog: {
           showReadingTime: true,
         },
+        pages: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },

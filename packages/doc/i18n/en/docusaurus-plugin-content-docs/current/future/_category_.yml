@@ -1,7 +1,0 @@
-position: 3
-label: 'Development 🌟'
-collapsible: true
-collapsed: false
-link:
-   type: generated-index
-   description: Software development planning, requirements gathering
