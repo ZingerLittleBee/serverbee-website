@@ -7,12 +7,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'ServerBee Document',
-  tagline: 'ServerBee are cool',
   favicon: 'img/favicon.png',
 
   url: 'https://docs.serverbee.app',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
@@ -22,9 +19,6 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh',
     locales: ['zh','en'],
@@ -36,6 +30,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: {
@@ -45,6 +40,9 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'G-5BLSVZQP00',
+        }
       }),
     ],
   ],
@@ -52,8 +50,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      metadata: [{name: 'keywords', content: 'serverbee, blog, document, probes, terminal, monitor, cpu, memory, disk, network, process, docker, ios, app, backend, open source'}],
       docs: {
         sidebar: {
           hideable: true,
@@ -64,7 +61,9 @@ const config = {
         logo: {
           alt: 'ServerBee Logo',
           src: 'img/logo.png',
+          href: 'https://serverbee.app',
         },
+        hideOnScroll: true,
         items: [
           {
             type: 'docSidebar',
@@ -85,15 +84,23 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
-            title: 'Docs',
+            title: 'Github Projects',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'serverbee-website',
+                to: 'https://github.com/ZingerLittleBee/serverbee-website',
               },
+              {
+                label: 'server_bee-backend',
+                to: 'https://github.com/ZingerLittleBee/server_bee-backend',
+              },
+              {
+                label: 'ServerMilk',
+                to: 'https://github.com/ZingerLittleBee/ServerMilk',
+              }
             ],
           },
           {
