@@ -144,6 +144,15 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      algolia: {
+        appId: '2XHJWOR8EY',
+
+        apiKey: 'b629626742a1c0cc3b28bb3d77f2e7e0',
+
+        indexName: 'serverbee',
+
+        contextualSearch: true,
+      },
     }),
 
   plugins: [

@@ -3,15 +3,6 @@
   "version": "1.0.0",
   "description": "ServerBee Website",
   "private": true,
-  "scripts": {
-    "dev": "pnpm -C packages/landing dev & pnpm -C packages/docs dev",
-    "landing": "pnpm -C packages/landing dev",
-    "doc": "pnpm -C packages/doc dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
   "homepage": "https://serverbee.app",
   "repository": {
     "type": "git",
