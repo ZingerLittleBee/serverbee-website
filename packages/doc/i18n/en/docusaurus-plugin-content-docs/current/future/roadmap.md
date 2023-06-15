@@ -3,6 +3,10 @@ title: Roadmap
 description: Software development plan
 ---
 
+:::tip
+Please check the project progress updates in the [GitHub Project](https://github.com/users/ZingerLittleBee/projects/1).
+:::
+
 ## `v1.1.x`
 
 Features
@@ -11,9 +15,11 @@ Features
 - [x] Local proxy support
 - [x] [Sensor temperature support](https://github.com/ZingerLittleBee/server_bee-backend/issues/29)
 - [x] [Subscription upgrade permanent option](https://github.com/ZingerLittleBee/server_bee-backend/issues/36)
+- [ ] [Server group](https://github.com/ZingerLittleBee/server_bee-backend/issues/47)
 
 Bug Fixes
 - [x] [Fixed app freezing when adding IPv6](https://github.com/ZingerLittleBee/server_bee-backend/issues/19)
+- [ ] [The temperature card is not fully displayed](https://github.com/ZingerLittleBee/server_bee-backend/issues/48)
 
 Enhancements
 - [x] [Launch FaceID verification immediately upon opening the app](https://github.com/ZingerLittleBee/server_bee-backend/issues/35)

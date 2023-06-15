@@ -15,3 +15,4 @@ description: Potential features to be supported in the future
 - [ ] SSH terminal (Pro version)
 - [ ] iCloud synchronization (Pro version)
 - [x] Process management (Pro version)
+- [ ] [Server group](https://github.com/ZingerLittleBee/server_bee-backend/issues/47)

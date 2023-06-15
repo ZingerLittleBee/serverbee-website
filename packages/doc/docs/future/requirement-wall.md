@@ -15,3 +15,4 @@ description: 未来可能会支持的功能
 - [ ] SSH 终端 (高级版)
 - [ ] iCloud 同步 (高级版)
 - [x] 进程管理 (高级版)
+- [ ] [服务器分组](https://github.com/ZingerLittleBee/server_bee-backend/issues/47)
