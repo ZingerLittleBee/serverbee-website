@@ -108,11 +108,11 @@ const config = {
             items: [
               {
                 label: 'Telegram',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://t.me/serverbee',
               },
               {
                 label: 'Discord',
-                href: 'https://discord.gg/n3bspQbF',
+                href: 'https://discord.gg/AM3rC32CC8',
               },
               {
                 label: 'Twitter',
