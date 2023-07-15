@@ -1,0 +1,8 @@
+position: 2
+label: '安全 🔒'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   slug: '/safety'
+   description: 安全相关
