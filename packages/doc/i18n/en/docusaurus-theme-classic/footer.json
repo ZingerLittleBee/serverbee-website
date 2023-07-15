@@ -17,11 +17,11 @@
   },
   "link.item.label.Telegram": {
     "message": "Telegram",
-    "description": "The label of footer link with label=Telegram linking to https://stackoverflow.com/questions/tagged/docusaurus"
+    "description": "The label of footer link with label=Telegram linking to https://t.me/serverbee"
   },
   "link.item.label.Discord": {
     "message": "Discord",
-    "description": "The label of footer link with label=Discord linking to https://discord.gg/n3bspQbF"
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/AM3rC32CC8"
   },
   "link.item.label.Twitter": {
     "message": "Twitter",
@@ -33,10 +33,30 @@
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/ZingerLittleBee/serverbee-website"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/ZingerLittleBee"
   },
   "copyright": {
     "message": "Copyright © 2023 ServerBee.",
     "description": "The footer copyright"
+  },
+  "link.title.Github Projects": {
+    "message": "Github Projects",
+    "description": "The title of the footer links column with title=Github Projects in the footer"
+  },
+  "link.item.label.serverbee-website": {
+    "message": "serverbee-website",
+    "description": "The label of footer link with label=serverbee-website linking to https://github.com/ZingerLittleBee/serverbee-website"
+  },
+  "link.item.label.server_bee-backend": {
+    "message": "server_bee-backend",
+    "description": "The label of footer link with label=server_bee-backend linking to https://github.com/ZingerLittleBee/server_bee-backend"
+  },
+  "link.item.label.ServerMilk": {
+    "message": "ServerMilk",
+    "description": "The label of footer link with label=ServerMilk linking to https://github.com/ZingerLittleBee/ServerMilk"
+  },
+  "link.item.label.Official Website": {
+    "message": "Official Website",
+    "description": "The label of footer link with label=Official Website linking to https://serverbee.app"
   }
 }

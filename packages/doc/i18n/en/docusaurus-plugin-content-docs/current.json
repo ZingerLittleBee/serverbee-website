@@ -50,5 +50,13 @@
   "sidebar.startupSidebar.category.使用政策 📖.link.generated-index.description": {
     "message": "Usage policies you should be aware of",
     "description": "The generated-index page description for category 使用政策 📖 in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.安全 🔒": {
+    "message": "Safety 🔒",
+    "description": "The label for category Safety 🔒 in sidebar startupSidebar"
+  },
+  "sidebar.startupSidebar.category.安全 🔒.link.generated-index.description": {
+    "message": "Security Related",
+    "description": "The generated-index page description for category Safety 🔒 in sidebar startupSidebar"
   }
 }

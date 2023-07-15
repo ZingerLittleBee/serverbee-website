@@ -1,29 +1,29 @@
 ---
-title: 通讯密钥
+title: Communication Key
 sidebar_position: 0
 ---
 
 :::tip
-1. 服务端的 `通讯密钥` 将在**首次连接**时自动设置。
-2. 自动设置的值为 APP 内设置的 `通讯密钥` （可以是 APP 全局密钥，也可以是手动设置的密钥）
+1. The server's `Communication Key` will be set automatically upon the **first connection**.
+2. The automatically set value is the `Communication Key` set within the APP (can be the APP global key, or a manually set key).
 :::
 
-## 通讯密钥接口
+## Communication Key Interface
 :::caution
-以下接口只能从 `localhost` 访问
+The following interfaces can only be accessed from `localhost`
 :::
 
-### 查看密钥
+### View Key
 ```bash
 curl http://localhost:9527/local/token/view
 ```
 
-### 重设密钥
+### Reset Key
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"token": "youNewToken"}' http://localhost:9527/local/token/rest
+curl -X POST -H "Content-Type: application/json" -d '{"token": "yourNewToken"}' http://localhost:9527/local/token/rest
 ```
 
-### 清空密钥
+### Clear Key
 ```bash
 curl http://localhost:9527/local/token/clear
 ```
