@@ -3,45 +3,41 @@ title: Linux
 sidebar_position: 1
 ---
 
-import {install} from "@site/src/cmd/install";
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import ServerMilkLogo from "@site/src/components/ServerMilkLogo/index";
-import {getDesktopDownloadUrl, osEnum} from "@site/config";
-import CodeBlock from '@theme/CodeBlock';
-import {archEnum, moduleEnum} from "@site/config";
-import daemonCMD from "@site/src/cmd/daemon";
-
+import {install} from "@/cmd/install";
+import ServerMilkLogo from "@/components/ServerMilkLogo/index";
+import {getDesktopDownloadUrl, osEnum} from "@/config";
+import {archEnum, moduleEnum} from "@/config";
+import {Tabs, Tab, Callout, Code, Pre, CopyToClipboard} from 'nextra/components'
+import Button from '@/components/Button'
 
 ## Linux 桌面环境
 <ServerMilkLogo />
 
-<Tabs>
-<TabItem value="amd" label="x86_64">
-    <a href={getDesktopDownloadUrl(osEnum.linux)}>👉 点击下载 AppImage 镜像</a>
-</TabItem>
+<Tabs items={['x86_64']}>
+    <Tab>
+        <Button target="_parent" url={getDesktopDownloadUrl(osEnum.linux)}>
+            👉 点击下载 AppImage 镜像
+        </Button>
+    </Tab>
 </Tabs>
 
 ## 命令行安装 (适合无图形系统使用)
 
 <details>
     <summary>需要安装 wget、unzip</summary>
-<Tabs>
-<TabItem value="Debian" label="Debian、Ubuntu">
 
-```bash
-apt -y update && apt -y install wget unzip
-```
-
-</TabItem>
-<TabItem value="CentOS" label="CentOS">
-
-```bash
-yum -y update && yum -y install wget unzip
-```
-
-</TabItem>
-</Tabs>
+    <Tabs items={['Debian、Ubuntu', 'CentOS']}>
+        <Tab>
+            ```bash copy
+            apt -y update && apt -y install wget unzip
+            ```
+        </Tab>
+        <Tab>
+            ```bash copy
+            yum -y update && yum -y install wget unzip
+            ```
+        </Tab>
+    </Tabs>
 </details>
 
 *deploy* 和 *web* **任选其一**安装即可
@@ -55,9 +51,11 @@ yum -y update && yum -y install wget unzip
 逐行复制执行或者全部复制执行
 :::
 
-<Tabs groupId="architecture">
-    <TabItem value="amd" label="x86_64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.x86, moduleEnum.deploy)}</CodeBlock></TabItem>
-    <TabItem value="arm" label="arrch64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.arm, moduleEnum.deploy)}</CodeBlock></TabItem>
+<Tabs items={['x86_64', 'arm64']}>
+    <Tab>
+        {install(osEnum.linux, archEnum.x86, moduleEnum.deploy)}
+    </Tab>
+    <Tab>{install(osEnum.linux, archEnum.arm, moduleEnum.deploy)}</Tab>
 </Tabs>
 
 #### 交互式安装
@@ -72,19 +70,41 @@ yum -y update && yum -y install wget unzip
 
 <details>
     <summary>具体代码在这里</summary>
-    <CodeBlock language="bash" >{daemonCMD}</CodeBlock>
+
+```bash copy {9}
+cat > /etc/systemd/system/serverbee-deploy.service <<EOF
+[Unit]
+Description=ServerBee Deploy
+After=network-online.target systemd-resolved.service
+Wants=network-online.target systemd-resolved.service
+
+[Service]
+Type=oneshot
+ExecStart=/root/serverbee-deploy # 修改为实际路径
+RemainAfterExit=yes
+Environment="RUST_LOG=info"
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl enable serverbee-deploy.service
+```
+
 </details>
 
 ### 安装 web
 
-<Tabs groupId="architecture">
-    <TabItem value="amd" label="x86_64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.x86, moduleEnum.web)}</CodeBlock></TabItem>
-    <TabItem value="arm" label="arrch64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.arm, moduleEnum.web)}</CodeBlock></TabItem>
+<Tabs items={['x86_64', 'arm64']}>
+    <Tab>
+        {install(osEnum.linux, archEnum.x86, moduleEnum.web)}
+    </Tab>
+    <Tab>{install(osEnum.linux, archEnum.arm, moduleEnum.web)}</Tab>
 </Tabs>
 
-:::info 自定义端口号
-```bash
+<Callout type="info" emoji="ℹ️">
+    自定义端口号
+</Callout>
+
+```bash copy
 ./serverbee-web -p 9528
 ```
-:::
-

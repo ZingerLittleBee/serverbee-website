@@ -1,11 +1,11 @@
 import React from 'react'
-import GithubIcon from "@site/src/components/icons/GithubIcon";
+import GithubIcon from "@/components/icons/GithubIcon";
 
 export default function ServerMilkLogo() {
     return (
         <div className='flex items-center'>
             <img
-                src={require('@site/static/img/serverbee-desktop.png').default}
+                src='/img/serverbee-desktop.png'
                 alt='Index'
                 width='100'
                 height='100'

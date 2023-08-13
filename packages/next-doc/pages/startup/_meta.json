@@ -1,7 +1,6 @@
 {
-  "getting-started": "入门指南",
   "module": "Deploy 与 Web",
   "deploy": "Deploy 模块",
   "web": "Web 模块",
-  "future": "发行说明"
+  "changelog": "发行说明"
 }

@@ -1,14 +1,36 @@
 ---
 title: Docker
-sidebar_position: 0
 ---
-
-import dockerCMD from "@site/src/cmd/docker";
-import CodeBlock from '@theme/CodeBlock';
 
 <details>
     <summary>安装 docker</summary>
-    <CodeBlock>{dockerCMD}</CodeBlock>
+
+```bash copy
+curl -fsSL https://get.docker.com | bash
+
+# 安装 docker-compose
+
+# curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# chmod a+x /usr/local/bin/docker-compose
+
+# 启动 docker
+
+systemctl start docker
+
+# 启动 docker
+
+# service docker start
+
+# 开机自启
+
+systemctl enable docker.service
+
+# 查看 docker 状态
+
+systemctl status docker.service
+```
+
 </details>
 
 ## Docker 运行命令
@@ -25,8 +47,10 @@ docker run -d \
 将 `9527` 替换为任何你想要的端口
 
 
+
+
 ## 查看容器日志
 
-```bash
+```bash copy
 docker logs serverbee-web
 ```
