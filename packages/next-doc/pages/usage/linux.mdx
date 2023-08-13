@@ -1,0 +1,90 @@
+---
+title: Linux
+sidebar_position: 1
+---
+
+import {install} from "@site/src/cmd/install";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ServerMilkLogo from "@site/src/components/ServerMilkLogo/index";
+import {getDesktopDownloadUrl, osEnum} from "@site/config";
+import CodeBlock from '@theme/CodeBlock';
+import {archEnum, moduleEnum} from "@site/config";
+import daemonCMD from "@site/src/cmd/daemon";
+
+
+## Linux 桌面环境
+<ServerMilkLogo />
+
+<Tabs>
+<TabItem value="amd" label="x86_64">
+    <a href={getDesktopDownloadUrl(osEnum.linux)}>👉 点击下载 AppImage 镜像</a>
+</TabItem>
+</Tabs>
+
+## 命令行安装 (适合无图形系统使用)
+
+<details>
+    <summary>需要安装 wget、unzip</summary>
+<Tabs>
+<TabItem value="Debian" label="Debian、Ubuntu">
+
+```bash
+apt -y update && apt -y install wget unzip
+```
+
+</TabItem>
+<TabItem value="CentOS" label="CentOS">
+
+```bash
+yum -y update && yum -y install wget unzip
+```
+
+</TabItem>
+</Tabs>
+</details>
+
+*deploy* 和 *web* **任选其一**安装即可
+
+- *deploy*（包含 web 功能，并额外提供**交互式安装**、**开机自启**、**自动更新**等功能）
+- *web*（需要手动启动、手动更新）
+
+### 安装 deploy（**推荐**）
+
+:::tip
+逐行复制执行或者全部复制执行
+:::
+
+<Tabs groupId="architecture">
+    <TabItem value="amd" label="x86_64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.x86, moduleEnum.deploy)}</CodeBlock></TabItem>
+    <TabItem value="arm" label="arrch64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.arm, moduleEnum.deploy)}</CodeBlock></TabItem>
+</Tabs>
+
+#### 交互式安装
+![](/img/interactive.gif)
+
+#### 设置自启动
+
+☑️ 勾选自启动会输出如图日志
+
+复制红框内的命令，执行即可
+![linux-daemon](https://assets.serverbee.app/docs/linux-daemon.jpg)
+
+<details>
+    <summary>具体代码在这里</summary>
+    <CodeBlock language="bash" >{daemonCMD}</CodeBlock>
+</details>
+
+### 安装 web
+
+<Tabs groupId="architecture">
+    <TabItem value="amd" label="x86_64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.x86, moduleEnum.web)}</CodeBlock></TabItem>
+    <TabItem value="arm" label="arrch64"><CodeBlock language="bash">{install(osEnum.linux, archEnum.arm, moduleEnum.web)}</CodeBlock></TabItem>
+</Tabs>
+
+:::info 自定义端口号
+```bash
+./serverbee-web -p 9528
+```
+:::
+

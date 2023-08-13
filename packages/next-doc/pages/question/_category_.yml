@@ -1,0 +1,8 @@
+position: 3
+label: '问题 ❓'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   slug: '/question'
+   description: 经常问的问题汇总

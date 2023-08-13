@@ -1,0 +1,82 @@
+---
+title: Deploy 模块
+sidebar_position: 2
+keywords:
+  - serverbee deploy
+description: Deploy 模块功能与用法
+---
+
+import Button from "@/components/Button"
+
+<div className="pt-4 flex flex-row space-x-2">
+    <img
+        src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+        alt='GitHub release (latest by date)'
+    />
+    <img
+        src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+        alt='GitHub Workflow Status'
+    />
+    <img
+        src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+        alt='GitHub last commit'
+    />
+</div>
+
+## 功能
+
+-   开机启动
+-   交互式安装
+-   自动下载 Web 模块
+-   自动运行 Web 模块
+-   自动更新 Web 模块
+
+## 更多配置
+
+### 交互式安装 (默认)
+
+
+```bash copy
+./serverbee-deploy -i
+```
+
+### 使用自定义端口
+
+
+```bash copy
+./serverbee-deploy -p 8081
+```
+
+### 开机自启 (默认打开)
+
+```bash copy
+./serverbee-deploy -a true
+```
+
+### 关闭开机自启
+
+```bash copy
+./serverbee-deploy -a false
+```
+
+### 例子
+
+
+```bash copy
+./serverbee-deploy -p 8081 -a false
+```
+
+## 从源码编译
+
+
+```bash copy
+cargo build --bin serverbee-deploy --release
+```
+
+然后你可以在 `target/release` 找到可执行文件 `serverbee-deploy`
+
+## 发现问题或提出建议
+
+<Button url='https://github.com/zingerlittlebee/server_bee-backend/issues/new'>
+    Create issue
+</Button>

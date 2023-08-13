@@ -1,0 +1,8 @@
+position: 0
+label: '起步 🛫️'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   slug: '/'
+   description: 快速了解 ServerBee 相关概念

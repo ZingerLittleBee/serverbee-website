@@ -1,0 +1,11 @@
+position: 5
+label: '联系我们 ☎️'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   slug: '/contact'
+   keywords:
+      - 'serverbee'
+      - 'contact'
+   description: 只要您有困惑，你都应该毫无顾虑的联系我们

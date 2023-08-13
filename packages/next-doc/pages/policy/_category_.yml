@@ -1,0 +1,8 @@
+position: 6
+label: '使用政策 📖'
+collapsible: true
+collapsed: false
+link:
+   type: generated-index
+   slug: '/policy'
+   description: 你应该知道的使用政策
