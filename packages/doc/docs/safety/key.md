@@ -15,15 +15,25 @@ sidebar_position: 0
 
 ### 查看密钥
 ```bash
-curl http://localhost:9527/local/token/view
+curl http://localhost:9527/local/config/app
+```
+响应如下:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token"
+  }
+}
 ```
 
 ### 重设密钥
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"token": "youNewToken"}' http://localhost:9527/local/token/rest
+curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken"}' http://localhost:9527/local/config/app
 ```
-
-### 清空密钥
-```bash
-curl http://localhost:9527/local/token/clear
+响应如下:
+```json
+{
+  "success": true
+}
 ```

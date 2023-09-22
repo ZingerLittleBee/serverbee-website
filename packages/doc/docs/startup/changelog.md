@@ -6,6 +6,20 @@ description: Changelog
 
 [`serverbee-backend`](https://github.com/ZingerLittleBee/server_bee-backend) 发行说明
 
+## `2.0.0` (2023-09-07)
+### Features
+- Dashboard for web
+- Config for web
+- Data report
+
+### Refactor
+- Refactor the config struct
+- Refactor the local api
+
+## `1.2.6` (2023-06-11)
+### Bug Fixes
+- Linux daemon template
+
 ## `1.2.5` (2022-06-07)
 ### Features
 - Local Api

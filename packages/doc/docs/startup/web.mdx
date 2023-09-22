@@ -36,25 +36,145 @@ import Button from "@site/src/components/Button";
 -   杀死进程
 -   进程所属子进程
 
+## Web 仪表盘
+![overview](https://assets.serverbee.app/snapshots/overview.png)
+![process](https://assets.serverbee.app/snapshots/process.png)
+![disk&network](https://assets.serverbee.app/snapshots/disk&network.png)
+![settings](https://assets.serverbee.app/snapshots/settings.png)
+
 ## 更多设置
 
 ### 使用自定义端口
-
 
 ```bash
 ./serverbee-web -p 8081
 ```
 
+## 配置相关 API
+以下接口只能从 `localhost` 访问
+
+### 查看所有配置
+```bash
+curl http://localhost:9527/local/config
+```
+响应如下:
+```json
+{
+    "success": true,
+    "data": {
+        "web_server": {
+            "port": 9527
+        },
+        "server": {
+            "token": "token",
+            "host": "serverhub.app",
+            "disable_ssl": false
+        },
+        "app": {
+            "token": "token"
+        }
+    }
+}
+```
+
+### 查看 `web_server` 配置
+> web 服务器的相关配置，包括端口号
+
+```bash
+curl http://localhost:9527/local/config/web_server
+```
+响应如下:
+```json
+{
+  "success": true,
+  "data": {
+    "port": 9527
+  }
+}
+```
+
+### 更新 `web_server` 配置
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"port": 9527}' http://127.0.0.1:9527/local/config/web_server
+```
+响应如下:
+```json
+{
+  "success": true
+}
+```
+
+### 查看 `app` 配置
+> app 的相关配置，包括通讯密钥
+
+```bash
+curl http://localhost:9527/local/config/app
+```
+响应如下:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token"
+  }
+}
+```
+
+### 更新 `app` 配置
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken"}' http://localhost:9527/local/config/app
+```
+响应如下:
+```json
+{
+  "success": true
+}
+```
+
+### 查看 `server` 配置
+> server 的相关配置，包括通讯密钥、服务器地址、是否禁用 SSL
+
+```bash
+curl http://localhost:9527/local/config/server
+```
+响应如下:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token",
+    "host": "serverhub.app",
+    "disable_ssl": false
+  }
+}
+```
+
+### 更新 `server` 配置
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken", "host": "serverhub.app", "disable_ssl": false}' http://127.0.0.1:9527/local/config/server
+```
+响应如下:
+```json
+{
+  "success": true
+}
+```
 
 ## 从源码编译
+### 1. 构建前端源码
+> 需要安装 nodejs、pnpm
+```shell
+pnpm -C view install
+pnpm -C view build
+```
+构建产物在 `view/dist` 目录下
 
-
+### 2. 构建 web 模块源码
+> 需要安装 rust
 ```bash
 cargo build --bin serverbee-web --release
 ```
-
-
-然后你可以在 `target/release` 找到可执行文件 `serverbee-web`
+然后你可以在 `target/release` 找到 `serverbee-web` 文件
 
 ## 发现问题或提出建议
 

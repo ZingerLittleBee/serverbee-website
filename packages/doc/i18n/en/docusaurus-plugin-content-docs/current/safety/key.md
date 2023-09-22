@@ -14,16 +14,28 @@ The following interfaces can only be accessed from `localhost`
 :::
 
 ### View Key
+> App-related configurations, including communication keys
+
 ```bash
-curl http://localhost:9527/local/token/view
+curl http://localhost:9527/local/config/app
+```
+The response is as follows:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token"
+  }
+}
 ```
 
 ### Reset Key
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"token": "yourNewToken"}' http://localhost:9527/local/token/rest
+curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken"}' http://localhost:9527/local/config/app
 ```
-
-### Clear Key
-```bash
-curl http://localhost:9527/local/token/clear
+The response is as follows:
+```json
+{
+"success": true
+}
 ```
