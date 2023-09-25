@@ -12,16 +12,6 @@ import CodeBlock from '@theme/CodeBlock';
 import {archEnum, moduleEnum} from "@site/config";
 import daemonCMD from "@site/src/cmd/daemon";
 
-
-## Linux 桌面环境
-<ServerMilkLogo />
-
-<Tabs>
-<TabItem value="amd" label="x86_64">
-    <a href={getDesktopDownloadUrl(osEnum.linux)}>👉 点击下载 AppImage 镜像</a>
-</TabItem>
-</Tabs>
-
 ## 命令行安装 (适合无图形系统使用)
 
 <details>
@@ -88,3 +78,11 @@ yum -y update && yum -y install wget unzip
 ```
 :::
 
+## Linux 桌面环境
+<ServerMilkLogo />
+
+<Tabs>
+    <TabItem value="amd" label="x86_64">
+        <a href={getDesktopDownloadUrl(osEnum.linux)}>👉 点击下载 AppImage 镜像</a>
+    </TabItem>
+</Tabs>
