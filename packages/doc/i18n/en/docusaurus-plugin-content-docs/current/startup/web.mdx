@@ -42,6 +42,53 @@ import Button from "@site/src/components/Button";
 ![disk&network](https://assets.serverbee.app/snapshots/disk&network.png)
 ![settings](https://assets.serverbee.app/snapshots/settings.png)
 
+## Installation
+### Docker (Recommended for Synology, QTS, Unraid, PVE, Openwrt)
+> For detailed tutorial, please visit the documentation link 👉 [Docker](https://docs.serverbee.app/en/usage/docker)
+
+```bash
+docker run -d \
+  -v /proc:/proc \
+  -v /dev:/dev \
+  -v /sys:/sys \
+  -v /etc:/etc \
+  -v /run/media:/run/media \
+  -v /sys/class/net:/sys/class/net \
+  --privileged=true \
+  --restart unless-stopped \
+  --network=host \
+  --name=serverbee-web \
+  zingerbee/serverbee-web -p 9527
+```
+Replace `9527` with any port you want.
+
+### Linux、Windows、MacOS
+前往 [Github Releases](https://github.com/ZingerLittleBee/server_bee-backend/releases) 下载对应平台的 serverbee-web 压缩包，解压后运行 `serverbee-web` 二进制文件即可
+
+## Tips
+
+### Dashboard address
+The Dashboard address is `http://ip:port`, the default port is 9527
+
+### First login
+After the first installation, fill in the token arbitrarily, which is the Token (admin password), which can be modified under the /settings/security route later
+
+### Forgot password
+You can query the token under `localhost`
+```bash
+curl http://localhost:9527/local/config/app
+```
+
+The response is as follows:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token"
+  }
+}
+```
+
 ## More Settings
 
 ### Use a Custom Port

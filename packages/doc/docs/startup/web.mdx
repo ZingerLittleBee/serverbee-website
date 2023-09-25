@@ -42,6 +42,53 @@ import Button from "@site/src/components/Button";
 ![disk&network](https://assets.serverbee.app/snapshots/disk&network.png)
 ![settings](https://assets.serverbee.app/snapshots/settings.png)
 
+## 安装
+### Docker（群晖、QTS、Unraid、PVE、Openwrt 推荐使用 docker）
+> 详细教程请访问文档链接 👉 [Docker](https://docs.serverbee.app/usage/docker)
+
+```bash
+docker run -d \
+  -v /proc:/proc \
+  -v /dev:/dev \
+  -v /sys:/sys \
+  -v /etc:/etc \
+  -v /run/media:/run/media \
+  -v /sys/class/net:/sys/class/net \
+  --privileged=true \
+  --restart unless-stopped \
+  --network=host \
+  --name=serverbee-web \
+  zingerbee/serverbee-web -p 9527
+```
+将 9527 替换为任何你想要的端口
+
+### Linux、Windows、MacOS
+前往 [Github Releases](https://github.com/ZingerLittleBee/server_bee-backend/releases) 下载对应平台的 serverbee-web 压缩包，解压后运行 `serverbee-web` 二进制文件即可
+
+## 常见问题
+
+### Dashboard 地址
+Dashboard 地址为 `http://ip:port`，默认端口为 9527
+
+### 首次登录
+首次安装完毕，token 随便填写，即为 Token （管理员密码），后续可在 `/settings/security` 路由下修改
+
+### 忘记密码
+可以在 `localhost` 下查询到 token
+```bash
+curl http://localhost:9527/local/config/app
+```
+
+响应如下:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token"
+  }
+}
+```
+
 ## 更多设置
 
 ### 使用自定义端口
