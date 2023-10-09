@@ -1,9 +1,5 @@
 export default async (request, context) => {
-    const url = request.url
-
-    if (!url.includes('docs.serverbee.app')) {
-        return undefined
-    }
+    const requestUrl = new URL(request.url);
 
     const countryCode = context.geo?.country?.code || "UNKNOWN";
 
@@ -12,7 +8,7 @@ export default async (request, context) => {
     if (zh.includes(countryCode)) {
         return undefined
     } else {
-        if (url.includes('docs.serverbee.app/en')) {
+        if (requestUrl.pathname.startsWith('/en')) {
             return undefined
         } else {
             const requestUrl = new URL(request.url);
