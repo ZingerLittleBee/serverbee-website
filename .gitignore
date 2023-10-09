@@ -30,3 +30,6 @@ pnpm-debug.log*
 .idea
 .vscode
 .history
+
+# Local Netlify folder
+.netlify
