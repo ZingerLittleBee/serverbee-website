@@ -1,6 +1,6 @@
 ---
 title: Deploy vs Web
-sidebar_position: 1
+sidebar_position: 2
 description: The difference between Deploy and Web modules
 ---
 

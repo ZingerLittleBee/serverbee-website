@@ -1,7 +1,7 @@
 ---
-title: 快速开始
+title: Quick Start
 sidebar_position: 0
-description: 一键安装、Docker、Windows
+description: Quick Install
 ---
 
 import ServerMilkLogo from "@site/src/components/ServerMilkLogo";

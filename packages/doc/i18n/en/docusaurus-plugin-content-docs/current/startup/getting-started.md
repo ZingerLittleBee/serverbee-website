@@ -1,6 +1,6 @@
 ---
 title: Getting started guide
-sidebar_position: 0
+sidebar_position: 1
 ---
 
 ## What is ServerBee？
