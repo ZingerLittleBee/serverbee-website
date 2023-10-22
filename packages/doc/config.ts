@@ -3,8 +3,8 @@ const baseUrl = 'https://db.serverbee.app';
 const desktopDir = 'desktop';
 const cliDir = 'cli';
 
-const desktopVersion = '2.0.0+14'
-const cliVersion = '2.0.0+8'
+const desktopVersion = '2.2.0'
+const cliVersion = '2.2.0'
 
 export enum moduleEnum {
     web = 'serverbee-web',

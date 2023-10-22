@@ -33,6 +33,7 @@ docker run -d \
   -v /etc:/etc \
   -v /run/media:/run/media \
   -v /sys/class/net:/sys/class/net \
+  -v /usr/lib:/usr/lib \
   --privileged=true \
   --restart unless-stopped \
   --network=host \

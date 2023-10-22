@@ -1,6 +1,6 @@
 ---
 title: Deploy 与 Web
-sidebar_position: 1
+sidebar_position: 2
 description: Deploy 与 Web 模块的区别
 ---
 

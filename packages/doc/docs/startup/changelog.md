@@ -1,6 +1,6 @@
 ---
 title: 发行说明
-sidebar_position: 4
+sidebar_position: 5
 description: Changelog
 ---
 

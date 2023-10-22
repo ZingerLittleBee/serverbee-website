@@ -1,6 +1,6 @@
 ---
 title: 入门指南
-sidebar_position: 0
+sidebar_position: 1
 ---
 
 ## ServerBee 是什么？
