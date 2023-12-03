@@ -1,0 +1,112 @@
+---
+title: 使用 HTTPS
+---
+
+## Caddy + Let's Encrypt (推荐)
+
+:::info
+使用前准备
+- 安装 [caddy](https://caddyserver.com/docs/install)
+- 安装并启动 `serverbee-web`，记好端口号
+- 域名解析到你的服务器 ip
+:::
+
+### 临时使用
+
+```shell
+caddy reverse-proxy --from your.domain.com --to localhost:9527
+```
+
+### 长期使用
+    
+```shell
+# 没有 serverbee，则创建目录
+# mkdir -p ~/serverbee/
+cat > ~/serverbee/Caddyfile <<EOF
+your.domain.com {
+    reverse_proxy localhost:9527
+}
+EOF
+```
+
+```shell
+# 前台运行
+caddy run --config ~/serverbee/Caddyfile
+# 后台运行
+caddy start --config ~/serverbee/Caddyfile
+```
+
+## Nginx + Let's Encrypt
+
+:::info
+使用前准备
+- 安装 [nginx](https://nginx.org/en/docs/install.html)
+- 安装 [certbot](https://certbot.eff.org/)
+- 安装并启动 `serverbee-web`，记好端口号
+- 域名解析到你的服务器 ip
+:::
+
+### 1. 配置 nginx
+
+```shell
+cat > /etc/nginx/conf.d/serverbee.conf <<EOF
+server {
+    server_name your.domain.com;
+
+    location / {
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://localhost:9527;
+    }
+}
+EOF
+```
+nginx 暂时只需要这样配置，剩余 ssl 配置会由 certbot 自动完成。
+
+### 2. 申请证书
+
+```shell
+certbot --nginx
+```
+交互式填写相关信息，完成后会自动申请证书并且配置 nginx。
+
+完成之后完整配置文件内容如下
+
+`cat /etc/nginx/conf.d/serverbee.conf`
+```nginx
+server {
+    server_name your.domain.com;
+
+    location / {
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://localhost:9527;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/your.domain.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/your.domain.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = your.domain.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name your.domain.com;
+    return 404; # managed by Certbot
+
+
+}
+```

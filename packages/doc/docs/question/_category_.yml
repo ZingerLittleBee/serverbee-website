@@ -1,7 +1,7 @@
-position: 3
+position: 4
 label: '问题 ❓'
 collapsible: true
-collapsed: false
+collapsed: true
 link:
    type: generated-index
    slug: '/question'

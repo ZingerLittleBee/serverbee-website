@@ -6,6 +6,45 @@ description: Changelog
 
 [`serverbee-backend`](https://github.com/ZingerLittleBee/server_bee-backend) Release Notes
 
+## `2.3.0` (2023-11-26)
+### Features
+- Support IPv6
+
+## `2.2.1` (2023-10-22)
+### Features
+- Add shell type selector
+
+## `2.2.0` (2023-10-21)
+### Features
+- Add Windows terminal support
+
+### Refactor
+- Refactor the pty implement
+
+### Bug Fixes
+- Fix the font family not work of the terminal page
+
+## `2.1.2` (2023-10-10)
+### Features
+- Add data dir option
+
+## `2.1.1` (2023-10-09)
+### Features
+- Avoid same route redirect
+- Validate state cache
+
+### Refactor
+- Login page
+
+## `2.1.0` (2023-10-05)
+### Features
+#### Web
+- Add `pty` support
+
+#### view
+- Add `terminal` page
+- Add `terminal` settings
+
 ## `2.0.0` (2023-09-07)
 ### Features
 - Dashboard for web

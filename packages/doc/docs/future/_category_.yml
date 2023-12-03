@@ -1,7 +1,7 @@
-position: 4
+position: 5
 label: '发展 🌟'
 collapsible: true
-collapsed: false
+collapsed: true
 link:
    type: generated-index
    slug: '/future'
