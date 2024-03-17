@@ -1,0 +1,30 @@
+{
+  "name": "serverhub-docs",
+  "version": "1.0.0",
+  "description": "Docs of ServerHub",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZingerLittleBee/serverbee-website.git"
+  },
+  "author": "ZingerLittleBee",
+  "bugs": {
+    "url": "https://github.com/ZingerLittleBee/server_bee-backend/issues"
+  },
+  "homepage": "docs.serverhub.app",
+  "dependencies": {
+    "next": "13.4.19",
+    "nextra": "^2.13.4",
+    "nextra-theme-docs": "^2.13.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.10",
+    "typescript": "^4.9.3"
+  }
+}
