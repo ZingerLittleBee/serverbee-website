@@ -1,10 +1,33 @@
-## Hello MDX
+# Installation
 
-import { Steps } from 'nextra/components'
+import { Steps, Callout } from 'nextra/components'
 
+
+System Requirements:
+- 1C1G
+- Docker, Docker-compose
+
+## Docker Compose Installation
 <Steps>
 ### Clone the repository
-```bash
+```bash copy
 git clone https://github.com/ZingerLittleBee/server_bee-backend.git
+cd server_bee-backend/docker
+```
+
+### Set up the environment
+```bash copy
+cp .env.example .env
+```
+
+### Run the docker-compose
+```bash copy
+docker-compose up -d
 ```
 </Steps>
+
+<Callout type="info">
+    If not need the status of local server, you can remove the service of `web` in `docker-compose.yml` file.
+</Callout>
+
+**And then, Enjoy it!🎉**
