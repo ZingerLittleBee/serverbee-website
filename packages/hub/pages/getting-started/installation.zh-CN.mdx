@@ -1,1 +1,33 @@
-# 123
+# Installation
+
+import { Callout, Steps } from 'nextra/components'
+
+
+系统要求:
+- 1C1G
+- Docker, Docker-compose
+
+## 使用 Docker Compose
+<Steps>
+### 克隆 Github 仓库
+```bash copy
+git clone https://github.com/ZingerLittleBee/server_bee-backend.git
+cd server_bee-backend/docker
+```
+
+### 设置环境变量
+```bash copy
+cp .env.example .env
+```
+
+### 运行 docker-compose
+```bash copy
+docker-compose up -d
+```
+</Steps>
+
+<Callout type="info">
+    如果不需要本地服务器的状态，可以在 `docker-compose.yml` 文件中删除 `web` 服务。
+</Callout>
+
+**大工告成!🎉**

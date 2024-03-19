@@ -1,1 +1,30 @@
-# Introduction
+# ServerHub
+
+## 什么是ServerHub？
+**ServerHub** 是一个简单的服务器管理工具，允许您从单个 Web 界面管理服务器。它设计简单易用，非常适合中小型服务器部署。
+
+## 特征
+- **云原生**：设计为云原生，可以部署在任何云平台上。
+- **Docker** 支持：可以部署为 Docker 容器，并附带一个 `docker-compose.yml` 文件，以便于部署。
+- **监控**：监控所有服务器的 CPU、内存、网络和磁盘使用情况等。
+- **实时**：实时数据更新，用于实时监控您的服务器。
+- **可扩展**：设计为可扩展，可以部署在多个服务器上。
+- **安全性**：上传数据需要 `Token` 验证，`Token` 可以随意封禁。
+- **跨平台**：适用于所有主要平台，并且可以在几乎所有桌面设备上使用。
+- **自托管**：部署到你的私有服务器上。
+- **开源**：开源，免费使用。
+
+## 概念
+- **ServerHub**：使用Next.js进行开发，用于聚合多个 ServerBee Web 报告的数据，具有仪表板视图模式、直接访问特定仪表板以及提供服务器令牌管理和分组功能。
+- **Server Web**：使用用于本地机器数据（CPU、内存、磁盘、网络、进程）的 RESTful API 开发基于 Rust 的 Web 服务器，具有简单直观的仪表板页面，负责向 ServerBee Recorder 报告数据，并能够与 ServerBee 应用程序直接交互。
+- **Server Recorder**: 使用 Rust 记录 ServerBee Web 上报的数据，并将其存储在 MongoDB 中。
+- **Server Interfactor**: 使用 Rust 通过 WebSocket 与前端交互，读取存储在 MongoDB 中的数据并将其返回给前端。
+
+## 相关项目
+- [ServerBee](https://apps.apple.com/us/app/serverbee/id6443553714) iOS App
+- [ServerMilk](https://github.com/ZingerLittleBee/ServerMilk) **ServerBee Web** 的桌面应用程序
+- [ServerBee Website](https://github.com/ZingerLittleBee/serverbee-website) **ServerBee** 网站和文档
+- [ServerBee Backend](https://github.com/ZingerLittleBee/server_bee-backend) 用于 **ServerBee Web**、**ServerBee Recorder** 和 **ServerBee Interfactor** 的 Monorepo
+
+## 加入我们的社区
+如果您对与 **ServerHub** 相关的任何问题有疑问，欢迎随时在我们的社区 [GitHub Discussions](https://github.com/ZingerLittleBee/server_bee-backend/discussions)、[Discord](https://discord.gg/AM3rC32CC8)、[Twitter](https://twitter.com/zinger_bee) 和 [Telegram](https://t.me/serverbee) 上提问。
