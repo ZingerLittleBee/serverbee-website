@@ -1,0 +1,57 @@
+# Configuration
+
+## .env
+```bash
+RUST_LOG=waring
+
+# Next Auth
+# You can generate a new secret on the command line with:
+# openssl rand -base64 32
+NEXTAUTH_SECRET="Your_NextAuth_Secret_Key"
+# ServerHub URL
+NEXTAUTH_URL="hub:3000"
+
+# MongoDB
+MONGO_INITDB_ROOT_USERNAME=mongoadmin
+MONGO_INITDB_ROOT_PASSWORD=secret
+MONGODB_URI=mongodb://mongoadmin:secret@mongo:27017/
+
+# Server JWT
+SERVER_JWT_SECRET="Your_Server_Secret_Key"
+SALT_ROUNDS=10
+
+# Interactor
+AUTH_SERVER_URL="hub:3000/api/user/auth"
+SERVICE_URL="hub:3000/api/server"
+
+# Web (optional if you don't want to get the status of local server)
+SERVER_HOST="recorder:9528"
+SERVER_TOKEN="Your_Server_Token"
+
+```
+
+## Caddyfile
+```bash
+{
+    # turn on if your want SSL
+    auto_https off
+}
+
+:80, :443 {
+    # replace host with your interactor domain
+    @interactor host interactor.serverbee.app
+    reverse_proxy @interactor interactor:9529
+
+    # replace host with your recorder domain
+    @recorder host recorder.serverbee.app
+    reverse_proxy @recorder recorder:9528
+
+    route /api/i/* {
+        uri strip_prefix /api/i
+        reverse_proxy interactor:9529
+    }
+
+    reverse_proxy hub:3000
+}
+
+```
