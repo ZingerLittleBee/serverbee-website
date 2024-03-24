@@ -4,8 +4,15 @@ import { Callout, Steps } from 'nextra/components'
 
 
 系统要求:
-- 1C1G
+- Git
 - Docker, Docker-compose
+- OpenSSL（用于生成密码和密钥）
+
+## 一键脚本
+```bash copy
+bash <(curl -s https://raw.githubusercontent.com/ZingerLittleBee/server_bee-backend/main/script/setup.sh)
+```
+回答几个问题后，脚本会自动帮你安装服务器。
 
 ## 使用 Docker Compose
 <Steps>
