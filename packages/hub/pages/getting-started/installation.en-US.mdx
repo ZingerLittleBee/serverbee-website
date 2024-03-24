@@ -37,3 +37,27 @@ docker-compose up -d
 </Callout>
 
 **And then, Enjoy it!🎉**
+
+## Link your sqlite database
+```bash copy {9-10}
+version: '3'
+
+services:
+  # Omit other services
+  hub:
+    image: zingerbee/serverhub:latest
+    container_name: serverhub
+    restart: unless-stopped
+    volumes:
+      - /replace_your_path/serverhub.db:/app/serverhub.db
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - MONGODB_URI=${MONGODB_URI}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - SERVER_JWT_SECRET=${SERVER_JWT_SECRET}
+      - SALT_ROUNDS=${SALT_ROUNDS}
+    depends_on:
+      - mongo
+  # Omit other services
+```

@@ -1,33 +1,21 @@
-import { Callout } from 'nextra/components'
+import Image from 'next/image'
+import { Steps, Callout } from 'nextra/components'
 
 # 配置项
 
 ## 创建 Admin 用户
 输入 `your_domain/init` 进入初始化页面，输入用户名和密码即可创建 Admin 用户。
 
-## 使用已有 sqlite 文件
-```bash copy {9-10}
-version: '3'
+## 添加服务器
 
-services:
-  # Omit other services
-  hub:
-    image: zingerbee/serverhub:latest
-    container_name: serverhub
-    restart: unless-stopped
-    volumes:
-      - /replace_your_path/serverhub.db:/app/serverhub.db
-    environment:
-      - DATABASE_URL=${DATABASE_URL}
-      - MONGODB_URI=${MONGODB_URI}
-      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
-      - NEXTAUTH_URL=${NEXTAUTH_URL}
-      - SERVER_JWT_SECRET=${SERVER_JWT_SECRET}
-      - SALT_ROUNDS=${SALT_ROUNDS}
-    depends_on:
-      - mongo
-  # Omit other services
-```
+<Steps>
+    ### 创建服务器
+    在 `your_domain/server` 页面中，添加服务器，确认之后会自动生成 `Token`。
+    ### 复制 Token
+    <Image src="/create-server.png" alt="复制 Token" width={1000} height={1000} />
+    ### 将 Token 填写到 `ServerBee Web` 服务中
+    <Image src="/set-server.png" alt="设置 ServerBee Web" width={1000} height={1000} />
+</Steps>
 
 ## 修改环境变量
 在 `server_bee-backend/docker/.env` 文件中修改环境变量，然后重新运行**一键脚本**选择 2 更新即可重新安装。

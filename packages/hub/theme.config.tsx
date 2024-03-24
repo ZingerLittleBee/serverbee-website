@@ -19,7 +19,7 @@ const config: DocsThemeConfig = {
   chat: {
     link: 'https://discord.com',
   },
-  docsRepositoryBase: 'https://github.com/ZingerLittleBee/serverbee-website',
+  docsRepositoryBase: 'https://github.com/ZingerLittleBee/serverbee-website/tree/main/packages/hub',
   footer: {
     text: 'Docs of ServerHub',
   },

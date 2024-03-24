@@ -1,33 +1,21 @@
-import { Callout } from 'nextra/components'
+import Image from 'next/image'
+import { Steps, Callout } from 'nextra/components'
 
 # Configuration
 
 ## Create Admin User
 Route to `your_domain/init` to access the initialization page, enter your username and password to create an Admin user.
 
-## Link your sqlite database
-```bash copy {9-10}
-version: '3'
+## Add Server
 
-services:
-  # Omit other services
-  hub:
-    image: zingerbee/serverhub:latest
-    container_name: serverhub
-    restart: unless-stopped
-    volumes:
-      - /replace_your_path/serverhub.db:/app/serverhub.db
-    environment:
-      - DATABASE_URL=${DATABASE_URL}
-      - MONGODB_URI=${MONGODB_URI}
-      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
-      - NEXTAUTH_URL=${NEXTAUTH_URL}
-      - SERVER_JWT_SECRET=${SERVER_JWT_SECRET}
-      - SALT_ROUNDS=${SALT_ROUNDS}
-    depends_on:
-      - mongo
-  # Omit other services
-```
+<Steps>
+    ### Create Server
+    Route to `your_domain/server`, you will get `token` after create a new server
+    ### Copy Token
+    <Image src="/create-server.png" alt="copy token" width={1000} height={1000} />
+    ### Fill in the Token to the `ServerBee Web` service.
+    <Image src="/set-server.png" alt="set serverBee web" width={1000} height={1000} />
+</Steps>
 
 ## Modify environment variables
 Modify the environment variables, then rerun the **one-click script** and select option 2 **Update** to reinstall in the `server_bee-backend/docker/.env` file.
