@@ -4,10 +4,17 @@ import { Steps, Callout } from 'nextra/components'
 
 
 System Requirements:
-- 1C1G
+- Git
 - Docker, Docker-compose
+- OpenSSL (To generate password and secret key)
 
-## Docker Compose Installation
+## Automatic Installation
+```bash copy
+bash <(curl -s https://raw.githubusercontent.com/ZingerLittleBee/server_bee-backend/main/script/setup.sh)
+```
+The script will automatically install the server for you after ask fewer questions.
+
+## Manual Installation (docker compose)
 <Steps>
 ### Clone the repository
 ```bash copy

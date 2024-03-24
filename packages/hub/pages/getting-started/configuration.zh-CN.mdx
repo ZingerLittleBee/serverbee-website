@@ -18,7 +18,6 @@ MONGODB_URI=mongodb://mongoadmin:secret@mongo:27017/
 
 # Server JWT
 SERVER_JWT_SECRET="Your_Server_Secret_Key"
-SALT_ROUNDS=10
 
 # Interactor
 AUTH_SERVER_URL="hub:3000/api/user/auth"
@@ -38,10 +37,6 @@ SERVER_TOKEN="Your_Server_Token"
 }
 
 :80, :443 {
-    # replace host with your interactor domain
-    @interactor host interactor.serverbee.app
-    reverse_proxy @interactor interactor:9529
-
     # replace host with your recorder domain
     @recorder host recorder.serverbee.app
     reverse_proxy @recorder recorder:9528

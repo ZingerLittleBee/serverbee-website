@@ -14,6 +14,9 @@
 - **自托管**：部署到你的私有服务器上。
 - **开源**：开源，免费使用。
 
+## 架构
+<Image src="/architecture.png" alt="架构" width={1000} height={1000} />
+
 ## 概念
 - **ServerHub**：使用Next.js进行开发，用于聚合多个 ServerBee Web 报告的数据，具有仪表板视图模式、直接访问特定仪表板以及提供服务器令牌管理和分组功能。
 - **Server Web**：使用用于本地机器数据（CPU、内存、磁盘、网络、进程）的 RESTful API 开发基于 Rust 的 Web 服务器，具有简单直观的仪表板页面，负责向 ServerBee Recorder 报告数据，并能够与 ServerBee 应用程序直接交互。
