@@ -2,7 +2,6 @@
 
 import { Callout, Steps } from 'nextra/components'
 
-
 系统要求:
 - Git
 - Docker, Docker-compose
@@ -38,15 +37,3 @@ docker-compose up -d
 </Callout>
 
 **大工告成!🎉**
-
-## 安装常见问题
-### 如何修改环境变量
-在 `server_bee-backend/docker/.env` 文件中修改环境变量，然后重新运行**一键脚本**选择 2 更新即可重新安装。
-
-<Callout type="info">
-    如果没有使用一键脚本，可以手动重新运行。
-    ```shell copy
-    docker-compose down
-    docker-compose up -d
-    ```
-</Callout>

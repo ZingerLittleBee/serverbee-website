@@ -1,4 +1,44 @@
-# Configuration
+import { Callout } from 'nextra/components'
+
+# 配置项
+
+## 创建 Admin 用户
+输入 `your_domain/init` 进入初始化页面，输入用户名和密码即可创建 Admin 用户。
+
+## 使用已有 sqlite 文件
+```bash copy {9-10}
+version: '3'
+
+services:
+  # Omit other services
+  hub:
+    image: zingerbee/serverhub:latest
+    container_name: serverhub
+    restart: unless-stopped
+    volumes:
+      - /replace_your_path/serverhub.db:/app/serverhub.db
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - MONGODB_URI=${MONGODB_URI}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - SERVER_JWT_SECRET=${SERVER_JWT_SECRET}
+      - SALT_ROUNDS=${SALT_ROUNDS}
+    depends_on:
+      - mongo
+  # Omit other services
+```
+
+## 修改环境变量
+在 `server_bee-backend/docker/.env` 文件中修改环境变量，然后重新运行**一键脚本**选择 2 更新即可重新安装。
+
+<Callout type="info">
+    如果没有使用一键脚本，可以手动重新运行。
+    ```shell copy
+    docker-compose down
+    docker-compose up -d
+    ```
+</Callout>
 
 ## .env
 ```bash
@@ -9,7 +49,7 @@ RUST_LOG=waring
 # openssl rand -base64 32
 NEXTAUTH_SECRET="Your_NextAuth_Secret_Key"
 # ServerHub URL
-NEXTAUTH_URL="hub:3000"
+NEXTAUTH_URL="https://serverhub.app"
 
 # MongoDB
 MONGO_INITDB_ROOT_USERNAME=mongoadmin
