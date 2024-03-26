@@ -10,11 +10,15 @@ import { Steps, Callout } from 'nextra/components'
 
 <Steps>
     ### 创建服务器
-    在 `your_domain/server` 页面中，添加服务器，确认之后会自动生成 `Token`。
+    在 **ServerHub** `server` 页面中，添加服务器，确认之后会自动生成 `Token`。
     ### 复制 Token
     <Image src="/create-server.png" alt="复制 Token" width={1000} height={1000} />
     ### 将 Token 填写到 `ServerBee Web` 服务中
     <Image src="/set-server.png" alt="设置 ServerBee Web" width={1000} height={1000} />
+
+    <Callout type="default">
+        可以通过 **Record Interval** 字段设置上传间隔时间，单位为秒。
+    </Callout>
 </Steps>
 
 ## 修改环境变量
