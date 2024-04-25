@@ -3,6 +3,10 @@ title: Frequently Asked Questions
 sidebar_position: 0
 ---
 
+## Installation-related
+### How to uninstall
+Delete the ServerBee folder.
+
 ## Connection-related
 ### The server is already installed, but the APP cannot connect
 Please try the following:
