@@ -1,0 +1,36 @@
+import { Steps, Callout } from 'nextra/components'
+
+# Development
+System Requirement:
+- Git
+- Rust
+- Docker
+- Node.js with pnpm
+
+(Latest version is recommended)
+
+<Steps>
+    ### Clone the repository
+    ```bash copy
+    git clone https://github.com/ZingerLittleBee/server_bee-backend.git
+    ```
+
+    ### Switch to the project directory
+    ```bash copy
+    cd server_bee-backend
+    ```
+
+    ### Install dependencies
+    ```bash copy
+    pnpm install
+    ```
+
+    ### Start the development server
+    ```bash copy
+    pnpm dev
+    ```
+</Steps>
+
+<Callout type="info">
+    `pnpm dev` is a script start, you can check the `script/dev.mjs` file for the specific start command
+</Callout>
