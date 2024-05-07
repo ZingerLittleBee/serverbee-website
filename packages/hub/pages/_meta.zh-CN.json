@@ -1,6 +1,14 @@
 {
-  "index": "介绍",
-  "getting-started": "入门指南",
-  "advanced": "进阶",
-  "faq": "常见问题"
+  "index": {
+    "title": "主页",
+    "type": "page"
+  },
+  "agent": {
+    "title": "ServerAgent",
+    "type": "page"
+  },
+  "hub": {
+    "title": "ServerHub",
+    "type": "page"
+  }
 }

@@ -1,0 +1,34 @@
+# Windows
+
+import ServerMilkLogo from "@site/src/components/ServerMilkLogo";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {getDesktopDownloadUrl, osEnum} from "@site/config";
+
+## Windows 桌面环境
+
+<ServerMilkLogo />
+
+<Tabs>
+    <TabItem value="amd" label="x86_64">
+        <a href={getDesktopDownloadUrl(osEnum.windows)}>👉 点击下载 Windows 桌面程序安装包</a>
+    </TabItem>
+</Tabs>
+
+## Windows Server 在不登录情况下自启动
+
+界面程序无法在不登录的情况下启动
+
+可以下载<a target='_blank' href='https://github.com/ZingerLittleBee/server_bee-backend/releases'>
+serverbee-web </a>模块，并且进行如下步骤
+
+1. 打开 Windows 管理工具- 任务计划程序
+2. 右键点击任务计划程序库-创建任务
+
+    <img src="https://assets.serverbee.app/docs/win-lauch-1.png" width='600' alt='win-lauch-1' />
+3. 设置触发器
+
+    <img src="https://assets.serverbee.app/docs/win-lauch-2.png" width='600' alt='win-lauch-2' />
+4. 设置操作
+
+    <img src="https://assets.serverbee.app/docs/win-lauch-3.png" width='600' alt='win-lauch-3' />

@@ -1,0 +1,8 @@
+{
+  "docker": "Docker",
+  "linux": "Linux",
+  "macos": "macOS",
+  "windows": "Windows",
+  "synology": "Synology 群晖",
+  "qts": "QTS 威联通"
+}

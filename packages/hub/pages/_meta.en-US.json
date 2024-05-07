@@ -1,6 +1,14 @@
 {
-  "index": "Introduction",
-  "getting-started": "Getting Started",
-  "advanced": "Advanced",
-  "faq": "FAQ"
+  "index": {
+    "title": "Home",
+    "type": "page"
+  },
+  "agent": {
+    "title": "ServerAgent",
+    "type": "page"
+  },
+  "hub": {
+    "title": "ServerHub",
+    "type": "page"
+  }
 }
