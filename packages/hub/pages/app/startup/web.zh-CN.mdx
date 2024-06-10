@@ -1,7 +1,7 @@
-# Web Module
-Web Module Features and Usage
+import { Cards, Card } from 'nextra/components'
+import { Bug } from 'lucide-react'
 
-import Button from "@site/src/components/Button";
+# Web 模块
 
 <div className='flex space-x-2 flex-wrap'>
 	<img
@@ -18,32 +18,32 @@ import Button from "@site/src/components/Button";
 	/>
 </div>
 
-## Features
+## 功能
 
--   CPU load
--   Average load
--   Memory usage
--   System uptime and startup time
--   File system mounts (and disk usage)
--   Disk I/O statistics
--   Network interfaces
--   Network traffic statistics
--   Process list
--   Process details
--   Kill processes
--   Child processes of a process
+-   CPU 负载
+-   平均负载
+-   内存使用情况
+-   正常运行、启动时间
+-   文件系统装载（和磁盘使用）
+-   磁盘 I/O 统计信息
+-   网络接口
+-   网络流量统计
+-   进程列表
+-   进程详细信息
+-   杀死进程
+-   进程所属子进程
 
-## Web Dashboard
+## Web 仪表盘
 ![overview](https://assets.serverbee.app/snapshots/overview.png)
 ![process](https://assets.serverbee.app/snapshots/process.png)
 ![disk&network](https://assets.serverbee.app/snapshots/disk&network.png)
 ![settings](https://assets.serverbee.app/snapshots/settings.png)
 
-## Installation
-### Docker (Recommended for Synology, QTS, Unraid, PVE, Openwrt)
-> For detailed tutorial, please visit the documentation link 👉 [Docker](https://docs.serverbee.app/en/usage/docker)
+## 安装
+### Docker（群晖、QTS、Unraid、PVE、Openwrt 推荐使用 docker）
+> 详细教程请访问文档链接 👉 [Docker](https://docs.serverbee.app/usage/docker)
 
-```bash
+```bash copy
 docker run -d \
   -v /proc:/proc \
   -v /dev:/dev \
@@ -57,26 +57,26 @@ docker run -d \
   --name=serverbee-web \
   zingerbee/serverbee-web -p 9527
 ```
-Replace `9527` with any port you want.
+将 9527 替换为任何你想要的端口
 
 ### Linux、Windows、MacOS
-Navigate to [GitHub Releases](https://github.com/ZingerLittleBee/server_bee-backend/releases) to download the serverbee-web compressed package for the corresponding platform. After decompression, you can run the `serverbee-web` binary file.
+前往 [Github Releases](https://github.com/ZingerLittleBee/server_bee-backend/releases) 下载对应平台的 serverbee-web 压缩包，解压后运行 `serverbee-web` 二进制文件即可
 
-## Tips
+## 常见问题
 
-### Dashboard address
-The Dashboard address is `http://ip:port`, the default port is 9527
+### Dashboard 地址
+Dashboard 地址为 `http://ip:port`，默认端口为 9527
 
-### First login
-After the first installation, fill in the token arbitrarily, which is the Token (admin password), which can be modified under the /settings/security route later
+### 首次登录
+首次安装完毕，token 随便填写，即为 Token （管理员密码），后续可在 `/settings/security` 路由下修改
 
-### Forgot password
-You can query the token under `localhost`
-```bash
+### 忘记密码
+可以在 `localhost` 下查询到 token
+```bash copy
 curl http://localhost:9527/local/config/app
 ```
 
-The response is as follows:
+响应如下:
 ```json
 {
   "success": true,
@@ -86,22 +86,22 @@ The response is as follows:
 }
 ```
 
-## More Settings
+## 更多设置
 
-### Use a Custom Port
+### 使用自定义端口
 
-```bash
+```bash copy
 ./serverbee-web -p 8081
 ```
 
-## Configuration related API
-The following interfaces can only be accessed from `localhost`
+## 配置相关 API
+以下接口只能从 `localhost` 访问
 
-### View all configurations
+### 查看所有配置
 ```bash
 curl http://localhost:9527/local/config
 ```
-The response is as follows:
+响应如下:
 ```json
 {
     "success": true,
@@ -121,13 +121,13 @@ The response is as follows:
 }
 ```
 
-### View `web_server` config
-> Related configuration of web server, including port number
+### 查看 `web_server` 配置
+> web 服务器的相关配置，包括端口号
 
-```bash
+```bash copy
 curl http://localhost:9527/local/config/web_server
 ```
-The response is as follows:
+响应如下:
 ```json
 {
   "success": true,
@@ -137,24 +137,24 @@ The response is as follows:
 }
 ```
 
-### Update the `web_server` configuration
+### 更新 `web_server` 配置
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"port": 9527}' http://127.0.0.1:9527/local/config/web_server
 ```
-The response is as follows:
+响应如下:
 ```json
 {
   "success": true
 }
 ```
 
-### View `app` config
-> App-related configurations, including communication keys
+### 查看 `app` 配置
+> app 的相关配置，包括通讯密钥
 
-```bash
+```bash copy
 curl http://localhost:9527/local/config/app
 ```
-The response is as follows:
+响应如下:
 ```json
 {
   "success": true,
@@ -164,24 +164,24 @@ The response is as follows:
 }
 ```
 
-### Update `app` config
+### 更新 `app` 配置
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken"}' http://localhost:9527/local/config/app
 ```
-The response is as follows:
+响应如下:
 ```json
 {
   "success": true
 }
 ```
 
-### View `server` config
-> Server related configuration, including communication key, server address, whether to disable SSL
+### 查看 `server` 配置
+> server 的相关配置，包括通讯密钥、服务器地址、是否禁用 SSL
 
-```bash
+```bash copy
 curl http://localhost:9527/local/config/server
 ```
-The response is as follows:
+响应如下:
 ```json
 {
   "success": true,
@@ -193,38 +193,35 @@ The response is as follows:
 }
 ```
 
-### Update `server` config
+### 更新 `server` 配置
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken", "host": "serverhub.app", "disable_ssl": false}' http://127.0.0.1:9527/local/config/server
 ```
-The response is as follows:
+响应如下:
 ```json
 {
   "success": true
 }
 ```
 
-## Compile from Source Code
-
-### 1. Build the front-end source code
-> Need to install nodejs, pnpm
-
-```shell
+## 从源码编译
+### 1. 构建前端源码
+> 需要安装 nodejs、pnpm
+```shell copy
 pnpm -C view install
 pnpm -C view build
 ```
-The build product is in the `view/dist` directory
+构建产物在 `view/dist` 目录下
 
-### 2. Build web, deploy module source code
-> Need to install rust
-
-```bash
+### 2. 构建 web 模块源码
+> 需要安装 rust
+```bash copy
 cargo build --bin serverbee-web --release
 ```
-Then you can find the executable file `serverbee-web` in `target/release`.
+然后你可以在 `target/release` 找到 `serverbee-web` 文件
 
-## Report issues or make suggestions
+## 发现问题或提出建议
 
-<Button url='https://github.com/zingerlittlebee/server_bee-backend/issues/new'>
-    Create issue
-</Button>
+<Cards>
+    <Card icon={<Bug />} title="Create issue" arrow href="https://github.com/zingerlittlebee/server_bee-backend/issues/new" />
+</Cards>

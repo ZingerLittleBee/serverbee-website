@@ -1,0 +1,83 @@
+import Image from 'next/image'
+import { Steps, Callout } from 'nextra/components'
+
+# Configuration
+
+## Create Admin User
+Route to `your_domain/init` to access the initialization page, enter your username and password to create an Admin user.
+
+## Add Server
+
+<Steps>
+    ### Create Server
+    Route to `server` page in **ServerHub**, you will get `token` after create a new server
+    ### Copy Token
+    <Image src="/create-server.png" alt="copy token" width={1000} height={1000} />
+    ### Fill in the Token to the `ServerBee Web` service.
+    <Image src="/set-server.png" alt="set serverBee web" width={1000} height={1000} />
+    <Callout type="default">
+        The record interval can be set through the **Record Interval** field, in seconds.
+    </Callout>
+</Steps>
+
+## Modify environment variables
+Modify the environment variables, then rerun the **one-click script** and select option 2 **Update** to reinstall in the `server_bee-backend/docker/.env` file.
+
+<Callout type="info">
+    If you have not used the one-click script, you can manually rerun it.
+    ```shell copy
+    docker-compose down
+    docker-compose up -d
+    ```
+</Callout>
+
+
+## .env
+```bash copy
+RUST_LOG=waring
+
+# Next Auth
+# You can generate a new secret on the command line with:
+# openssl rand -base64 32
+NEXTAUTH_SECRET="Your_NextAuth_Secret_Key"
+# ServerHub URL
+NEXTAUTH_URL="hub:3000"
+
+# MongoDB
+MONGO_INITDB_ROOT_USERNAME=mongoadmin
+MONGO_INITDB_ROOT_PASSWORD=secret
+MONGODB_URI=mongodb://mongoadmin:secret@mongo:27017/
+
+# Server JWT
+SERVER_JWT_SECRET="Your_Server_Secret_Key"
+
+# Web (optional if you don't want to get the status of local server)
+SERVER_HOST="recorder:9528"
+# Get from the ServerHub, also can set by settings of ServerBee Web dashboard
+SERVER_TOKEN="Your_Server_Token"
+```
+
+## Caddyfile
+```bash copy
+{
+    # turn on if your want SSL
+    auto_https off
+}
+
+:80, :443 {
+    # replace host with your recorder domain
+    @recorder host recorder.serverbee.app
+    reverse_proxy @recorder recorder:9528
+
+    # optional
+    # @web host web.serverhub.app
+    # reverse_proxy @web web:9527
+
+    route /api/i/* {
+        uri strip_prefix /api/i
+        reverse_proxy interactor:9529
+    }
+
+    reverse_proxy hub:3000
+}
+```

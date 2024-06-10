@@ -1,0 +1,63 @@
+# Installation
+
+import { Steps, Callout } from 'nextra/components'
+
+System Requirements:
+- Git
+- Docker, Docker-compose
+- OpenSSL (To generate password and secret key)
+
+## Automatic Installation
+```bash copy
+bash <(curl -s https://raw.githubusercontent.com/ZingerLittleBee/server_bee-backend/main/script/setup.sh)
+```
+The script will automatically install the server for you after ask fewer questions.
+
+## Manual Installation (docker compose)
+<Steps>
+### Clone the repository
+```bash copy
+git clone https://github.com/ZingerLittleBee/server_bee-backend.git
+cd server_bee-backend/docker
+```
+
+### Set up the environment
+```bash copy
+cp .env.example .env
+```
+
+### Run the docker-compose
+```bash copy
+docker-compose up -d
+```
+</Steps>
+
+<Callout type="info">
+    If not need the status of local server, you can remove the service of `web` in `docker-compose.yml` file.
+</Callout>
+
+**And then, Enjoy it!🎉**
+
+## Link your sqlite database
+```bash copy {9-10}
+version: '3'
+
+services:
+  # Omit other services
+  hub:
+    image: zingerbee/serverhub:latest
+    container_name: serverhub
+    restart: unless-stopped
+    volumes:
+      - /replace_your_path/serverhub.db:/app/serverhub.db
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - MONGODB_URI=${MONGODB_URI}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - SERVER_JWT_SECRET=${SERVER_JWT_SECRET}
+      - SALT_ROUNDS=${SALT_ROUNDS}
+    depends_on:
+      - mongo
+  # Omit other services
+```

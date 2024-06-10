@@ -1,0 +1,37 @@
+import { Steps, Callout } from 'nextra/components'
+
+# 开发
+系统要求
+- Git
+- Rust
+- Docker
+- Node.js with pnpm
+
+（最新稳定版即可）
+
+
+<Steps>
+    ### 克隆仓库
+    ```bash copy
+    git clone https://github.com/ZingerLittleBee/server_bee-backend.git
+    ```
+
+    ### 进入目录
+    ```bash copy
+    cd server_bee-backend
+    ```
+
+    ### 安装依赖
+    ```bash copy
+    pnpm install
+    ```
+
+    ### 启动
+    ```bash copy
+    pnpm dev
+    ```
+</Steps>
+
+<Callout type="info">
+    `pnpm dev` 为脚本启动，具体启动命令可以查看 `script/dev.mjs` 文件
+</Callout>

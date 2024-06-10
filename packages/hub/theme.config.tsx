@@ -16,21 +16,12 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/ZingerLittleBee/server_bee-backend',
   },
-    primaryHue: {
-        light: 260,
-        dark: 208,
-
-    },
-    primarySaturation: {
-        light: 100,
-        dark: 100,
-    },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.gg/AM3rC32CC8',
   },
   docsRepositoryBase: 'https://github.com/ZingerLittleBee/serverbee-website/tree/main/packages/hub',
   footer: {
-    text: '2024 © ServerHub.',
+    text: '2024 © ServerBee',
   },
     i18n: [
         { locale: 'en-US', text: 'English' },

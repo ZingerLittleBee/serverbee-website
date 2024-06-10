@@ -1,14 +1,18 @@
 {
   "index": {
-    "title": "主页",
+    "title": "Introduction",
     "type": "page"
   },
-  "agent": {
-    "title": "ServerAgent",
+  "app": {
+    "title": "App",
+    "type": "page"
+  },
+  "web": {
+    "title": "Web",
     "type": "page"
   },
   "hub": {
-    "title": "ServerHub",
+    "title": "Hub",
     "type": "page"
   }
 }
