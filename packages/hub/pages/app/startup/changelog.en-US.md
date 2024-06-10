@@ -1,5 +1,4 @@
 # Release Notes
-Changelog
 
 [`serverbee-backend`](https://github.com/ZingerLittleBee/server_bee-backend) Release Notes
 

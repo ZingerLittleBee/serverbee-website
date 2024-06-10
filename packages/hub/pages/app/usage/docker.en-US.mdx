@@ -1,28 +1,50 @@
+import { Callout } from 'nextra/components'
+
 # Docker
 
-import dockerCMD from "@site/src/cmd/docker";
-import CodeBlock from '@theme/CodeBlock';
-
 <details>
-    <summary>Install Docker</summary>
-    <CodeBlock>{dockerCMD}</CodeBlock>
+    <summary>安装 docker</summary>
+    ```bash copy
+    curl -fsSL https://get.docker.com | bash
+
+    # 安装 docker-compose
+
+    # curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+    # chmod a+x /usr/local/bin/docker-compose
+
+    # 启动 docker
+
+    systemctl start docker
+
+    # 启动 docker
+
+    # service docker start
+
+    # 开机自启
+
+    systemctl enable docker.service
+
+    # 查看 docker 状态
+
+    systemctl status docker.service
+    ```
 </details>
 
-:::tip
-Linux base systems can run serverbee-web directly using docker, for example: Synology, QTS, Unraid, PVE, Openwrt and other systems.
 
-other systems please install using the [binary file](/usage/linux) method.
-:::
+<Callout type="info">
+    Linux base systems can run serverbee-web directly using docker, for example: Synology, QTS, Unraid, PVE, Openwrt and other systems.
+</Callout>
 
-:::caution
+<Callout type="warning">
 Docker is only recommended for Linux base systems, otherwise the data you get will be the data of the docker image itself, not your host data.
 
 If you are installing using the system's built-in docker interface, please remember to mount the directory.
-:::
+</Callout>
 
 ## Docker Run Command
 
-```bash
+```bash copy
 docker run -d \
   -v /proc:/proc \
   -v /dev:/dev \
@@ -39,7 +61,7 @@ docker run -d \
 Replace `9527` with any port you want.
 
 ## Docker Compose
-```bash
+```bash copy
 version: '3'
 services:
   serverbee-web:
@@ -59,6 +81,6 @@ services:
 
 ## View Container Logs
 
-```bash
+```bash copy
 docker logs serverbee-web
 ```

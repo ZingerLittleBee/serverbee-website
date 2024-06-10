@@ -1,5 +1,4 @@
 # 发行说明
-Changelog
 
 [`serverbee-backend`](https://github.com/ZingerLittleBee/server_bee-backend) 发行说明
 
