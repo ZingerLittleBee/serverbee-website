@@ -10,7 +10,7 @@ Potential features to be supported in the future
 - [ ] [ESXi support](https://github.com/ZingerLittleBee/server_bee-backend/issues/25)
 - [ ] [Steam Deck support](https://github.com/ZingerLittleBee/server_bee-backend/issues/24)
 - [ ] Adaptation for iPad, macOS
-- [ ] SSH terminal (Pro version)
+- [x] Terminal (Pro version)
 - [ ] iCloud synchronization (Pro version)
 - [x] Process management (Pro version)
 - [ ] [Server group](https://github.com/ZingerLittleBee/server_bee-backend/issues/47)

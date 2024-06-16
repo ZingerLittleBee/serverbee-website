@@ -1,14 +1,28 @@
 {
   "index": {
-    "title": "Home",
+    "title": "Introduction",
+    "type": "page",
+    "theme": {
+      "breadcrumb": false,
+      "sidebar": false,
+      "toc": true
+    }
+  },
+  "app": {
+    "title": "App",
     "type": "page"
   },
-  "agent": {
-    "title": "ServerAgent",
-    "type": "page"
+  "web": {
+    "title": "Web",
+    "type": "page",
+    "theme": {
+      "breadcrumb": false,
+      "sidebar": false,
+      "toc": true
+    }
   },
   "hub": {
-    "title": "ServerHub",
+    "title": "Hub",
     "type": "page"
   }
 }

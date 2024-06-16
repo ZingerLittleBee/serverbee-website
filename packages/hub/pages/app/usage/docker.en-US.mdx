@@ -3,29 +3,29 @@ import { Callout } from 'nextra/components'
 # Docker
 
 <details>
-    <summary>安装 docker</summary>
+    <summary>Install docker</summary>
     ```bash copy
     curl -fsSL https://get.docker.com | bash
 
-    # 安装 docker-compose
+    # install docker-compose
 
     # curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
     # chmod a+x /usr/local/bin/docker-compose
 
-    # 启动 docker
+    # start docker
 
     systemctl start docker
 
-    # 启动 docker
+    # start docker
 
     # service docker start
 
-    # 开机自启
+    # Boot automatically
 
     systemctl enable docker.service
 
-    # 查看 docker 状态
+    # View docker status
 
     systemctl status docker.service
     ```

@@ -1,6 +1,7 @@
 ## Installation-related
 ### How to uninstall
-Delete the ServerBee folder.
+One-click script comes with uninstall function, execute the following command to uninstall
+Otherwise, simply delete the ServerBee folder
 
 ## Connection-related
 ### The server is already installed, but the APP cannot connect

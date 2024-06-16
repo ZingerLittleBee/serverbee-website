@@ -10,7 +10,7 @@
 - [ ] [exsi 支持](https://github.com/ZingerLittleBee/server_bee-backend/issues/25)
 - [ ] [Steam Deck 支持](hhttps://github.com/ZingerLittleBee/server_bee-backend/issues/24)
 - [ ] 适配 ipad、macOS
-- [ ] SSH 终端 (高级版)
+- [x] 终端 (高级版)
 - [ ] iCloud 同步 (高级版)
 - [x] 进程管理 (高级版)
 - [ ] [服务器分组](https://github.com/ZingerLittleBee/server_bee-backend/issues/47)

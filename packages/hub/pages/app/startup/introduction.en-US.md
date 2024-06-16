@@ -23,9 +23,9 @@ To ensure data security, ServerBee supports `Token` authentication, allowing use
 
 Control side: `ServerBee` APP
 
-Server-side (Controlled side): `server_bee-backend` or `ServerMilk`
+Controlled side: `server_bee-backend` or `ServerMilk`
 
 ### Usage process
-1. Install the **server-side** program, please refer to the **User Guide** in the directory for installation instructions.
+1. Install the **Controlled side** program, [installation](/app/startup/installation).
 2. Open the `ServerBee` APP and enter the IP (domain) and port number.
 3. Start using!

@@ -3,12 +3,12 @@ import { Callout } from 'nextra/components'
 # Installation
 
 ## One-click installation (Linux、macOS)
-```shell
+```shell copy
 bash <(curl -s https://raw.githubusercontent.com/ZingerLittleBee/server_bee-backend/main/script/startup.sh)
 ```
 
 ## Docker
-```shell
+```shell copy
 docker run -d \
   -v /proc:/proc \
   -v /dev:/dev \
@@ -34,14 +34,11 @@ Download the `.msi` installation package
 
 Download the `.dmg` installation package
 
-## macOS (Desktop)
+## Linux (Desktop)
 [Github Release](https://github.com/ZingerLittleBee/ServerMilk/releases)
 
 Download the `.AppImage` installation package
 
 <Callout type="info">
-    x86 cpu select amd64 suffix
-</Callout>
-<Callout type="info">
-    arm cpu select aarch64 suffix
+    x86 cpu select amd64 suffix, arm cpu select aarch64 suffix
 </Callout>

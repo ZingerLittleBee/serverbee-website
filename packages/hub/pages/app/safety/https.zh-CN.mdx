@@ -1,13 +1,15 @@
+import { Callout } from 'nextra/components'
+
 # 使用 HTTPS
 
 ## Caddy + Let's Encrypt (推荐)
 
-:::info
+<Callout type="info">
 使用前准备
 - 安装 [caddy](https://caddyserver.com/docs/install)
 - 安装并启动 `serverbee-web`，记好端口号
 - 域名解析到你的服务器 ip
-:::
+</Callout>
 
 ### 临时使用
 
@@ -16,7 +18,7 @@ caddy reverse-proxy --from your.domain.com --to localhost:9527
 ```
 
 ### 长期使用
-    
+
 ```shell
 # 没有 serverbee，则创建目录
 # mkdir -p ~/serverbee/
@@ -36,13 +38,13 @@ caddy start --config ~/serverbee/Caddyfile
 
 ## Nginx + Let's Encrypt
 
-:::info
+<Callout type="info">
 使用前准备
 - 安装 [nginx](https://nginx.org/en/docs/install.html)
 - 安装 [certbot](https://certbot.eff.org/)
 - 安装并启动 `serverbee-web`，记好端口号
 - 域名解析到你的服务器 ip
-:::
+</Callout>
 
 ### 1. 配置 nginx
 

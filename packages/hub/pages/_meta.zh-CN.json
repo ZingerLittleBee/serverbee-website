@@ -1,7 +1,13 @@
 {
   "index": {
     "title": "Introduction",
-    "type": "page"
+    "type": "page",
+    "theme": {
+      "breadcrumb": false,
+      "footer": false,
+      "sidebar": false,
+      "toc": true
+    }
   },
   "app": {
     "title": "App",
@@ -9,7 +15,13 @@
   },
   "web": {
     "title": "Web",
-    "type": "page"
+    "type": "page",
+    "theme": {
+      "breadcrumb": false,
+      "footer": false,
+      "sidebar": false,
+      "toc": true
+    }
   },
   "hub": {
     "title": "Hub",
