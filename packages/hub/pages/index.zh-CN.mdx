@@ -1,35 +1,75 @@
-import Image from 'next/image'
+<h1 align="center" className="pt-4 text-4xl font-bold">
+    ServerBee
+</h1>
 
-# ServerHub
+<div align="center" className='py-6 flex justify-center space-x-2 flex-wrap'>
+    <img
+        src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+        alt='GitHub release (latest by date)'
+    />
+    <img
+        src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+        alt='GitHub Workflow Status'
+    />
+    <img
+        src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+        alt='GitHub last commit'
+    />
+</div>
 
-## 什么是ServerHub？
-**ServerHub** 是一个简单的服务器管理工具，允许您从单个 Web 界面管理服务器。它设计简单易用，非常适合中小型服务器部署。
 
-## 特征
-- **云原生**：设计为云原生，可以部署在任何云平台上。
-- **Docker** 支持：可以部署为 Docker 容器，并附带一个 `docker-compose.yml` 文件，以便于部署。
-- **监控**：监控所有服务器的 CPU、内存、网络和磁盘使用情况等。
-- **实时**：实时数据更新，用于实时监控您的服务器。
-- **可扩展**：设计为可扩展，可以部署在多个服务器上。
-- **安全性**：上传数据需要 `Token` 验证，`Token` 可以随意封禁。
-- **跨平台**：适用于所有主要平台，并且可以在几乎所有桌面设备上使用。
-- **自托管**：部署到你的私有服务器上。
-- **开源**：开源，免费使用。
+## 概述
 
-## 架构
-<Image src="/architecture.png" alt="架构" width={1000} height={1000} />
+ServerBee 的单一代码库
 
-## 概念
-- **ServerHub**：使用Next.js进行开发，用于聚合多个 ServerBee Web 报告的数据，具有仪表板视图模式、直接访问特定仪表板以及提供服务器令牌管理和分组功能。
-- **Server Web**：使用用于本地机器数据（CPU、内存、磁盘、网络、进程）的 RESTful API 开发基于 Rust 的 Web 服务器，具有简单直观的仪表板页面，负责向 ServerBee Recorder 报告数据，并能够与 ServerBee 应用程序直接交互。
-- **Server Recorder**: 使用 Rust 记录 ServerBee Web 上报的数据，并将其存储在 MongoDB 中。
-- **Server Interfactor**: 使用 Rust 通过 WebSocket 与前端交互，读取存储在 MongoDB 中的数据并将其返回给前端。
+- ServerHub (**ServerBee** 的中心，提供来自 **serverbee-web** 的历史数据)
+  - hub
+  - serverbee-interactor
+  - serverbee-recorder
+- [ServerBee Backend](https://github.com/ZingerLittleBee/server_bee-backend/blob/main/web/README.zh-CN.md) (**ServerBee** 的后端可以作为独立应用程序使用)
+  - serverbee-web (模块提供来自机器的数据)
+  - ~~serverbee-deploy (模块提供 **开机启动**、**自动更新**、**下载 Web 模块** 的功能)~~(已弃用)
+  - Linux 使用 startup.sh 替换
+  - `bash <(curl -s https://raw.githubusercontent.com/ZingerLittleBee/server_bee-backend/main/script/startup.sh)`
+  - macOS、Windows 使用 [ServerMilk](https://github.com/ZingerLittleBee/ServerMilk) 替换
 
-## 相关项目
-- [ServerBee](https://apps.apple.com/us/app/serverbee/id6443553714) iOS App
-- [ServerMilk](https://github.com/ZingerLittleBee/ServerMilk) **ServerBee Web** 的桌面应用程序
-- [ServerBee Website](https://github.com/ZingerLittleBee/serverbee-website) **ServerBee** 网站和文档
-- [ServerBee Backend](https://github.com/ZingerLittleBee/server_bee-backend) 用于 **ServerBee Web**、**ServerBee Recorder** 和 **ServerBee Interfactor** 的 Monorepo
+## 文档
 
-## 加入我们的社区
-如果您对与 **ServerHub** 相关的任何问题有疑问，欢迎随时在我们的社区 [GitHub Discussions](https://github.com/ZingerLittleBee/server_bee-backend/discussions)、[Discord](https://discord.gg/AM3rC32CC8)、[Twitter](https://twitter.com/zinger_bee) 和 [Telegram](https://t.me/serverbee) 上提问。
+#### 完整文档
+
+- [ServerHub](docs.serverhub.app/zh-CN/hub/introduction)
+- [ServerBee](docs.serverbee.app/zh-CN/app/startup/introduction)
+
+#### 按照功能查看
+
+- 如何你只想安装 **ServerBee** 后端服务，👉 [点击查看文档](https://docs.serverbee.app/usage)
+- 如何你只想通过网页来查看你的单台服务器或电脑，👉 [点击查看文档](https://docs.serverbee.app/startup/web)
+- 如果你想通过网页来监控你的多台服务器或电脑，👉 [点击查看文档](https://docs.serverhub.app)
+
+## 截图
+
+### ServerHub
+
+TODO
+
+### ServerBee Web
+
+![overview](https://assets.serverbee.app/snapshots/overview.png)
+![process](https://assets.serverbee.app/snapshots/process.png)
+![disk&network](https://assets.serverbee.app/snapshots/disk&network.png)
+![terminal](https://assets.serverbee.app/snapshots/terminal.png)
+![settings](https://assets.serverbee.app/snapshots/settings.png)
+
+## 发现问题或提出建议
+
+[创建 issue](https://github.com/zingerlittlebee/server_bee-backend/issues/new)
+
+## 发行说明
+
+[CHANGELOG](https://github.com/ZingerLittleBee/server_bee-backend/blob/main/CHANGELOG.md)
+
+## 更多
+
+[官网](https://serverbee.app/)
+
+[App Store](https://apps.apple.com/us/app/serverbee/id6443553714)

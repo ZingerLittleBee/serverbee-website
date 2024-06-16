@@ -1,0 +1,45 @@
+import { Callout } from 'nextra/components'
+
+# 安装
+
+## 一键安装 (Linux、macOS)
+```shell copy
+bash <(curl -s https://raw.githubusercontent.com/ZingerLittleBee/server_bee-backend/main/script/startup.sh)
+```
+
+## Docker
+```shell copy
+docker run -d \
+  -v /proc:/proc \
+  -v /dev:/dev \
+  -v /sys:/sys \
+  -v /etc:/etc \
+  -v /run/media:/run/media \
+  -v /sys/class/net:/sys/class/net \
+  -v /usr/lib:/usr/lib \
+  --privileged=true \
+  --restart unless-stopped \
+  --network=host \
+  --name=serverbee-web \
+  zingerbee/serverbee-web -p 9527
+```
+
+## Windows (桌面程序)
+[Github Release](https://github.com/ZingerLittleBee/ServerMilk/releases)
+
+下载 `.msi` 后缀安装包
+
+## macOS (桌面程序)
+[Github Release](https://github.com/ZingerLittleBee/ServerMilk/releases)
+
+下载 `.dmg` 后缀安装包
+
+
+## Linux (桌面程序)
+[Github Release](https://github.com/ZingerLittleBee/ServerMilk/releases)
+
+下载 `.AppImage` 后缀安装包
+
+<Callout type="info">
+    x86 cpu 选择 amd64 后缀，arm cpu 选择 aarch64 后缀
+</Callout>

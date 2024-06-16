@@ -1,0 +1,86 @@
+import { Callout } from 'nextra/components'
+
+# Docker
+
+<details>
+    <summary>Install docker</summary>
+    ```bash copy
+    curl -fsSL https://get.docker.com | bash
+
+    # install docker-compose
+
+    # curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+    # chmod a+x /usr/local/bin/docker-compose
+
+    # start docker
+
+    systemctl start docker
+
+    # start docker
+
+    # service docker start
+
+    # Boot automatically
+
+    systemctl enable docker.service
+
+    # View docker status
+
+    systemctl status docker.service
+    ```
+</details>
+
+
+<Callout type="info">
+    Linux base systems can run serverbee-web directly using docker, for example: Synology, QTS, Unraid, PVE, Openwrt and other systems.
+</Callout>
+
+<Callout type="warning">
+Docker is only recommended for Linux base systems, otherwise the data you get will be the data of the docker image itself, not your host data.
+
+If you are installing using the system's built-in docker interface, please remember to mount the directory.
+</Callout>
+
+## Docker Run Command
+
+```bash copy
+docker run -d \
+  -v /proc:/proc \
+  -v /dev:/dev \
+  -v /sys:/sys \
+  -v /etc:/etc \
+  -v /run/media:/run/media \
+  -v /sys/class/net:/sys/class/net \
+  --privileged=true \
+  --restart unless-stopped \
+  --network=host \
+  --name=serverbee-web \
+  zingerbee/serverbee-web -p 9527
+```
+Replace `9527` with any port you want.
+
+## Docker Compose
+```bash copy
+version: '3'
+services:
+  serverbee-web:
+    image: zingerbee/serverbee-web
+    command: ["-p", "9527"]
+    privileged: true
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /proc:/proc
+      - /dev:/dev
+      - /sys:/sys
+      - /etc:/etc
+      - /run/media:/run/media
+      - /sys/class/net:/sys/class/net
+```
+
+## View Container Logs
+
+```bash copy
+docker logs serverbee-web
+```

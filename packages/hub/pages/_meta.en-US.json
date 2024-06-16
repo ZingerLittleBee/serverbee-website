@@ -1,6 +1,28 @@
 {
-  "index": "Introduction",
-  "getting-started": "Getting Started",
-  "advanced": "Advanced",
-  "faq": "FAQ"
+  "index": {
+    "title": "Introduction",
+    "type": "page",
+    "theme": {
+      "breadcrumb": false,
+      "sidebar": false,
+      "toc": true
+    }
+  },
+  "app": {
+    "title": "App",
+    "type": "page"
+  },
+  "web": {
+    "title": "Web",
+    "type": "page",
+    "theme": {
+      "breadcrumb": false,
+      "sidebar": false,
+      "toc": true
+    }
+  },
+  "hub": {
+    "title": "Hub",
+    "type": "page"
+  }
 }

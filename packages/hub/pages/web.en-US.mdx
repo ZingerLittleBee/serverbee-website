@@ -1,0 +1,228 @@
+import { Cards, Card } from 'nextra/components'
+import { Bug } from 'lucide-react'
+
+# Web
+
+<div className='flex space-x-2 flex-wrap'>
+	<img
+		src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub release (latest by date)'
+	/>
+	<img
+		src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+		alt='GitHub Workflow Status'
+	/>
+	<img
+		src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub last commit'
+	/>
+</div>
+
+## Features
+
+-   CPU load
+-   Average load
+-   Memory usage
+-   System uptime and startup time
+-   File system mounts (and disk usage)
+-   Disk I/O statistics
+-   Network interfaces
+-   Network traffic statistics
+-   Process list
+-   Process details
+
+## Dashboard
+![overview](https://assets.serverbee.app/snapshots/overview.png)
+![process](https://assets.serverbee.app/snapshots/process.png)
+![disk&network](https://assets.serverbee.app/snapshots/disk&network.png)
+![settings](https://assets.serverbee.app/snapshots/settings.png)
+
+## Installation
+### Docker (Recommended for Synology, QTS, Unraid, PVE, Openwrt)
+> For detailed tutorial, please visit the documentation link 👉 [Docker](https://docs.serverbee.app/en/usage/docker)
+
+```bash copy
+docker run -d \
+  -v /proc:/proc \
+  -v /dev:/dev \
+  -v /sys:/sys \
+  -v /etc:/etc \
+  -v /run/media:/run/media \
+  -v /sys/class/net:/sys/class/net \
+  --privileged=true \
+  --restart unless-stopped \
+  --network=host \
+  --name=serverbee-web \
+  zingerbee/serverbee-web -p 9527
+```
+Replace `9527` with any port you want.
+
+### Linux、Windows、MacOS
+Navigate to [GitHub Releases](https://github.com/ZingerLittleBee/server_bee-backend/releases) to download the serverbee-web compressed package for the corresponding platform. After decompression, you can run the `serverbee-web` binary file.
+
+## Tips
+
+### Dashboard address
+The Dashboard address is `http://ip:port`, the default port is 9527
+
+### First login
+After the first installation, fill in the token arbitrarily, which is the Token (admin password), which can be modified under the /settings/security route later
+
+### Forgot password
+You can query the token under `localhost`
+```bash copy
+curl http://localhost:9527/local/config/app
+```
+
+The response is as follows:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token"
+  }
+}
+```
+
+## More Settings
+
+### Use a Custom Port
+
+```bash copy
+./serverbee-web -p 8081
+```
+
+## Configuration related API
+The following interfaces can only be accessed from `localhost`
+
+### View all configurations
+```bash copy
+curl http://localhost:9527/local/config
+```
+The response is as follows:
+```json
+{
+    "success": true,
+    "data": {
+        "web_server": {
+            "port": 9527
+        },
+        "server": {
+            "token": "token",
+            "host": "serverhub.app",
+            "disable_ssl": false
+        },
+        "app": {
+            "token": "token"
+        }
+    }
+}
+```
+
+### View `web_server` config
+> Related configuration of web server, including port number
+
+```bash copy
+curl http://localhost:9527/local/config/web_server
+```
+The response is as follows:
+```json
+{
+  "success": true,
+  "data": {
+    "port": 9527
+  }
+}
+```
+
+### Update the `web_server` configuration
+```bash copy
+curl -X POST -H "Content-Type: application/json" -d '{"port": 9527}' http://127.0.0.1:9527/local/config/web_server
+```
+The response is as follows:
+```json
+{
+  "success": true
+}
+```
+
+### View `app` config
+> App-related configurations, including communication keys
+
+```bash copy
+curl http://localhost:9527/local/config/app
+```
+The response is as follows:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token"
+  }
+}
+```
+
+### Update `app` config
+```bash copy
+curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken"}' http://localhost:9527/local/config/app
+```
+The response is as follows:
+```json
+{
+  "success": true
+}
+```
+
+### View `server` config
+> Server related configuration, including communication key, server address, whether to disable SSL
+
+```bash copy
+curl http://localhost:9527/local/config/server
+```
+The response is as follows:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token",
+    "host": "serverhub.app",
+    "disable_ssl": false
+  }
+}
+```
+
+### Update `server` config
+```bash copy
+curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken", "host": "serverhub.app", "disable_ssl": false}' http://127.0.0.1:9527/local/config/server
+```
+The response is as follows:
+```json
+{
+  "success": true
+}
+```
+
+## Compile from Source Code
+
+### 1. Build the front-end source code
+> Need to install nodejs, pnpm
+
+```shell copy
+pnpm -C view install
+pnpm -C view build
+```
+The build product is in the `view/dist` directory
+
+### 2. Build web, deploy module source code
+> Need to install rust
+
+```bash copy
+cargo build --bin serverbee-web --release
+```
+Then you can find the executable file `serverbee-web` in `target/release`.
+
+## Report issues or make suggestions
+
+<Cards>
+    <Card icon={<Bug />} title="Create issue" arrow href="https://github.com/zingerlittlebee/server_bee-backend/issues/new" />
+</Cards>

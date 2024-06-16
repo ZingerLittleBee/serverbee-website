@@ -1,0 +1,225 @@
+import { Cards, Card } from 'nextra/components'
+import { Bug } from 'lucide-react'
+
+# Web
+
+<div className='flex space-x-2 flex-wrap'>
+	<img
+		src='https://img.shields.io/github/v/release/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub release (latest by date)'
+	/>
+	<img
+		src='https://img.shields.io/github/actions/workflow/status/ZingerLittleBee/server_bee-backend/release.yml?style=for-the-badge'
+		alt='GitHub Workflow Status'
+	/>
+	<img
+		src='https://img.shields.io/github/last-commit/ZingerLittleBee/server_bee-backend?style=for-the-badge'
+		alt='GitHub last commit'
+	/>
+</div>
+
+## 功能
+
+-   CPU 负载
+-   平均负载
+-   内存使用情况
+-   正常运行、启动时间
+-   文件系统装载（和磁盘使用）
+-   磁盘 I/O 统计信息
+-   网络接口
+-   网络流量统计
+-   进程列表
+-   进程详细信息
+
+## 仪表盘
+![overview](https://assets.serverbee.app/snapshots/overview.png)
+![process](https://assets.serverbee.app/snapshots/process.png)
+![disk&network](https://assets.serverbee.app/snapshots/disk&network.png)
+![settings](https://assets.serverbee.app/snapshots/settings.png)
+
+## 安装
+### Docker（群晖、QTS、Unraid、PVE、Openwrt 推荐使用 docker）
+> 详细教程请访问文档链接 👉 [Docker](https://docs.serverbee.app/usage/docker)
+
+```bash copy
+docker run -d \
+  -v /proc:/proc \
+  -v /dev:/dev \
+  -v /sys:/sys \
+  -v /etc:/etc \
+  -v /run/media:/run/media \
+  -v /sys/class/net:/sys/class/net \
+  --privileged=true \
+  --restart unless-stopped \
+  --network=host \
+  --name=serverbee-web \
+  zingerbee/serverbee-web -p 9527
+```
+将 9527 替换为任何你想要的端口
+
+### Linux、Windows、MacOS
+前往 [Github Releases](https://github.com/ZingerLittleBee/server_bee-backend/releases) 下载对应平台的 serverbee-web 压缩包，解压后运行 `serverbee-web` 二进制文件即可
+
+## 常见问题
+
+### Dashboard 地址
+Dashboard 地址为 `http://ip:port`，默认端口为 9527
+
+### 首次登录
+首次安装完毕，token 随便填写，即为 Token （管理员密码），后续可在 `/settings/security` 路由下修改
+
+### 忘记密码
+可以在 `localhost` 下查询到 token
+```bash copy
+curl http://localhost:9527/local/config/app
+```
+
+响应如下:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token"
+  }
+}
+```
+
+## 更多设置
+
+### 使用自定义端口
+
+```bash copy
+./serverbee-web -p 8081
+```
+
+## 配置相关 API
+以下接口只能从 `localhost` 访问
+
+### 查看所有配置
+```bash
+curl http://localhost:9527/local/config
+```
+响应如下:
+```json
+{
+    "success": true,
+    "data": {
+        "web_server": {
+            "port": 9527
+        },
+        "server": {
+            "token": "token",
+            "host": "serverhub.app",
+            "disable_ssl": false
+        },
+        "app": {
+            "token": "token"
+        }
+    }
+}
+```
+
+### 查看 `web_server` 配置
+> web 服务器的相关配置，包括端口号
+
+```bash copy
+curl http://localhost:9527/local/config/web_server
+```
+响应如下:
+```json
+{
+  "success": true,
+  "data": {
+    "port": 9527
+  }
+}
+```
+
+### 更新 `web_server` 配置
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"port": 9527}' http://127.0.0.1:9527/local/config/web_server
+```
+响应如下:
+```json
+{
+  "success": true
+}
+```
+
+### 查看 `app` 配置
+> app 的相关配置，包括通讯密钥
+
+```bash copy
+curl http://localhost:9527/local/config/app
+```
+响应如下:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token"
+  }
+}
+```
+
+### 更新 `app` 配置
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken"}' http://localhost:9527/local/config/app
+```
+响应如下:
+```json
+{
+  "success": true
+}
+```
+
+### 查看 `server` 配置
+> server 的相关配置，包括通讯密钥、服务器地址、是否禁用 SSL
+
+```bash copy
+curl http://localhost:9527/local/config/server
+```
+响应如下:
+```json
+{
+  "success": true,
+  "data": {
+    "token": "token",
+    "host": "serverhub.app",
+    "disable_ssl": false
+  }
+}
+```
+
+### 更新 `server` 配置
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"token": "newToken", "host": "serverhub.app", "disable_ssl": false}' http://127.0.0.1:9527/local/config/server
+```
+响应如下:
+```json
+{
+  "success": true
+}
+```
+
+## 从源码编译
+### 1. 构建前端源码
+> 需要安装 nodejs、pnpm
+```shell copy
+pnpm -C view install
+pnpm -C view build
+```
+构建产物在 `view/dist` 目录下
+
+### 2. 构建 web 模块源码
+> 需要安装 rust
+```bash copy
+cargo build --bin serverbee-web --release
+```
+然后你可以在 `target/release` 找到 `serverbee-web` 文件
+
+## 发现问题或提出建议
+
+<Cards>
+    <Card icon={<Bug />} title="Create issue" arrow href="https://github.com/zingerlittlebee/server_bee-backend/issues/new" />
+</Cards>

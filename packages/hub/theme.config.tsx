@@ -1,6 +1,7 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
+// @ts-ignore
 const config: DocsThemeConfig = {
   logo:  <><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
          strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-square-gantt-chart">
@@ -10,19 +11,18 @@ const config: DocsThemeConfig = {
       <path d="M11 16h5"/>
     </svg>
     <span style={{marginLeft: '.4em', fontWeight: 800}}>
-        ServerHub
+        ServerBee
       </span>
   </>,
   project: {
     link: 'https://github.com/ZingerLittleBee/server_bee-backend',
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.gg/AM3rC32CC8',
   },
   docsRepositoryBase: 'https://github.com/ZingerLittleBee/serverbee-website/tree/main/packages/hub',
-  footer: {
-    text: 'Docs of ServerHub',
-  },
+  // @ts-ignore
+  footer: false,
     i18n: [
         { locale: 'en-US', text: 'English' },
         { locale: 'zh-CN', text: '中文' },

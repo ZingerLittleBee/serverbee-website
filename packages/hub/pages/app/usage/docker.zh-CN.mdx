@@ -1,0 +1,86 @@
+import { Callout } from 'nextra/components'
+
+# Docker
+
+<details>
+    <summary>安装 docker</summary>
+    ```bash copy
+    curl -fsSL https://get.docker.com | bash
+
+    # 安装 docker-compose
+
+    # curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+    # chmod a+x /usr/local/bin/docker-compose
+
+    # 启动 docker
+
+    systemctl start docker
+
+    # 启动 docker
+
+    # service docker start
+
+    # 开机自启
+
+    systemctl enable docker.service
+
+    # 查看 docker 状态
+
+    systemctl status docker.service
+    ```
+</details>
+
+<Callout type="info">
+    Linux base 系统可以使用 docker 直接运行 serverbee-web，比如：群晖、QTS、Unraid、PVE、Openwrt 等系统。
+</Callout>
+
+<Callout type="warning">
+    仅建议 Linux base 系统使用 docker，否则你获得的数据将是 docker 镜像本身的数据，而不是你的主机数据。
+
+    如果使用系统自带 docker 界面安装，请注意记得挂载目录。
+</Callout>
+
+## Docker 运行命令
+
+```shell copy
+docker run -d \
+  -v /proc:/proc \
+  -v /dev:/dev \
+  -v /sys:/sys \
+  -v /etc:/etc \
+  -v /run/media:/run/media \
+  -v /sys/class/net:/sys/class/net \
+  -v /usr/lib:/usr/lib \
+  --privileged=true \
+  --restart unless-stopped \
+  --network=host \
+  --name=serverbee-web \
+  zingerbee/serverbee-web -p 9527
+```
+将 `9527` 替换为任何你想要的端口
+
+## Docker Compose
+```bash copy
+version: '3'
+services:
+  serverbee-web:
+    image: zingerbee/serverbee-web
+    command: ["-p", "9527"]
+    privileged: true
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /proc:/proc
+      - /dev:/dev
+      - /sys:/sys
+      - /etc:/etc
+      - /run/media:/run/media
+      - /sys/class/net:/sys/class/net
+```
+
+## 查看容器日志
+
+```bash copy
+docker logs serverbee-web
+```

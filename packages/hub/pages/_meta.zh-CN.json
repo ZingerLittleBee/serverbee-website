@@ -1,6 +1,30 @@
 {
-  "index": "介绍",
-  "getting-started": "入门指南",
-  "advanced": "进阶",
-  "faq": "常见问题"
+  "index": {
+    "title": "Introduction",
+    "type": "page",
+    "theme": {
+      "breadcrumb": false,
+      "footer": false,
+      "sidebar": false,
+      "toc": true
+    }
+  },
+  "app": {
+    "title": "App",
+    "type": "page"
+  },
+  "web": {
+    "title": "Web",
+    "type": "page",
+    "theme": {
+      "breadcrumb": false,
+      "footer": false,
+      "sidebar": false,
+      "toc": true
+    }
+  },
+  "hub": {
+    "title": "Hub",
+    "type": "page"
+  }
 }
